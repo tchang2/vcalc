@@ -87,7 +87,7 @@ type returns [Type tsym]
   : WORD {
     $tsym = (Type) symtab.resolveType($WORD.text);
     if ($tsym == null) {
-      System.err.println("'" + $IDENT.text + "' is not a valid type");
+      System.err.println("'" + $WORD.text + "' is not a valid type");
       System.exit(-1);
     }
   }
