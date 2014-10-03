@@ -29,9 +29,9 @@ declaration
   : type assignment -> ^(DECL type assignment) 
   ;
 assignment 
-  : IDENT '=' expr SC -> ^('=' IDENT expr)
+  : IDENT EQUAL expr SC -> ^(EQUAL IDENT expr)
   ;
-  
+   
 statement
   : ifStatement
   | loopStatement
@@ -66,7 +66,7 @@ vector
   ;
 
 type 
-  : WORD
+  : IDENT
   ;
 term 
   : LP expr RP -> expr
@@ -78,7 +78,7 @@ term
 fragment LETTER : ('a'..'z' | 'A'..'Z') ;
 fragment DIGIT : '0'..'9';
 INTEGER : DIGIT+ ;
-WORD : LETTER+ ;
+EQUAL : '=' ;
 IDENT : LETTER (LETTER | DIGIT)*;
 SC : ';' ;
 LP : '(' ;
