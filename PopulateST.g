@@ -84,8 +84,8 @@ vector
   } vector expr) {currentscope = currentscope.getEnclosingScope();}
   ;
 type returns [Type tsym]
-  : IDENT {
-    $tsym = (Type) symtab.resolveType($IDENT.text);
+  : WORD {
+    $tsym = (Type) symtab.resolveType($WORD.text);
     if ($tsym == null) {
       System.err.println("'" + $IDENT.text + "' is not a valid type");
       System.exit(-1);

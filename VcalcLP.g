@@ -66,7 +66,7 @@ vector
   ;
 
 type 
-  : IDENT 
+  : WORD
   ;
 term 
   : LP expr RP -> expr
@@ -78,6 +78,7 @@ term
 fragment LETTER : ('a'..'z' | 'A'..'Z') ;
 fragment DIGIT : '0'..'9';
 INTEGER : DIGIT+ ;
+WORD : LETTER+ ;
 IDENT : LETTER (LETTER | DIGIT)*;
 SC : ';' ;
 LP : '(' ;
