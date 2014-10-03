@@ -1,13 +1,15 @@
 vcalc
 =====
 
+```
 Lyle: I'm going to use this file to as a central location to share what I'm currently doing,
  what my plan is for the immediate future, and most importantly, what files I am actively editing
  to help avoid merge conflicts. (Plus helps keep my brain from wandering all over the place)
- 
+
 Lyle's development schedule and status:
-	*ETS: Estimated Time to Start
-	*ETC; Estimated Time to Completion
+	ETS: Estimated Time to Start
+	ETC: Estimated Time to Completion
+	
 	Error Reporting: 1st pass complete (See PopulateST.g for further). 
 		TO-DO: look into "proper" way of reporting errors as discussed in class.
 			Priority: Moderate
@@ -30,3 +32,4 @@ Lyle's development schedule and status:
 	Active Files:
 		VcalcLP.g
 		PopulateST.g
+	```
