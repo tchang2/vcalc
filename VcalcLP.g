@@ -37,10 +37,6 @@ statement
   | loopStatement
   | printStatement
   | assignment 
-  | filter
-  ;
-filter
-  : 'filter' LP IDENT 'in' vector '|' expr RP -> ^('filter' IDENT vector expr)
   ;
 ifStatement
   : 'if' LP expr RP cstat 'fi' SC -> ^('if' expr cstat)
@@ -66,6 +62,7 @@ mult
 vector
   : term ('..'^ term)*
   | '[' IDENT 'in' vector '|' expr ']' -> ^(GEN IDENT vector expr)
+  | 'filter' LP IDENT 'in' vector '|' expr RP -> ^('filter' IDENT vector expr)
   ;
 
 type 

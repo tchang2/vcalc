@@ -41,15 +41,6 @@ statement
   | loopStatement
   | printStatement
   | assignment 
-  | filter
-  ;
-filter
-  : ^('filter' IDENT {
-    currentscope = new NestedScope("filscope", currentscope);
-    VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
-    
-    currentscope.define(vs);
-  } vector expr) {currentscope = currentscope.getEnclosingScope();}
   ;
 ifStatement
   : ^('if' expr cstat)
@@ -83,6 +74,12 @@ vector
     currentscope = new NestedScope("genscope", currentscope);
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
     //System.out.println(vs.toString());
+    currentscope.define(vs);
+  } vector expr) {currentscope = currentscope.getEnclosingScope();}
+  | ^('filter' IDENT {
+    currentscope = new NestedScope("filscope", currentscope);
+    VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
+    
     currentscope.define(vs);
   } vector expr) {currentscope = currentscope.getEnclosingScope();}
   ;
