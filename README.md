@@ -30,6 +30,5 @@ Lyle's development schedule and status:
 			ETC: unknown
 
 	Active Files:
-		VcalcLP.g
-		PopulateST.g
+		None
 	```

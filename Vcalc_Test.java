@@ -20,35 +20,37 @@ import SymTab.SymbolTable;
 public class Vcalc_Test {
 
 	public static void main(String[] args) throws RecognitionException, IOException {
-		// TODO Auto-generated method stub
-		//FileReader groupFileR = new FileReader("x86.stg" );
-		//StringTemplateGroup templates = new StringTemplateGroup(groupFileR);
-		//groupFileR.close();
-		// create the lexer attached to stdin
-		//CharStream input = new ANTLRStringStream("%entry, %test\n");
+		
+		//get input file. Hardcoded for now
 		CharStream input = new ANTLRFileStream("vectest.vcalc");
+		
+		//run lexer and parser
 		VcalcLPLexer lexer = new VcalcLPLexer(input);
-		// create the buffer of tokens between the lexer and parser
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
-		// create the parser attached to the token buffer
 		VcalcLPParser parser = new VcalcLPParser(tokens);
-		// launch the parser starting at rule r, get return object
-		SymbolTable symtab = new SymbolTable();
+		SymbolTable symtab = new SymbolTable(); //init symbol table
 		VcalcLPParser.program_return result = parser.program();
-		// pull out the tree and cast it
 		Tree t = (Tree)result.getTree();
 		
-		//System.out.println(t.toStringTree()); // print out the tree
 		DOTTreeGenerator gen = new DOTTreeGenerator();
 		StringTemplate st = gen.toDOT(t);
 		System.out.println(st);
+		
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(t);
 		nodes.setTokenStream(tokens);
+		
+		//walk the tree to populate symbol table and perform compile time error checking
 		PopulateST pop = new PopulateST(nodes, symtab);
 		pop.program();
+		nodes.reset();
+		
+		
 		//Interpreter interpreter = new Interpreter(nodes);
 	    //interpreter.program(symtab);
 	    //nodes.reset();
+		//FileReader groupFileR = new FileReader("x86.stg" );
+		//StringTemplateGroup templates = new StringTemplateGroup(groupFileR);
+		//groupFileR.close();
 	    //Templater templater = new Templater(nodes);
 	    //templater.setTemplateLib(templates);
 	    //System.out.println(templater.program().getTemplate().toString());

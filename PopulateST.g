@@ -25,6 +25,7 @@ program
   : ^(PROGRAM declaration* statement*)
   ;
 
+//declaration node, check for redefination error and define new variable
 declaration
   : ^(DECL type assignment) {
     if (symtab.definedName($assignment.id)) {
@@ -32,10 +33,11 @@ declaration
       System.exit(-1);
     }  
     VariableSymbol vs = new VariableSymbol($assignment.id, $type.tsym);
-    //System.out.println(vs.toString());
     symtab.globals.define(vs);
   }
   ;
+  
+//return the id of the assignment for use depending on if a declaration or assignment statement
 assignment returns [String id]
   : ^(EQUAL IDENT expr) {$id = $IDENT.text;}
   ;
@@ -73,7 +75,8 @@ expr
   | ^('!=' expr expr) 
   | ^('>' expr expr)
   | ^('<' expr expr) 
-  | ^(DREF IDENT  {
+  | ^(DREF IDENT  //check to see if IDENT is defined and is a vector
+  {
     Symbol s = currentscope.resolve($IDENT.text);
     if (s == null) {
       System.err.println("The symbol '" + $IDENT.text + "' has not been defined yet");
@@ -85,7 +88,8 @@ expr
     }
   } expr) 
   | vector
-  | IDENT {
+  | IDENT //check to see if IDENT is defined
+  {
     if (!symtab.definedName($IDENT.text)) {
       System.err.println("The symbol '" + $IDENT.text + "' has not been defined yet");
       System.exit(-1);
@@ -95,15 +99,16 @@ expr
   ;
 vector
   : ^('..' expr expr)
-  | ^(GEN IDENT {
+  | ^(GEN IDENT //create new scope and define IDENT within it. pop the scope when done
+  {
     currentscope = new NestedScope("genscope", currentscope);
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
-    //System.out.println(vs.toString());
     currentscope.define(vs);
   } vector expr) 
   {currentscope = currentscope.getEnclosingScope();}
   
-  | ^('filter' IDENT {
+  | ^('filter' IDENT //create new scope and define IDENT within it. pop scope when done
+  {
     currentscope = new NestedScope("filscope", currentscope);
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
     
@@ -112,7 +117,8 @@ vector
   {currentscope = currentscope.getEnclosingScope();}
   ;
 type returns [Type tsym]
-  : IDENT {
+  : IDENT //check to see if type is valid, returning it if it is. 
+  {
     $tsym = (Type) symtab.resolveType($IDENT.text);
     if ($tsym == null) {
       System.err.println("'" + $IDENT.text + "' is not a valid type");
