@@ -37,10 +37,6 @@ statement
   | loopStatement
   | printStatement
   | assignment 
-  | filter
-  ;
-filter
-  : 'filter' LP IDENT 'in' vector '|' expr RP -> ^('filter' IDENT vector expr)
   ;
 ifStatement
   : 'if' LP expr RP cstat 'fi' SC -> ^('if' expr cstat)
@@ -66,10 +62,11 @@ mult
 vector
   : term ('..'^ term)*
   | '[' IDENT 'in' vector '|' expr ']' -> ^(GEN IDENT vector expr)
+  | 'filter' LP IDENT 'in' vector '|' expr RP -> ^('filter' IDENT vector expr)
   ;
 
 type 
-  : IDENT 
+  : WORD
   ;
 term 
   : LP expr RP -> expr
@@ -81,6 +78,7 @@ term
 fragment LETTER : ('a'..'z' | 'A'..'Z') ;
 fragment DIGIT : '0'..'9';
 INTEGER : DIGIT+ ;
+WORD : LETTER+ ;
 IDENT : LETTER (LETTER | DIGIT)*;
 SC : ';' ;
 LP : '(' ;

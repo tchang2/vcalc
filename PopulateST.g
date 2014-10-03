@@ -41,15 +41,6 @@ statement
   | loopStatement
   | printStatement
   | assignment 
-  | filter
-  ;
-filter
-  : ^('filter' IDENT {
-    currentscope = new NestedScope("filscope", currentscope);
-    VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
-    
-    currentscope.define(vs);
-  } vector expr) {currentscope = currentscope.getEnclosingScope();}
   ;
 ifStatement
   : ^('if' expr cstat)
@@ -85,10 +76,16 @@ vector
     //System.out.println(vs.toString());
     currentscope.define(vs);
   } vector expr) {currentscope = currentscope.getEnclosingScope();}
+  | ^('filter' IDENT {
+    currentscope = new NestedScope("filscope", currentscope);
+    VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
+    
+    currentscope.define(vs);
+  } vector expr) {currentscope = currentscope.getEnclosingScope();}
   ;
 type returns [Type tsym]
-  : IDENT {
-    $tsym = (Type) symtab.resolveType($IDENT.text);
+  : WORD {
+    $tsym = (Type) symtab.resolveType($WORD.text);
     if ($tsym == null) {
       System.err.println("'" + $IDENT.text + "' is not a valid type");
       System.exit(-1);

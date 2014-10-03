@@ -9,7 +9,7 @@ package SymTab;
  * Visit http://www.pragmaticprogrammer.com/titles/tpdsl for more book information.
 ***/
 import java.util.*;
-public class SymbolTable { // single-scope symtab
+public class SymbolTable {
     public Scope globals;
     Map<String, Symbol> resnames = new HashMap<String, Symbol>();
     Map<String, BuiltInTypeSymbol> bitypes = new HashMap<String, BuiltInTypeSymbol>();
@@ -26,6 +26,7 @@ public class SymbolTable { // single-scope symtab
         resnames.put("print", new Symbol("print"));
         resnames.put("vector", new Symbol("vector"));
         resnames.put("filter", new Symbol("filter"));
+        resnames.put("in", new Symbol("in"));
         //define(new BuiltInTypeSymbol("float"));
     }
 	
