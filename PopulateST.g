@@ -75,18 +75,7 @@ expr
   | ^('!=' expr expr) 
   | ^('>' expr expr)
   | ^('<' expr expr) 
-  | ^(DREF IDENT  //check to see if IDENT is defined and is a vector
-  {
-    Symbol s = currentscope.resolve($IDENT.text);
-    if (s == null) {
-      System.err.println("The symbol '" + $IDENT.text + "' has not been defined yet");
-      System.exit(-1);
-    }
-    if (!s.getType().equals("vector")) {
-      System.err.println("The symbol '" + $IDENT.text + "' is being indexed, but is not a vector");
-      System.exit(-1);
-    }
-  } expr) 
+  | ^('[' expr expr*) 
   | vector
   | IDENT //check to see if IDENT is defined
   {
