@@ -20,7 +20,7 @@ Lyle's development schedule and status:
 			Priority: High
 			ETS: Saturday morning (started)
 			ETC: lock step with interpreter
-		TO-DO: Complete interpretor grammar
+		TO-DO: Complete interpretor grammar (indexing, generators filters, validity checking left)
 			Priority: High
 			ETS: Saturday morning/early afternoon (started)
 			ETC: Sunday evening (with luck)
@@ -30,6 +30,5 @@ Lyle's development schedule and status:
 			ETC: unknown
 
 	Active Files:
-		Interpretor.g
-		Value.java
+		none
 	```
