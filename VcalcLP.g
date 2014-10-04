@@ -60,7 +60,7 @@ mult
   : dref (('*'^ | '/'^) dref)*
   ;
 dref
-  : vector ('['^ expr ']'!)*// -> ^(DREF vector expr*)
+  : (vector -> vector) ('[' e=expr ']' -> ^(DREF $dref $e))*// -> ^(DREF vector expr*)
   ; 
 vector
   : term ('..'^ term)*

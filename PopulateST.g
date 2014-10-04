@@ -2,7 +2,6 @@ tree grammar PopulateST;
 
 options {
   language = Java;
-  output = AST;
   tokenVocab = VcalcLP;
   ASTLabelType = CommonTree;
 }
@@ -75,7 +74,7 @@ expr
   | ^('!=' expr expr) 
   | ^('>' expr expr)
   | ^('<' expr expr) 
-  | ^('[' expr expr*) 
+  | ^(DREF expr expr) 
   | vector
   | IDENT //check to see if IDENT is defined
   {
