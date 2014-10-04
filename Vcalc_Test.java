@@ -45,8 +45,8 @@ public class Vcalc_Test {
 		nodes.reset();
 		
 		
-		//Interpreter interpreter = new Interpreter(nodes);
-	    //interpreter.program(symtab);
+		Interpretor interpreter = new Interpretor(nodes, symtab);
+	    interpreter.program();
 	    //nodes.reset();
 		//FileReader groupFileR = new FileReader("x86.stg" );
 		//StringTemplateGroup templates = new StringTemplateGroup(groupFileR);
