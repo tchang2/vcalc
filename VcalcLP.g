@@ -57,23 +57,25 @@ add
   : mult (('+'^ | '-'^) mult)*
   ;
 mult
-  : vector (('*'^ | '/'^) vector)*
+  : dref (('*'^ | '/'^) dref)*
   ;
+dref
+  : vector ('['^ expr ']'!)*// -> ^(DREF vector expr*)
+  ; 
 vector
   : term ('..'^ term)*
   | '[' IDENT 'in' vector '|' expr ']' -> ^(GEN IDENT vector expr)
   | 'filter' LP IDENT 'in' vector '|' expr RP -> ^('filter' IDENT vector expr)
   ;
-
-type 
-  : IDENT
-  ;
 term 
   : LP expr RP -> expr
-  | IDENT '[' expr ']' -> ^(DREF IDENT expr)
   | IDENT 
   | INTEGER
   ;
+type 
+  : IDENT
+  ;
+
 
 fragment LETTER : ('a'..'z' | 'A'..'Z') ;
 fragment DIGIT : '0'..'9';
