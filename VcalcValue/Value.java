@@ -28,10 +28,6 @@ public class Value {
 	}
 	
 	public Value add(Value value) {
-		
-		/*if (this.getTypeName().equals("int") && value.getTypeName().equals("int")) {
-			return new Value(this.getInt() + value.getInt());
-		}*/
 		if (this.data.size() == value.data.size()) {
 			return this.addVec(value);
 		} 
@@ -66,7 +62,111 @@ public class Value {
 		else
 			return new Value(new BuiltInTypeSymbol("int"), out);
 	}
-	
+	public Value sub(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.subVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, 0);
+			return op1.subVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, 0);
+			return this.subVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value subVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			out.add(this.data.get(i) - value.data.get(i));
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
+	public Value mult(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.multVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, 0);
+			return op1.multVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, 0);
+			return this.multVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value multVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			out.add(this.data.get(i) * value.data.get(i));
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
+	public Value div(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.divVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, 1);
+			return op1.divVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, 0);
+			return this.divVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value divVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			out.add(this.data.get(i) / value.data.get(i));
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
 	
 	public Integer getInt() {return data.get(0);}
 	public BuiltInTypeSymbol getType() {return type;}
@@ -74,7 +174,7 @@ public class Value {
 	
 	private Value extend(Value value, Integer ext) {
 		ArrayList<Integer> ret = new ArrayList<Integer>(this.data);
-		for (int i=0; ret.size() < value.data.size(); i++) 
+		while (ret.size() < value.data.size()) 
 			ret.add(ext);
 		return new Value(new BuiltInTypeSymbol("vector"), ret);
 	}

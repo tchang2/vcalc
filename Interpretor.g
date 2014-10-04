@@ -58,9 +58,9 @@ printStatement
   ;
 expr returns [Value value]
   : ^('+' a=expr b=expr) {$value = $a.value.add($b.value);}
-  | ^('-' expr expr)
-  | ^('*' expr expr)
-  | ^('/' expr expr)
+  | ^('-' a=expr b=expr) {$value = $a.value.sub($b.value);}
+  | ^('*' a=expr b=expr) {$value = $a.value.mult($b.value);}
+  | ^('/' a=expr b=expr) {$value = $a.value.div($b.value);}
   | ^('==' expr expr)
   | ^('!=' expr expr) 
   | ^('>' expr expr)
