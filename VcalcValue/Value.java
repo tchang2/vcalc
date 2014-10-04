@@ -149,7 +149,7 @@ public class Value {
 			if (value.getTypeName().equals("int"))
 				op1 = value.extend(this, value.getInt());
 			else 
-				op1 = value.extend(this, 0);
+				op1 = value.extend(this, 1);
 			return this.divVec(op1);
 		}
 		
@@ -160,6 +160,175 @@ public class Value {
 		ArrayList<Integer> out = new ArrayList<Integer>();
 		for (int i=0; i<value.data.size(); i++) {
 			out.add(this.data.get(i) / value.data.get(i));
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
+	
+	public Value eq(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.eqVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, null);
+			return op1.eqVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, null);
+			return this.eqVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value eqVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			try {
+				if (this.data.get(i).equals(value.data.get(i)))
+					out.add(1);
+				else
+					out.add(0);
+			} catch (NullPointerException npe) {
+				out.add(0);
+			}
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
+	public Value neq(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.neqVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, null);
+			return op1.neqVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, null);
+			return this.neqVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value neqVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			try {
+				if (!this.data.get(i).equals(value.data.get(i)) && !value.data.get(i).equals(null))
+					out.add(1);
+				else
+					out.add(0);
+			} catch (NullPointerException npe) {
+				out.add(0);
+			}
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
+	public Value gt(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.gtVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, null);
+			return op1.gtVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, null);
+			return this.gtVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value gtVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			try {
+				if (this.data.get(i).intValue() > value.data.get(i).intValue() && !value.data.get(i).equals(null))
+					out.add(1);
+				else
+					out.add(0);
+			} catch (NullPointerException npe) {
+				out.add(0);
+			}
+		}
+		
+		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))
+			return new Value(new BuiltInTypeSymbol("vector"), out);
+		else
+			return new Value(new BuiltInTypeSymbol("int"), out);
+	}
+	public Value lt(Value value) {
+		if (this.data.size() == value.data.size()) {
+			return this.ltVec(value);
+		} 
+		if (this.data.size() < value.data.size()) {
+			Value op1 = null;
+			if (this.getTypeName().equals("int"))
+				op1 = this.extend(value, this.getInt());
+			else 
+				op1 = this.extend(value, null);
+			return op1.ltVec(value);
+		}
+		if (this.data.size() > value.data.size()) {
+			Value op1 = null;
+			if (value.getTypeName().equals("int"))
+				op1 = value.extend(this, value.getInt());
+			else 
+				op1 = value.extend(this, null);
+			return this.ltVec(op1);
+		}
+		
+		//should never return
+		return null;
+	}
+	private Value ltVec(Value value) {
+		ArrayList<Integer> out = new ArrayList<Integer>();
+		for (int i=0; i<value.data.size(); i++) {
+			try {
+				if (this.data.get(i).intValue() < value.data.get(i).intValue() && !value.data.get(i).equals(null))
+					out.add(1);
+				else
+					out.add(0);
+			} catch (NullPointerException npe) {
+				out.add(0);
+			}
 		}
 		
 		if (this.getTypeName().equals("vector") || value.getTypeName().equals("vector"))

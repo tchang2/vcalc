@@ -61,10 +61,10 @@ expr returns [Value value]
   | ^('-' a=expr b=expr) {$value = $a.value.sub($b.value);}
   | ^('*' a=expr b=expr) {$value = $a.value.mult($b.value);}
   | ^('/' a=expr b=expr) {$value = $a.value.div($b.value);}
-  | ^('==' expr expr)
-  | ^('!=' expr expr) 
-  | ^('>' expr expr)
-  | ^('<' expr expr) 
+  | ^('==' a=expr b=expr) {$value = $a.value.eq($b.value);}
+  | ^('!=' a=expr b=expr) {$value = $a.value.neq($b.value);}
+  | ^('>' a=expr b=expr) {$value = $a.value.gt($b.value);}
+  | ^('<' a=expr b=expr) {$value = $a.value.lt($b.value);}
   | ^(DREF expr expr) 
   | ^('..' a=expr b=expr) {$value = new Value($a.value, $b.value);}
   | ^(GEN IDENT expr expr) 
