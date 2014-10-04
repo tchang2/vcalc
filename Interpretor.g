@@ -14,6 +14,7 @@ import VcalcValue.*;
 @members {
     SymbolTable symtab;
     Scope currentscope;
+    boolean gflag = true;
     public Interpretor(TreeNodeStream input, SymbolTable symtab) {
         this(input);
         this.symtab = symtab;
@@ -33,9 +34,11 @@ declaration
 //return the id of the assignment for use depending on if a declaration or assignment statement
 assignment 
   : ^(EQUAL IDENT expr) {
-    Symbol s = symtab.resolve($IDENT.text);
-    VariableSymbol vs = (VariableSymbol) s;
-    vs.setValue($expr.value);
+    if (gflag) {
+      Symbol s = symtab.resolve($IDENT.text);
+      VariableSymbol vs = (VariableSymbol) s;
+      vs.setValue($expr.value);
+    }
   }
   ;
 statement
@@ -45,16 +48,51 @@ statement
   | assignment 
   ;
 ifStatement
-  : ^('if' expr cstat)
+@init {boolean flag = true; boolean oldflag = true;}
+  : ^('if' expr {
+    if (gflag) {
+        oldflag = gflag;
+        //TO-DO: add valid check
+        if ($expr.value.getInt() == 1) {
+          
+          flag = true;
+        } else {
+          flag = false;
+          
+        }
+        gflag = flag;
+      } else {
+        oldflag = gflag;
+      }
+    }    
+  cstat) {gflag = oldflag;}
   ;
 loopStatement
-  : ^('loop' expr cstat)
+@init {int mark = input.mark(); boolean rewind = false; boolean flag = true; boolean oldflag = true;}
+  : ^('loop' expr {
+    if (gflag) {
+      oldflag = gflag;
+      //TO-DO: add valid check
+      if ($expr.value.getInt() == 1) {
+        
+        flag = true;
+        rewind = true;
+      } else {
+        flag = false;
+        rewind = false;
+      }
+      gflag = flag;
+    } else {
+      oldflag = gflag;
+    }
+  }
+  cstat) {gflag = oldflag; if (rewind) input.rewind(mark);}
   ;
 cstat
   : ^(CSTAT statement*)
   ;
 printStatement
-  : ^('print' expr) {$expr.value.print();}
+  : ^('print' expr) {if (gflag) $expr.value.print();}
   ;
 expr returns [Value value]
   : ^('+' a=expr b=expr) {$value = $a.value.add($b.value);}
