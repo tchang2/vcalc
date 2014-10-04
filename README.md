@@ -16,13 +16,13 @@ Lyle's development schedule and status:
 			ETS: early next week
 			ETC: early next week
 	Interpretor: Not started, theory crafting stage
-		TO-DO: Write support class(es).
+		TO-DO: Complete support class(es).
 			Priority: High
-			ETS: Saturday morning
-			ETC: Saturday morning (may require rewrite and ETC recalibration if theory crafting fails)
-		TO-DO: Write interpretor grammar
+			ETS: Saturday morning (started)
+			ETC: lock step with interpreter
+		TO-DO: Complete interpretor grammar
 			Priority: High
-			ETS: Saturday morning/early afternoon
+			ETS: Saturday morning/early afternoon (started)
 			ETC: Sunday evening (with luck)
 		TO-DO: Find better way to do conditional execution for if/loop statements
 			Priority: Low
@@ -30,5 +30,6 @@ Lyle's development schedule and status:
 			ETC: unknown
 
 	Active Files:
-		None
+		Interpretor.g
+		Value.java
 	```
