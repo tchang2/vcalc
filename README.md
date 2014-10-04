@@ -15,7 +15,7 @@ Lyle's development schedule and status:
 			Priority: Moderate
 			ETS: early next week
 			ETC: early next week
-	Interpretor: Not started, theory crafting stage
+	Interpretor: arithmetic and logical operators complete. if and loop statements functional. Only takes valid input atm
 		TO-DO: Complete support class(es).
 			Priority: High
 			ETS: Saturday morning (started)
