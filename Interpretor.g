@@ -103,7 +103,7 @@ expr returns [Value value]
   | ^('!=' a=expr b=expr) {$value = $a.value.neq($b.value);}
   | ^('>' a=expr b=expr) {$value = $a.value.gt($b.value);}
   | ^('<' a=expr b=expr) {$value = $a.value.lt($b.value);}
-  | ^(DREF expr expr) 
+  | ^(DREF a=expr b=expr) {$value = $a.value.dref($b.value);}
   | ^('..' a=expr b=expr) {$value = new Value($a.value, $b.value);}
   | ^(GEN IDENT expr expr) 
   | ^('filter' IDENT expr expr) 

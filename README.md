@@ -2,7 +2,7 @@ vcalc
 =====
 
 ```
-Lyle: I'm going to use this file to as a central location to share what I'm currently doing,
+Lyle: I'm going to use this file as a central location to share what I'm currently doing,
  what my plan is for the immediate future, and most importantly, what files I am actively editing
  to help avoid merge conflicts. (Plus helps keep my brain from wandering all over the place)
 
@@ -20,7 +20,7 @@ Lyle's development schedule and status:
 			Priority: High
 			ETS: Saturday morning (started)
 			ETC: lock step with interpreter
-		TO-DO: Complete interpretor grammar (indexing, generators filters, validity checking left)
+		TO-DO: Complete interpretor grammar (generators filters, validity checking left)
 			Priority: High
 			ETS: Saturday morning/early afternoon (started)
 			ETC: Sunday evening (with luck)
@@ -30,5 +30,6 @@ Lyle's development schedule and status:
 			ETC: unknown
 
 	Active Files:
-		none
+		interpretor.g
+		Value.java
 	```

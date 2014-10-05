@@ -336,8 +336,30 @@ public class Value {
 		else
 			return new Value(new BuiltInTypeSymbol("int"), out);
 	}
+
+	public Value dref(Value expr) {
+		if (expr.getTypeName().equals("int")) {
+			try {
+				return new Value(this.getInt(expr.getInt()));
+			} catch (IndexOutOfBoundsException e) {
+				return new Value(0);
+			}
+		}
+		
+		ArrayList<Integer> ret = new ArrayList<Integer>();
+		for (int i=0; i<expr.data.size(); i++) {
+			try {
+				ret.add(this.data.get(expr.data.get(i)));
+			} catch (IndexOutOfBoundsException e) {
+				ret.add(0);
+			}
+		}
+		
+		return new Value(new BuiltInTypeSymbol("vector"), ret);
+	}
 	
 	public Integer getInt() {return data.get(0);}
+	public Integer getInt(int index) {return data.get(index);}
 	public BuiltInTypeSymbol getType() {return type;}
 	public String getTypeName() {return type.getName();}
 	
