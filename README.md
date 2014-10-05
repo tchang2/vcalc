@@ -15,21 +15,20 @@ Lyle's development schedule and status:
 			Priority: Moderate
 			ETS: early next week
 			ETC: early next week
-	Interpretor: arithmetic and logical operators complete. if and loop statements functional. Only takes valid input atm
+	Interpretor: all but validity checking is functional. 
 		TO-DO: Complete support class(es).
 			Priority: High
 			ETS: Saturday morning (started)
 			ETC: lock step with interpreter
-		TO-DO: Complete interpretor grammar (filters, validity checking left)
+		TO-DO: Complete interpretor grammar (validity checking left)
 			Priority: High
 			ETS: Saturday morning/early afternoon (started)
-			ETC: Sunday evening (with luck)
+			ETC: Monday
 		TO-DO: Find better way to do conditional execution for if/loop statements
 			Priority: Low
 			ETS: early/mid next week (pending progress as of Monday lab)
 			ETC: unknown
 
 	Active Files:
-		interpretor.g
-		Value.java
+		none
 	```

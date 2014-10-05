@@ -78,7 +78,8 @@ expr
   | vector
   | IDENT //check to see if IDENT is defined
   {
-    if (!symtab.definedName($IDENT.text)) {
+  Symbol s = currentscope.resolve($IDENT.text);
+    if (s == null) {
       System.err.println("The symbol '" + $IDENT.text + "' has not been defined yet");
       System.exit(-1);
     }
@@ -92,7 +93,7 @@ vector
     currentscope = new NestedScope("genscope", currentscope);
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
     currentscope.define(vs);
-  } vector expr) 
+  } expr expr) 
   {currentscope = currentscope.getEnclosingScope();}
   
   | ^('filter' IDENT //create new scope and define IDENT within it. pop scope when done
@@ -101,7 +102,7 @@ vector
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
     
     currentscope.define(vs);
-  } vector expr) 
+  } expr expr) 
   {currentscope = currentscope.getEnclosingScope();}
   ;
 type returns [Type tsym]

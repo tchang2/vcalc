@@ -20,5 +20,13 @@ public class NestedScope implements Scope{
 	public String getScopeName() { return this.name; }
     public Scope getEnclosingScope() { return enclosingscope; }
     public void define(Symbol sym) { symbols.put(sym.name, sym); }
-    public Symbol resolve(String name) { return symbols.get(name); }
+    public Symbol resolve(String name) {
+    	Symbol s = symbols.get(name);
+    	Scope currscope = this;
+    	while (s == null && currscope.getEnclosingScope() != null) {
+    		currscope = currscope.getEnclosingScope();
+    		s = currscope.resolve(name);
+    	}
+    	return s; 
+    }
 }

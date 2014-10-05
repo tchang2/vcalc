@@ -53,7 +53,7 @@ ifStatement
     if (gflag) {
         oldflag = gflag;
         //TO-DO: add valid check
-        if ($expr.value.getInt() == 1) {
+        if ($expr.value.getInt().intValue() == 1) {
           
           flag = true;
         } else {
@@ -73,7 +73,7 @@ loopStatement
     if (gflag) {
       oldflag = gflag;
       //TO-DO: add valid check
-      if ($expr.value.getInt() == 1) {
+      if ($expr.value.getInt().intValue() == 1) {
         
         flag = true;
         rewind = true;
@@ -106,15 +106,9 @@ expr returns [Value value]
   | ^(DREF a=expr b=expr) {$value = $a.value.dref($b.value);}
   | ^('..' a=expr b=expr) {$value = new Value($a.value, $b.value);}
   | gen {$value = $gen.value;}
-  | filter
+  | filter {$value = $filter.value;}
   | IDENT {
     Symbol s = currentscope.resolve($IDENT.text);
-    Scope scopewalk = currentscope;
-    while (s == null && scopewalk.getEnclosingScope() != null) {
-      scopewalk = scopewalk.getEnclosingScope();
-      s = scopewalk.resolve($IDENT.text);
-      //TO-DO: add error checking
-    }
     VariableSymbol vs = (VariableSymbol) s;
     $value = vs.getValue();
   }
@@ -127,19 +121,14 @@ gen returns [Value value]
   ArrayList<Integer> data = new ArrayList<Integer>();
   Integer vsize; 
   currentscope = new NestedScope("genscope", currentscope); 
-  //int mark = input.mark();
-  //System.out.println("hit");
 }
   : ^(GEN 
   IDENT v=expr {
     vsize = $v.value.getSize();
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"), new Value($v.value.dref(new Value(index)).getInt()));
     currentscope.define(vs);
-    //int mark = input.mark();
-    
   } 
   ({int mark = input.mark();} d=expr {
-  //$d.value.print();
   data.add($d.value.getInt());
   
   index++;
@@ -147,14 +136,35 @@ gen returns [Value value]
   if (index < vsize) input.rewind(mark);
   })+ 
   ) {
-    //System.out.println("hit");
     currentscope = currentscope.getEnclosingScope();
     $value = new Value(new BuiltInTypeSymbol("vector"), data);
 }
   ;
   
-filter
-  : ^('filter' IDENT expr expr) 
+filter returns [Value value]
+@init {
+  Integer index = 0;
+  ArrayList<Integer> data = new ArrayList<Integer>();
+  Integer vsize; 
+  currentscope = new NestedScope("filscope", currentscope); 
+}
+  : ^('filter' IDENT v=expr  {
+    vsize = $v.value.getSize();
+    VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"), new Value($v.value.dref(new Value(index)).getInt()));
+    currentscope.define(vs);
+  } 
+  ({int mark = input.mark();} d=expr {
+  if ($d.value.getInt().intValue() == 1)
+    data.add($v.value.dref(new Value(index)).getInt());
+  
+  index++;
+  vs.setValue(new Value($v.value.dref(new Value(index)).getInt()));
+  if (index < vsize) input.rewind(mark);
+  })+
+  ) {
+    currentscope = currentscope.getEnclosingScope();
+    $value = new Value(new BuiltInTypeSymbol("vector"), data);
+}
   ;
 
 type returns [Type tsym]
