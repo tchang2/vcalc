@@ -1,16 +1,17 @@
 package SymTab;
+import VcalcValue.*;
 
 public class VariableSymbol extends Symbol {
-	String value;
+	Value value;
 	public VariableSymbol(String name, Type type) { 
 		super(name, type); 
 	}
-	public VariableSymbol(String name, Type type, String value) {
+	public VariableSymbol(String name, Type type, Value value) {
 		super(name, type);
 		this.value = value;
 	}
-	public String getValue() {return value;}
-	public void setValue(String value) {
+	public Value getValue() {return value;}
+	public void setValue(Value value) {
 		this.value = value;
 	}
 	

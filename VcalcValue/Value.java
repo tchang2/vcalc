@@ -358,6 +358,7 @@ public class Value {
 		return new Value(new BuiltInTypeSymbol("vector"), ret);
 	}
 	
+	public Integer getSize() {return data.size();}
 	public Integer getInt() {return data.get(0);}
 	public Integer getInt(int index) {return data.get(index);}
 	public BuiltInTypeSymbol getType() {return type;}

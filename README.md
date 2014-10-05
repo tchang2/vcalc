@@ -20,7 +20,7 @@ Lyle's development schedule and status:
 			Priority: High
 			ETS: Saturday morning (started)
 			ETC: lock step with interpreter
-		TO-DO: Complete interpretor grammar (generators filters, validity checking left)
+		TO-DO: Complete interpretor grammar (filters, validity checking left)
 			Priority: High
 			ETS: Saturday morning/early afternoon (started)
 			ETC: Sunday evening (with luck)
