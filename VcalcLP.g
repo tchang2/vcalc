@@ -35,7 +35,12 @@ declaration
   : type assignment -> ^(DECL type assignment) 
   ; 
 assignment 
-  : IDENT EQUAL expr SC -> ^(EQUAL IDENT expr)
+  : IDENT {
+    if ($IDENT.text.equals("int") || $IDENT.text.equals("vector")) {
+      System.err.println("'" + $IDENT.text + "' is not a valid name");
+      System.exit(-1);
+    }
+  } EQUAL expr SC -> ^(EQUAL IDENT expr)
   | 'fi' {System.err.println("'fi' is not a valid name"); System.exit(-1);}
   | IN {System.err.println("'in' is not a valid name"); System.exit(-1);}
   | 'if' {System.err.println("'if' is not a valid name"); System.exit(-1);}
