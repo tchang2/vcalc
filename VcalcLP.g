@@ -43,8 +43,6 @@ assignment
   | 'pool' {System.err.println("'pool' is not a valid name"); System.exit(-1);}
   | 'print' {System.err.println("'print' is not a valid name"); System.exit(-1);}
   | 'filter' {System.err.println("'filter' is not a valid name"); System.exit(-1);}
-  | 'int' {System.err.println("'int' is not a valid name"); System.exit(-1);}
-  | 'vector' {System.err.println("'vector' is not a valid name"); System.exit(-1);}
   ;
    
 statement
