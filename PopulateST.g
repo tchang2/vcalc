@@ -28,6 +28,7 @@ program
 declaration
   : ^(DECL type assignment) {
     if (symtab.definedName($assignment.id)) {
+      //System.err.println(input.toString());
       System.err.println("The identifier '" + $assignment.id + "' has already been defined, or is a built in symbol and cannot be reused");
       System.exit(-1);
     }  
@@ -65,26 +66,73 @@ cstat
 printStatement
   : ^('print' expr)
   ;
-expr
-  : ^('+' expr expr)
-  | ^('-' expr expr)
-  | ^('*' expr expr)
-  | ^('/' expr expr)
-  | ^('==' expr expr)
-  | ^('!=' expr expr) 
-  | ^('>' expr expr)
-  | ^('<' expr expr) 
-  | ^(DREF expr expr) 
-  | vector
+expr returns [String type]
+  : ^('+' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('-' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('*' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('/' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('==' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('!=' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('>' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^('<' a=expr b=expr) {
+    if ($a.type.equals("vector") || $b.type.equals("vector"))
+      $type = "vector";
+    else
+      $type = "int";
+  }
+  | ^(DREF a=expr b=expr) {
+    if (!$a.type.equals("vector")) {
+      System.err.println("cannot index on type '" + $a.type + "', requires vector");
+      System.exit(-1);
+    }
+    $type = $b.type;
+  }
+  | vector {$type = "vector";}
   | IDENT //check to see if IDENT is defined
   {
-  Symbol s = currentscope.resolve($IDENT.text);
+    Symbol s = currentscope.resolve($IDENT.text);
     if (s == null) {
       System.err.println("The symbol '" + $IDENT.text + "' has not been defined yet");
       System.exit(-1);
     }
+    $type = s.getTypeName();
   }
-  | INTEGER 
+  | INTEGER {$type = "int";}
   ;
 vector
   : ^('..' expr expr)

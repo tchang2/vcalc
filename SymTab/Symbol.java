@@ -14,7 +14,8 @@ public class Symbol { // A generic programming language symbol
     public Symbol(String name) { this.name = name; }
     public Symbol(String name, Type type) {this(name); this.type = type;}
     public String getName() { return name; }
-    public String getType() { return type.toString(); }
+    public String getTypeName() { return type.toString(); }
+    public Type getType() { return type; }
     public String toString() {
         if ( type!=null ) return '<'+getName()+":"+type+'>';
         return getName();
