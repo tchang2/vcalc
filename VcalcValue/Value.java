@@ -388,7 +388,7 @@ public class Value {
 		for (int i=0; i<data.size(); i++)
 			out = out + " " + data.get(i);
 		
-		return out + ">";
+		return out + " >";
 	}
 	
 	public Value clone() {

@@ -113,7 +113,13 @@ expr returns [Value value]
   | ^('>' a=expr b=expr) {$value = $a.value.gt($b.value);}
   | ^('<' a=expr b=expr) {$value = $a.value.lt($b.value);}
   | ^(DREF a=expr b=expr) {$value = $a.value.dref($b.value);}
-  | ^('..' a=expr b=expr) {$value = new Value($a.value, $b.value);}
+  | ^('..' a=expr b=expr) {
+    if (!$a.value.getTypeName().equals("int") || !$b.value.getTypeName().equals("int") || $a.value.getInt().intValue() > $b.value.getInt().intValue()) {
+      System.err.println("Range boundary error on " + $a.value.toString() + ".." + $b.value.toString());
+      System.exit(-1);
+    }
+    $value = new Value($a.value, $b.value);
+  }
   | gen {$value = $gen.value;}
   | filter {$value = $filter.value;}
   | IDENT {
