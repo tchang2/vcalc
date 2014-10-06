@@ -18,6 +18,14 @@ import SymTab.*;
         this.symtab = symtab;
         currentscope = symtab.globals;
     }
+    public class AssignmentTuple {
+      public String id;
+      public String type;
+      public AssignmentTuple(String id, String type) {
+        this.id = id;
+        this.type = type;
+      }
+    }
 }
 
 program
@@ -27,19 +35,23 @@ program
 //declaration node, check for redefination error and define new variable
 declaration
   : ^(DECL type assignment) {
-    if (symtab.definedName($assignment.id)) {
+    if (symtab.definedName($assignment.tup.id)) {
       //System.err.println(input.toString());
-      System.err.println("The identifier '" + $assignment.id + "' has already been defined, or is a built in symbol and cannot be reused");
+      System.err.println("The identifier '" + $assignment.tup.id + "' has already been defined, or is a built in symbol and cannot be reused");
       System.exit(-1);
     }  
-    VariableSymbol vs = new VariableSymbol($assignment.id, $type.tsym);
+    if (!$type.tsym.getName().equals($assignment.tup.type)) {
+      System.err.println("Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + $type.tsym.getName() + "', got '" + $assignment.tup.type + "'");
+      System.exit(-1);
+    }
+    VariableSymbol vs = new VariableSymbol($assignment.tup.id, $type.tsym);
     symtab.globals.define(vs);
   }
   ;
   
 //return the id of the assignment for use depending on if a declaration or assignment statement
-assignment returns [String id]
-  : ^(EQUAL IDENT expr) {$id = $IDENT.text;}
+assignment returns [AssignmentTuple tup]
+  : ^(EQUAL IDENT expr) {$tup = new AssignmentTuple($IDENT.text, $expr.type);}
   ;
   
 statement
@@ -47,9 +59,13 @@ statement
   | loopStatement
   | printStatement
   | assignment {
-    Symbol id = symtab.resolve($assignment.id);
+    Symbol id = symtab.resolve($assignment.tup.id);
     if (id == null) {
-      System.err.println("The symbol '" + $assignment.id + "' is undefined");
+      System.err.println("The symbol '" + $assignment.tup.id + "' is undefined");
+      System.exit(-1);
+    }
+    if (!id.getTypeName().equals($assignment.tup.type)) {
+      System.err.println("Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + id.getTypeName() + "', got '" + $assignment.tup.type + "'");
       System.exit(-1);
     }
   }
