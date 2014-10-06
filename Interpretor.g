@@ -163,7 +163,12 @@ filter returns [Value value]
     currentscope.define(vs);
   } 
   ({int mark = input.mark();} d=expr {
-  if ($d.value.getInt().intValue() == 1)
+  int cond = $d.value.getInt().intValue();
+  if (cond != 1 && cond != 0) {
+    System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+    System.exit(-1);
+  }
+  if (cond == 1)
     data.add($v.value.dref(new Value(index)).getInt());
   
   index++;
