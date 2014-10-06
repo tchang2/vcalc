@@ -52,8 +52,12 @@ ifStatement
   : ^('if' expr {
     if (gflag) {
         oldflag = gflag;
-        //TO-DO: add valid check
-        if ($expr.value.getInt().intValue() == 1) {
+        int cond = $expr.value.getInt().intValue();
+        if (cond != 1 && cond != 0) {
+          System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+          System.exit(-1);
+        }
+        if (cond == 1) {
           
           flag = true;
         } else {
@@ -72,8 +76,12 @@ loopStatement
   : ^('loop' expr {
     if (gflag) {
       oldflag = gflag;
-      //TO-DO: add valid check
-      if ($expr.value.getInt().intValue() == 1) {
+      int cond = $expr.value.getInt().intValue();
+      if (cond != 1 && cond != 0) {
+        System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+        System.exit(-1);
+      }
+      if (cond == 1) {
         
         flag = true;
         rewind = true;
