@@ -71,10 +71,21 @@ statement
   }
   ;
 ifStatement
-  : ^('if' expr cstat)
+  : ^('if' expr {
+    if (!$expr.type.equals("int")) {
+      System.err.println("conditional expressions need to return an integer value");
+      System.exit(-1);
+    }
+  }
+  cstat)
   ;
 loopStatement
-  : ^('loop' expr cstat)
+  : ^('loop' expr {
+    if (!$expr.type.equals("int")) {
+      System.err.println("conditional expressions need to return an integer value");
+      System.exit(-1);
+    }
+  } cstat)
   ;
 cstat
   : ^(CSTAT statement*)
@@ -157,8 +168,17 @@ vector
     currentscope = new NestedScope("genscope", currentscope);
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
     currentscope.define(vs);
-  } expr expr) 
-  {currentscope = currentscope.getEnclosingScope();}
+  } v=expr e=expr) 
+  {
+    if (!$v.type.equals("vector")) {
+      System.err.println("Need a vector for the domain vector");
+      System.exit(-1);
+    }
+    if (!$e.type.equals("int")) {
+      System.err.println("Generator expression must be an integer expression");
+    }
+    currentscope = currentscope.getEnclosingScope();
+  }
   
   | ^('filter' IDENT //create new scope and define IDENT within it. pop scope when done
   {
@@ -166,8 +186,17 @@ vector
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"));
     
     currentscope.define(vs);
-  } expr expr) 
-  {currentscope = currentscope.getEnclosingScope();}
+  } v=expr e=expr) 
+  {
+    if (!$v.type.equals("vector")) {
+      System.err.println("Need a vector for the domain vector");
+      System.exit(-1);
+    }
+    if (!$e.type.equals("int")) {
+      System.err.println("Generator expression must be an integer expression");
+    }
+    currentscope = currentscope.getEnclosingScope();
+  }
   ;
 type returns [Type tsym]
   : IDENT //check to see if type is valid, returning it if it is. 
