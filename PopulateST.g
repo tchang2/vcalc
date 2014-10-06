@@ -94,6 +94,7 @@ printStatement
   : ^('print' expr)
   ;
 expr returns [String type]
+//@after {System.out.println(type);}
   : ^('+' a=expr b=expr) {
     if ($a.type.equals("vector") || $b.type.equals("vector"))
       $type = "vector";
@@ -202,6 +203,7 @@ type returns [Type tsym]
   : IDENT //check to see if type is valid, returning it if it is. 
   {
     $tsym = (Type) symtab.resolveType($IDENT.text);
+    //System.out.println($tsym.getName());
     if ($tsym == null) {
       System.err.println("'" + $IDENT.text + "' is not a valid type");
       System.exit(-1);

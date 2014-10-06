@@ -34,6 +34,7 @@ declaration
 //return the id of the assignment for use depending on if a declaration or assignment statement
 assignment 
   : ^(EQUAL IDENT expr) {
+    //$expr.value.print();
     if (gflag) {
       Symbol s = symtab.resolve($IDENT.text);
       VariableSymbol vs = (VariableSymbol) s;
