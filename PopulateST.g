@@ -36,12 +36,11 @@ program
 declaration
   : ^(DECL type assignment) {
     if (symtab.definedName($assignment.tup.id)) {
-      //System.err.println(input.toString());
-      System.err.println("The identifier '" + $assignment.tup.id + "' has already been defined, or is a built in symbol and cannot be reused");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "The identifier '" + $assignment.tup.id + "' has already been defined, or is a built in symbol and cannot be reused");
       System.exit(-1);
     }  
     if (!$type.tsym.getName().equals($assignment.tup.type)) {
-      System.err.println("Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + $type.tsym.getName() + "', got '" + $assignment.tup.type + "'");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + $type.tsym.getName() + "', got '" + $assignment.tup.type + "'");
       System.exit(-1);
     }
     VariableSymbol vs = new VariableSymbol($assignment.tup.id, $type.tsym);
@@ -61,11 +60,11 @@ statement
   | assignment {
     Symbol id = symtab.resolve($assignment.tup.id);
     if (id == null) {
-      System.err.println("The symbol '" + $assignment.tup.id + "' is undefined");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "The symbol '" + $assignment.tup.id + "' is undefined");
       System.exit(-1);
     }
     if (!id.getTypeName().equals($assignment.tup.type)) {
-      System.err.println("Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + id.getTypeName() + "', got '" + $assignment.tup.type + "'");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + id.getTypeName() + "', got '" + $assignment.tup.type + "'");
       System.exit(-1);
     }
   }
@@ -73,7 +72,7 @@ statement
 ifStatement
   : ^('if' expr {
     if (!$expr.type.equals("int")) {
-      System.err.println("conditional expressions need to return an integer value");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "conditional expressions need to return an integer value");
       System.exit(-1);
     }
   }
@@ -82,7 +81,8 @@ ifStatement
 loopStatement
   : ^('loop' expr {
     if (!$expr.type.equals("int")) {
-      System.err.println("conditional expressions need to return an integer value");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" +
+        " conditional expressions need to return an integer value");
       System.exit(-1);
     }
   } cstat)
@@ -94,7 +94,6 @@ printStatement
   : ^('print' expr)
   ;
 expr returns [String type]
-//@after {System.out.println(type);}
   : ^('+' a=expr b=expr) {
     if ($a.type.equals("vector") || $b.type.equals("vector"))
       $type = "vector";
@@ -145,7 +144,7 @@ expr returns [String type]
   }
   | ^(DREF a=expr b=expr) {
     if (!$a.type.equals("vector")) {
-      System.err.println("cannot index on type '" + $a.type + "', requires vector");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "cannot index on type '" + $a.type + "', requires vector");
       System.exit(-1);
     }
     $type = $b.type;
@@ -155,7 +154,7 @@ expr returns [String type]
   {
     Symbol s = currentscope.resolve($IDENT.text);
     if (s == null) {
-      System.err.println("The symbol '" + $IDENT.text + "' has not been defined yet");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "The symbol '" + $IDENT.text + "' has not been defined yet");
       System.exit(-1);
     }
     $type = s.getTypeName();
@@ -172,11 +171,12 @@ vector
   } v=expr e=expr) 
   {
     if (!$v.type.equals("vector")) {
-      System.err.println("Need a vector for the domain vector");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Need a vector for the domain vector");
       System.exit(-1);
     }
     if (!$e.type.equals("int")) {
-      System.err.println("Generator expression must be an integer expression");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Generator expression must be an integer expression");
+      System.exit(-1);
     }
     currentscope = currentscope.getEnclosingScope();
   }
@@ -190,11 +190,12 @@ vector
   } v=expr e=expr) 
   {
     if (!$v.type.equals("vector")) {
-      System.err.println("Need a vector for the domain vector");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Need a vector for the domain vector");
       System.exit(-1);
     }
     if (!$e.type.equals("int")) {
-      System.err.println("Generator expression must be an integer expression");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Generator expression must be an integer expression");
+      System.exit(-1);
     }
     currentscope = currentscope.getEnclosingScope();
   }
@@ -205,7 +206,7 @@ type returns [Type tsym]
     $tsym = (Type) symtab.resolveType($IDENT.text);
     //System.out.println($tsym.getName());
     if ($tsym == null) {
-      System.err.println("'" + $IDENT.text + "' is not a valid type");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "'" + $IDENT.text + "' is not a valid type");
       System.exit(-1);
     }
   }

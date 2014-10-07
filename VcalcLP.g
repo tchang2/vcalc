@@ -37,21 +37,20 @@ declaration
 assignment 
   : IDENT {
     if ($IDENT.text.equals("int") || $IDENT.text.equals("vector")) {
-      System.err.println("'" + $IDENT.text + "' is not a valid name");
+      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'" + $IDENT.text + "' is not a valid name");
       System.exit(-1);
     }
   } EQUAL expr SC -> ^(EQUAL IDENT expr)
-  | 'fi' {System.err.println("'fi' is not a valid name"); System.exit(-1);}
-  | IN {System.err.println("'in' is not a valid name"); System.exit(-1);}
-  | 'if' {System.err.println("'if' is not a valid name"); System.exit(-1);}
-  | 'loop' {System.err.println("'loop' is not a valid name"); System.exit(-1);}
-  | 'pool' {System.err.println("'pool' is not a valid name"); System.exit(-1);}
-  | 'print' {System.err.println("'print' is not a valid name"); System.exit(-1);}
-  | 'filter' {System.err.println("'filter' is not a valid name"); System.exit(-1);}
+  | 'fi' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'fi' is not a valid name"); System.exit(-1);}
+  | IN {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'in' is not a valid name"); System.exit(-1);}
+  | 'if' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'if' is not a valid name"); System.exit(-1);}
+  | 'loop' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'loop' is not a valid name"); System.exit(-1);}
+  | 'pool' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'pool' is not a valid name"); System.exit(-1);}
+  | 'print' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'print' is not a valid name"); System.exit(-1);}
+  | 'filter' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'filter' is not a valid name"); System.exit(-1);}
   ;
    
 statement
-//@init {System.out.println("hit statement");}
   : ifStatement
   | loopStatement
   | printStatement
@@ -61,14 +60,14 @@ ifStatement
   : 'if' LP expr RP cstat 'fi' SC -> ^('if' expr cstat)
   ;
   catch [RecognitionException re] {
-    System.err.println("Syntax error on if statement");
+    System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "Syntax error on if statement");
     System.exit(-1);
   }
 loopStatement
   : 'loop' LP expr RP cstat 'pool' SC -> ^('loop' expr cstat)
   ;
   catch [RecognitionException re] {
-    System.err.println("Syntax error on loop statement");
+    System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "Syntax error on loop statement");
     System.exit(-1);
   }
 cstat
@@ -78,7 +77,7 @@ printStatement
   : 'print' LP expr RP SC -> ^('print' expr)
   ;
   catch [RecognitionException re] {
-    System.err.println("Syntax error on print statement");
+    System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "Syntax error on print statement");
     System.exit(-1);
   }
 expr
@@ -109,17 +108,17 @@ type returns [Type tsym]
     $tsym = (Type) symtab.resolveType($IDENT.text);
     //System.out.println(tsym.getName());
     if ($tsym == null) {
-      System.err.println("'" + $IDENT.text + "' is not a valid type");
+      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'" + $IDENT.text + "' is not a valid type");
       System.exit(-1);
     }
   }
-  | 'fi' {System.err.println("'fi' is not a valid type"); System.exit(-1);}
-  | IN {System.err.println("'in' is not a valid type"); System.exit(-1);}
-  | 'if' {System.err.println("'if' is not a valid type"); System.exit(-1);}
-  | 'loop' {System.err.println("'loop' is not a valid type"); System.exit(-1);}
-  | 'pool' {System.err.println("'pool' is not a valid type"); System.exit(-1);}
-  | 'print' {System.err.println("'print' is not a valid type"); System.exit(-1);}
-  | 'filter' {System.err.println("'filter' is not a valid type"); System.exit(-1);}
+  | 'fi' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'fi' is not a valid type"); System.exit(-1);}
+  | IN {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'in' is not a valid type"); System.exit(-1);}
+  | 'if' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'if' is not a valid type"); System.exit(-1);}
+  | 'loop' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'loop' is not a valid type"); System.exit(-1);}
+  | 'pool' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'pool' is not a valid type"); System.exit(-1);}
+  | 'print' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'print' is not a valid type"); System.exit(-1);}
+  | 'filter' {System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'filter' is not a valid type"); System.exit(-1);}
   ;
 
 
