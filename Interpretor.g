@@ -49,12 +49,12 @@ statement
   ;
 ifStatement
 @init {boolean flag = true; boolean oldflag = true;}
-  : ^('if' expr {
+  : ^('if' {int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();} expr {
     if (gflag) {
         oldflag = gflag;
         int cond = $expr.value.getInt().intValue();
         if (cond != 1 && cond != 0) {
-          System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
+          System.err.println("Runtime Error: Line<" + line + ":" + chline + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
           System.exit(-1);
         }
         if (cond == 1) {
@@ -73,12 +73,12 @@ ifStatement
   ;
 loopStatement
 @init {int mark = input.mark(); boolean rewind = false; boolean flag = true; boolean oldflag = true;}
-  : ^('loop' expr {
+  : ^('loop' {int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();} expr {
     if (gflag) {
       oldflag = gflag;
       int cond = $expr.value.getInt().intValue();
       if (cond != 1 && cond != 0) {
-        System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
+        System.err.println("Runtime Error: Line<" + line + ":" + chline + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
         System.exit(-1);
       }
       if (cond == 1) {
@@ -167,10 +167,10 @@ filter returns [Value value]
     VariableSymbol vs = new VariableSymbol($IDENT.text, new BuiltInTypeSymbol("int"), new Value($v.value.dref(new Value(index)).getInt()));
     currentscope.define(vs);
   } 
-  ({int mark = input.mark();} d=expr {
+  ({int mark = input.mark();} {int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();} d=expr {
   int cond = $d.value.getInt().intValue();
   if (cond != 1 && cond != 0) {
-    System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
+    System.err.println("Runtime Error: Line<" + line + ":" + chline + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
     System.exit(-1);
   }
   if (cond == 1)
