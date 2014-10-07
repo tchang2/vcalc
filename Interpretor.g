@@ -34,7 +34,6 @@ declaration
 //return the id of the assignment for use depending on if a declaration or assignment statement
 assignment 
   : ^(EQUAL IDENT expr) {
-    //$expr.value.print();
     if (gflag) {
       Symbol s = symtab.resolve($IDENT.text);
       VariableSymbol vs = (VariableSymbol) s;
@@ -55,7 +54,7 @@ ifStatement
         oldflag = gflag;
         int cond = $expr.value.getInt().intValue();
         if (cond != 1 && cond != 0) {
-          System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+          System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
           System.exit(-1);
         }
         if (cond == 1) {
@@ -79,7 +78,7 @@ loopStatement
       oldflag = gflag;
       int cond = $expr.value.getInt().intValue();
       if (cond != 1 && cond != 0) {
-        System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+        System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
         System.exit(-1);
       }
       if (cond == 1) {
@@ -115,7 +114,7 @@ expr returns [Value value]
   | ^(DREF a=expr b=expr) {$value = $a.value.dref($b.value);}
   | ^('..' a=expr b=expr) {
     if (!$a.value.getTypeName().equals("int") || !$b.value.getTypeName().equals("int") || $a.value.getInt().intValue() > $b.value.getInt().intValue()) {
-      System.err.println("Range boundary error on " + $a.value.toString() + ".." + $b.value.toString());
+      System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Range boundary error on " + $a.value.toString() + ".." + $b.value.toString());
       System.exit(-1);
     }
     $value = new Value($a.value, $b.value);
@@ -171,7 +170,7 @@ filter returns [Value value]
   ({int mark = input.mark();} d=expr {
   int cond = $d.value.getInt().intValue();
   if (cond != 1 && cond != 0) {
-    System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+    System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
     System.exit(-1);
   }
   if (cond == 1)
