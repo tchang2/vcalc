@@ -40,3 +40,20 @@ printStatement(a,c) ::= <<
 %<c> = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32 %4)
 
 >>
+
+//a is the resolution of the exp a
+//b is the location that a is being stored
+loadVar(a,b) ::= <<
+
+store i32 %<a>, i32* @<b>, align
+
+>>
+
+//a is the resolution of the exp a
+//b is the resolution of the exp b
+//c is the current temp variable number
+add(a,b,c) ::= <<
+
+%<c> = add i32 %<a>, %<b>
+
+>>
