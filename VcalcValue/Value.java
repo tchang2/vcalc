@@ -238,12 +238,12 @@ public class Value {
 		ArrayList<Integer> out = new ArrayList<Integer>();
 		for (int i=0; i<value.data.size(); i++) {
 			try {
-				if (!this.data.get(i).equals(value.data.get(i)) && !value.data.get(i).equals(null))
+				if (!this.data.get(i).equals(value.data.get(i)))
 					out.add(1);
 				else
 					out.add(0);
 			} catch (NullPointerException npe) {
-				out.add(0);
+				out.add(1);
 			}
 		}
 		
