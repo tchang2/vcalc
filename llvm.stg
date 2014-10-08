@@ -96,8 +96,46 @@ store i32 <a>, %<b>
 
 >>
 
+//a is the variable name
+//b is the current temp variable
 var(a,b) ::= <<
 
 %<b> = load i32* @<a>, align 4
+
+>>
+
+//a is the resolution of exp a
+//b is the resolution of exp b
+//c is the current temp variable
+eql(a,b,c) ::= <<
+
+%<c> = icmp eq i32 %<a>, %<b>
+
+>>
+
+//a is the resolution of exp a
+//b is the resolution of exp b
+//c is the current temp variable
+neq(a,b,c) ::= <<
+
+%<c> = icmp ne i32 %<a>, %<b>
+
+>>
+
+//a is the resolution of exp a
+//b is the resolution of exp b
+//c is the current temp variable
+sgt(a,b,c) ::= <<
+
+%<c> = icmp sgt i32 %<a>, %<b>
+
+>>
+
+//a is the resolution of exp a
+//b is the resolution of exp b
+//c is the current temp variable
+slt(a,b,c) ::= <<
+
+%<c> = icmp slt i32 %<a>, %<b>
 
 >>
