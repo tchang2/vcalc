@@ -34,13 +34,13 @@ program
 
 //declaration node, check for redefination error and define new variable
 declaration
-  : ^(DECL type assignment) {
+  : ^(DECL type {int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();} assignment) {
     if (symtab.definedName($assignment.tup.id)) {
-      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "The identifier '" + $assignment.tup.id + "' has already been defined, or is a built in symbol and cannot be reused");
+      System.err.println("Sanity Error: Line<" + line + ":" + chline + ">" + "The identifier '" + $assignment.tup.id + "' has already been defined, or is a built in symbol and cannot be reused");
       System.exit(-1);
     }  
     if (!$type.tsym.getName().equals($assignment.tup.type)) {
-      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + $type.tsym.getName() + "', got '" + $assignment.tup.type + "'");
+      System.err.println("Sanity Error: Line<" + line + ":" + chline + ">" + "Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + $type.tsym.getName() + "', got '" + $assignment.tup.type + "'");
       System.exit(-1);
     }
     VariableSymbol vs = new VariableSymbol($assignment.tup.id, $type.tsym);
