@@ -29,12 +29,12 @@ public class Vcalc_Test {
 		CommonTokenStream tokens = new CommonTokenStream(lexer);
 		VcalcLPParser parser = new VcalcLPParser(tokens);
 		SymbolTable symtab = new SymbolTable(); //init symbol table
-		VcalcLPParser.program_return result = parser.program();
+		VcalcLPParser.program_return result = parser.program(symtab);
 		Tree t = (Tree)result.getTree();
 		
 		DOTTreeGenerator gen = new DOTTreeGenerator();
 		StringTemplate st = gen.toDOT(t);
-		System.out.println(st);
+		//System.out.println(st);
 		
 		CommonTreeNodeStream nodes = new CommonTreeNodeStream(t);
 		nodes.setTokenStream(tokens);
@@ -44,16 +44,25 @@ public class Vcalc_Test {
 		pop.program();
 		nodes.reset();
 		
+		//if (args[1].equals("int")) {
+			Interpretor interpreter = new Interpretor(nodes, symtab);
+			interpreter.program();
+		//} else {
+		/*BackEndLexer belexer = new BackEndLexer(input);
+		CommonTokenStream betokens = new CommonTokenStream(belexer);
+		BackEndParser beparser = new BackEndParser(betokens);
+		BackEndParser.prog_return beresult = beparser.prog();
+		Tree bet = (Tree)beresult.getTree();
+		CommonTreeNodeStream benodes = new CommonTreeNodeStream(bet);
+		benodes.setTokenStream(betokens);
 		
-		Interpretor interpreter = new Interpretor(nodes, symtab);
-	    interpreter.program();
-	    //nodes.reset();
-		//FileReader groupFileR = new FileReader("x86.stg" );
-		//StringTemplateGroup templates = new StringTemplateGroup(groupFileR);
-		//groupFileR.close();
-	    //Templater templater = new Templater(nodes);
-	    //templater.setTemplateLib(templates);
-	    //System.out.println(templater.program().getTemplate().toString());
+		FileReader groupFileR = new FileReader("llvm.stg" );
+		StringTemplateGroup templates = new StringTemplateGroup(groupFileR);
+		groupFileR.close();
+	    BackEndTemplate templater = new BackEndTemplate(benodes);
+	    templater.setTemplateLib(templates);
+	    System.out.println(templater.declara().getTemplate().toString());*/
+		//}
 	}
 
 }
