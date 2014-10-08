@@ -104,7 +104,7 @@ mult(a,b,op1,op2,dest) ::= <<
 div(a,b,op1,op2,dest) ::= <<
 <a>
 <b>
-%<dest> = idiv i32 %<op1>, %<op2>
+%<dest> = sdiv i32 %<op1>, %<op2>
 
 >>
 
