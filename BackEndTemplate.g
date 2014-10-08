@@ -7,7 +7,7 @@ options {
   ASTLabelType = CommonTree;
 }
 
-@members {int countLabel = 0; int countLoop = 0;}
+@members {int countLabel = 0; int countLoop = 0; int progLine = 0;}
 declara
   : ^(PROGRAM (x+=declaration)* (y+=nullblock)*) -> program(a={$x})
   ;
@@ -24,11 +24,11 @@ declaration
   ;
 
 walk
-  : ^(PROGRAM (x+=loadVariable)* (y+=block)*) -> program2(a={$x},b={$y})
+  : ^(PROGRAM (x+= storeVariable)* (y+=block)*) -> program2(a={$x},b={$y})
   ;
   
-loadVariable
-  : ^(DECL INTEGER x=ID y+=expr) -> loadVar(a={$x},b={$y})
+storeVariable
+  : ^(DECL INTEGER x=ID y+=expr) -> storeVar(a={$x},b={$y})
   ;
 
 block
@@ -39,7 +39,7 @@ block
   ;
   
 assignment
-  : ^(ASSIGN '=' x=ID y+=expr) -> loadVar(a={$x},b={$y})
+  : ^(ASSIGN '=' x=ID y+=expr) -> storeVar(a={$x},b={$y})
   ;
   
 print
