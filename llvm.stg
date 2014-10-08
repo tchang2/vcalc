@@ -57,3 +57,30 @@ add(a,b,c) ::= <<
 %<c> = add i32 %<a>, %<b>
 
 >>
+
+//a is the resolution of the exp a
+//b is the resolution of the exp b
+//c is the current temp variable number
+sub(a,b,c) ::= <<
+
+%<c> = sub i32 %<a>, %<b>
+
+>>
+
+//a is the resolution of the exp a
+//b is the resolution of the exp b
+//c is the current temp variable number
+mult(a,b,c) ::= <<
+
+%<c> = mul i32 %<a>, %<b>
+
+>>
+
+//a is the resolution of the exp a
+//b is the resolution of the exp b
+//c is the current temp variable number
+div(a,b,c) ::= <<
+
+%<c> = udiv i32 %<a>, %<b>
+
+>>
