@@ -43,7 +43,7 @@ printStatement(a,c) ::= <<
 
 //a is the resolution of the exp a
 //b is the location that a is being stored
-loadVar(a,b) ::= <<
+storeVar(a,b) ::= <<
 
 store i32 %<a>, i32* @<b>, align
 

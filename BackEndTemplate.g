@@ -35,7 +35,7 @@ block
   : ^(LINE ^(PRINT x+=expr)) -> printCode(a={$x})
   | ^(LINE ^(IF x+=expr y+=block*)) {countLabel++;} -> bne(exp={$x},lines={$y},label={countLabel})
   | ^(LINE ^(LOOP x+=expr y+=block*)) {countLoop++;} -> looper(exp={$x},lines={$y},label={countLoop})
-  | ^(LINE ^(ASSIGN '=' t=ID y+=expr)) -> loadVar(a={$t},b={$y}) 
+  | ^(LINE ^(ASSIGN '=' t=ID y+=expr)) -> storeVar(a={$t},b={$y}) 
   ;
   
 assignment
