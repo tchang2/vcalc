@@ -84,3 +84,20 @@ div(a,b,c) ::= <<
 %<c> = udiv i32 %<a>, %<b>
 
 >>
+
+//a is the resolution of the exp a
+//b is the current temp variable -1
+//c is the current temp variable 
+int(a,b,c) ::= <<
+
+%<b> = alloca i32, align 4
+store i32 <a>, %<b>
+%<c> = load i32* %<b>, align 4
+
+>>
+
+var(a,b) ::= <<
+
+%<b> = load i32* @<a>, align 4
+
+>>
