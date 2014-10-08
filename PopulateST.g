@@ -47,7 +47,7 @@ declaration
     symtab.globals.define(vs);
   }
   ;
-  
+   
 //return the id of the assignment for use depending on if a declaration or assignment statement
 assignment returns [AssignmentTuple tup]
   : ^(EQUAL IDENT expr) {$tup = new AssignmentTuple($IDENT.text, $expr.type);}
@@ -194,7 +194,7 @@ vector
       System.exit(-1);
     }
     if (!$e.type.equals("int")) {
-      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Generator expression must be an integer expression");
+      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "filter expression must be an integer expression");
       System.exit(-1);
     }
     currentscope = currentscope.getEnclosingScope();
