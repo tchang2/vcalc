@@ -27,18 +27,18 @@ declaration
   ;
 
 walk
-  : ^(PROGRAM (x+= storeVariable)* (y+=block)*) -> program2(a={$x},b={$y})
+  : ^(PROGRAM (storeVariable)* (y+=block)*) -> program2(b={$y})
   ;
   
 storeVariable
-  : ^(DECL INTEGER x=ID y+=expr) -> storeVar(a={$x},b={$y})
+  : ^(DECL INTEGER x=ID y+=expr) -> storeVar(a={$y},id={$x},op={opcounter})
   ;
 
 block
   : ^(LINE ^(PRINT x+=expr)) -> printCode(a={$x})
   | ^(LINE ^(IF x+=expr y+=block*)) {countLabel++;} -> bne(exp={$x},lines={$y},label={countLabel})
   | ^(LINE ^(LOOP x+=expr y+=block*)) {countLoop++;} -> looper(exp={$x},lines={$y},label={countLoop})
-  | ^(LINE ^(ASSIGN '=' t=ID y+=expr)) -> storeVar(a={$t},b={$y}) 
+  | ^(LINE ^(ASSIGN '=' t=ID y+=expr)) -> storeVar(a={$y},id={$t},op={opcounter})
   ;
   
 assignment
