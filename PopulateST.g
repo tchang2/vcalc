@@ -57,14 +57,15 @@ statement
   : ifStatement
   | loopStatement
   | printStatement
-  | assignment {
+  | {int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();} 
+    assignment {
     Symbol id = symtab.resolve($assignment.tup.id);
     if (id == null) {
       System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "The symbol '" + $assignment.tup.id + "' is undefined");
       System.exit(-1);
     }
     if (!id.getTypeName().equals($assignment.tup.type)) {
-      System.err.println("Sanity Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + id.getTypeName() + "', got '" + $assignment.tup.type + "'");
+      System.err.println("Sanity Error: Line<" + line + ":" + chline + ">" + "Type missmatch on symbol '" + $assignment.tup.id + "', expected '" + id.getTypeName() + "', got '" + $assignment.tup.type + "'");
       System.exit(-1);
     }
   }
