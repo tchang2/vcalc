@@ -9,7 +9,7 @@ options {
 
 @members {
   int countLabel = 0; int countLoop = 0; int progLine = 0;
-  int opcounter = 0; int tempcounter = 0;
+  int opcounter = 1; int tempcounter = 0;
 }
 declara
   : ^(PROGRAM (x+=declaration)* (y+=nullblock)*) -> program(a={$x})
@@ -23,7 +23,7 @@ nullblock
   ;
  
 declaration
-  : ^(DECL INTEGER x=ID expr)  -> decl(a={$x})
+  : ^(DECL INTEGER x=ID y+=expr)  -> declareInt(a={$y}, id={$x}, op={opcounter})
   ;
 
 walk
@@ -62,7 +62,7 @@ expr
 //  | ^('!=' x+=expr y+=expr) {z=progLine++} -> neq(a={$x},b={$y},c={$z})
 //  | ^('>' x+=expr y+=expr) {z=progLine++} -> sgt(a={$x},b={$y},c={$z})
 //  | ^('<' x+=expr y+=expr) {z=progLine++} -> slt(a={$x},b={$y},c={$z})
-  : ^('+' x+=expr y+=expr) {opcounter++;} -> add(a={$x},b={$y},op1={opcounter-2},op2={opcounter-1},dest={opcounter})
+  : ^('+' x=expr y=expr) {opcounter++;} -> add(a={$x.st},b={$y.st},op1={opcounter-2},op2={opcounter-1},dest={opcounter})
 //  | ^('-' x+=expr y+=expr) {z=progLine++} -> sub(a={$x},b={$y},c={$z})
 //  | ^('*' x+=expr y+=expr) {z=progLine++} -> mult(a={$x},b={$y},c={$z})
 //  | ^('/' x+=expr y+=expr) {z=progLine++} -> div(a={$x},b={$y},c={$z})
