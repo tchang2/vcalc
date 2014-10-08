@@ -54,15 +54,15 @@ loop
   : ^(LOOP expr block*)
   ;
   
-expr 
-  : ^('==' x+=expr y+=expr) -> eql(a={$x},b={$y})
-  | ^('!=' x+=expr y+=expr) -> neq(a={$x},b={$y})
-  | ^('>' x+=expr y+=expr) -> sgt(a={$x},b={$y})
-  | ^('<' x+=expr y+=expr) -> slt(a={$x},b={$y})
-  | ^('+' x+=expr y+=expr) -> add(a={$x},b={$y})
-  | ^('-' x+=expr y+=expr) -> sub(a={$x},b={$y})
-  | ^('*' x+=expr y+=expr) -> mult(a={$x},b={$y})
-  | ^('/' x+=expr y+=expr) -> div(a={$x},b={$y})
-  | INT -> int(v={$INT.text})
-  | ID -> var(id={$ID.text})
+expr returns [counter]
+  : ^('==' x+=expr y+=expr) {z=progLine++} -> eql(a={$x},b={$y},c={$z})
+  | ^('!=' x+=expr y+=expr) {z=progLine++} -> neq(a={$x},b={$y},c={$z})
+  | ^('>' x+=expr y+=expr) {z=progLine++} -> sgt(a={$x},b={$y},c={$z})
+  | ^('<' x+=expr y+=expr) {z=progLine++} -> slt(a={$x},b={$y},c={$z})
+  | ^('+' x+=expr y+=expr) {z=progLine++} -> add(a={$x},b={$y},c={$z})
+  | ^('-' x+=expr y+=expr) {z=progLine++} -> sub(a={$x},b={$y},c={$z})
+  | ^('*' x+=expr y+=expr) {z=progLine++} -> mult(a={$x},b={$y},c={$z})
+  | ^('/' x+=expr y+=expr) {z=progLine++} -> div(a={$x},b={$y},c={$z})
+  | INT {progLine++} -> int(v={$INT.text})
+  | ID {progLine++} -> var(id={$ID.text})
   ;

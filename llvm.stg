@@ -140,3 +140,11 @@ slt(a,b,c) ::= <<
 %<c> = icmp slt i32 %<a>, %<b>
 
 >>
+
+//a is the variable name for the vector
+//b is the number of elements vector a holds
+vectorInit(a,b,c) ::= <<
+
+%<a> = alloca [<b> x i32], align 16
+
+>>
