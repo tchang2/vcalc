@@ -22,7 +22,7 @@ public class Vcalc_Test {
 	public static void main(String[] args) throws RecognitionException, IOException {
 		
 		//get input file. Hardcoded for now
-		CharStream input = new ANTLRFileStream("Tests/tetest.vcalc");
+		CharStream input = new ANTLRFileStream(arg[0]);
 		
 		//run lexer and parser
 		VcalcLPLexer lexer = new VcalcLPLexer(input);
@@ -44,15 +44,20 @@ public class Vcalc_Test {
 		pop.program();
 		nodes.reset();
 		
-		//if (args[1].equals("int")) {
-		//	Interpretor interpreter = new Interpretor(nodes, symtab);
-		//	interpreter.program();
-		//} else {
-		BackEndLexer belexer = new BackEndLexer(input);
+		if (args[1].equals("int")) {
+			Interpretor interpreter = new Interpretor(nodes, symtab);
+			interpreter.program();
+		} else {
+		CharStream beinput = new ANTLRFileStream(arg[0]);
+		BackEndLexer belexer = new BackEndLexer(beinput);
 		CommonTokenStream betokens = new CommonTokenStream(belexer);
 		BackEndParser beparser = new BackEndParser(betokens);
 		BackEndParser.prog_return beresult = beparser.prog();
 		Tree bet = (Tree)beresult.getTree();
+		DOTTreeGenerator begen = new DOTTreeGenerator();
+		StringTemplate best = begen.toDOT(bet);
+		//System.out.println(best);
+		
 		CommonTreeNodeStream benodes = new CommonTreeNodeStream(bet);
 		benodes.setTokenStream(betokens);
 		
@@ -71,7 +76,7 @@ public class Vcalc_Test {
 	    
 	    
 	    //System.out.println(templater.declara().getTemplate().toString());
-		//}
+		}
 	}
 
 }
