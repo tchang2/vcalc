@@ -56,16 +56,16 @@ ifstatement
 loop
   : ^(LOOP expr block*)
   ;
-  
-expr returns [counter]
-  : ^('==' x+=expr y+=expr) {z=progLine++} -> eql(a={$x},b={$y},c={$z})
-  | ^('!=' x+=expr y+=expr) {z=progLine++} -> neq(a={$x},b={$y},c={$z})
-  | ^('>' x+=expr y+=expr) {z=progLine++} -> sgt(a={$x},b={$y},c={$z})
-  | ^('<' x+=expr y+=expr) {z=progLine++} -> slt(a={$x},b={$y},c={$z})
-  | ^('+' x+=expr y+=expr) {opcounter++;} -> add(a={$x},b={$y},op1={opcounter-2},op2={opcounter-1},dest={opcounter})
-  | ^('-' x+=expr y+=expr) {z=progLine++} -> sub(a={$x},b={$y},c={$z})
-  | ^('*' x+=expr y+=expr) {z=progLine++} -> mult(a={$x},b={$y},c={$z})
-  | ^('/' x+=expr y+=expr) {z=progLine++} -> div(a={$x},b={$y},c={$z})
+   
+expr 
+//  : ^('==' x+=expr y+=expr) {z=progLine++} -> eql(a={$x},b={$y},c={$z})
+//  | ^('!=' x+=expr y+=expr) {z=progLine++} -> neq(a={$x},b={$y},c={$z})
+//  | ^('>' x+=expr y+=expr) {z=progLine++} -> sgt(a={$x},b={$y},c={$z})
+//  | ^('<' x+=expr y+=expr) {z=progLine++} -> slt(a={$x},b={$y},c={$z})
+  : ^('+' x+=expr y+=expr) {opcounter++;} -> add(a={$x},b={$y},op1={opcounter-2},op2={opcounter-1},dest={opcounter})
+//  | ^('-' x+=expr y+=expr) {z=progLine++} -> sub(a={$x},b={$y},c={$z})
+//  | ^('*' x+=expr y+=expr) {z=progLine++} -> mult(a={$x},b={$y},c={$z})
+//  | ^('/' x+=expr y+=expr) {z=progLine++} -> div(a={$x},b={$y},c={$z})
   | INT {opcounter++; tempcounter++;} -> int(v={$INT.text},oc={opcounter},tc={tempcounter})
   | ID {opcounter++;} -> var(id={$ID.text}, oc={opcounter})
   ;

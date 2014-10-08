@@ -22,7 +22,7 @@ public class Vcalc_Test {
 	public static void main(String[] args) throws RecognitionException, IOException {
 		
 		//get input file. Hardcoded for now
-		CharStream input = new ANTLRFileStream("vectest.vcalc");
+		CharStream input = new ANTLRFileStream("Tests/tetest.vcalc");
 		
 		//run lexer and parser
 		VcalcLPLexer lexer = new VcalcLPLexer(input);
@@ -45,10 +45,10 @@ public class Vcalc_Test {
 		nodes.reset();
 		
 		//if (args[1].equals("int")) {
-			Interpretor interpreter = new Interpretor(nodes, symtab);
-			interpreter.program();
+		//	Interpretor interpreter = new Interpretor(nodes, symtab);
+		//	interpreter.program();
 		//} else {
-		/*BackEndLexer belexer = new BackEndLexer(input);
+		BackEndLexer belexer = new BackEndLexer(input);
 		CommonTokenStream betokens = new CommonTokenStream(belexer);
 		BackEndParser beparser = new BackEndParser(betokens);
 		BackEndParser.prog_return beresult = beparser.prog();
@@ -61,7 +61,16 @@ public class Vcalc_Test {
 		groupFileR.close();
 	    BackEndTemplate templater = new BackEndTemplate(benodes);
 	    templater.setTemplateLib(templates);
-	    System.out.println(templater.declara().getTemplate().toString());*/
+	    benodes.reset();
+	    System.out.println(templater.declara().getTemplate().toString());
+	    
+	  
+	    benodes.reset();
+	    //BackEndTemplate.walk_ret;
+	    System.out.println(templater.walk().getTemplate().toString());
+	    
+	    
+	    //System.out.println(templater.declara().getTemplate().toString());
 		//}
 	}
 
