@@ -62,10 +62,10 @@ public class Vcalc_Test {
 	    BackEndTemplate templater = new BackEndTemplate(benodes);
 	    templater.setTemplateLib(templates);
 	    benodes.reset();
-	    System.out.println(templater.declara().getTemplate().toString());
+	    //System.out.println(templater.declara().getTemplate().toString());
 	    
 	  
-	    benodes.reset();
+	    //benodes.reset();
 	    //BackEndTemplate.walk_ret;
 	    System.out.println(templater.walk().getTemplate().toString());
 	    
