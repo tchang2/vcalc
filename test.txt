@@ -1,37 +1,14 @@
-x = x + 1
+x = x + 5;
 
+//storeVar:<a>
+	//add:<a>
+	%1 = load i32* @x, align 4
 
-%<1> = load i32* @<a>, align 4
-%<2> = alloca i32, align 4
-store i32 <1>, %<2>
-%<3> = load i32* %<2>, align 4
-%<4> = add i32 %<1>, %<3>
+	//add:<b>
+	%t1 = alloca i32, align 4
+	store i32 5, %t1
+	%2 = load i32* %t1, align 4
 
-//a is the variable name
+	%3 = add i32 %1, %2
 
-//b is the current temp variable
-var(a,b) ::= <<
-
-%<b> = load i32* @<a>, align 4
-
->>
-
-//a is the resolution of the exp a
-//b is the current temp variable -1
-//c is the current temp variable 
-int(a,b,c) ::= <<
-
-%<b> = alloca i32, align 4
-store i32 <a>, %<b>
-%<c> = load i32* %<b>, align 4
-
->>
-
-//a is the resolution of the exp a
-//b is the resolution of the exp b
-//c is the current temp variable number
-add(a,b,c) ::= <<
-
-%<c> = add i32 %<a>, %<b>
-
->>
+store i32 %3, i32* @x, align 4
