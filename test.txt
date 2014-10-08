@@ -67,7 +67,7 @@ store i32 0, i32* %1
   %17 = load i32* %t11, align 4
 
   %t12 = icmp eq i32 %16, %17
-  %18 = zext i1 %18 to i32
+  %18 = zext i1 %t12 to i32
 
   %t13 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32 %18)
 
@@ -78,7 +78,7 @@ store i32 0, i32* %1
   %20 = load i32* %t14, align 4
 
   %t15 = icmp ne i32 %19, %20
-  %21 = zext i1 %21 to i32
+  %21 = zext i1 %t15 to i32
 
   %t16 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32 %21)
 
@@ -89,7 +89,7 @@ store i32 0, i32* %1
   %23 = load i32* %t17, align 4
 
   %t18 = icmp sgt i32 %22, %23
-  %24 = zext i1 %24 to i32
+  %24 = zext i1 %t18 to i32
 
   %t19 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32 %24)
 
@@ -100,7 +100,7 @@ store i32 0, i32* %1
   %26 = load i32* %t20, align 4
 
   %t21 = icmp slt i32 %25, %26
-  %27 = zext i1 %27 to i32
+  %27 = zext i1 %t21 to i32
 
   %t22 = call i32 (i8*, ...)* @printf(i8* getelementptr inbounds ([3 x i8]* @.str, i32 0, i32 0), i32 %27)
 
