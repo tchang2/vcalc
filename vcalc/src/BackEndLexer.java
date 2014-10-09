@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:45:30 C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g 2014-10-08 18:46:05
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g 2014-10-08 19:21:33
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -47,15 +47,15 @@ public class BackEndLexer extends Lexer {
         super(input,state);
 
     }
-    public String getGrammarFileName() { return "C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g"; }
+    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g"; }
 
     // $ANTLR start "T__21"
     public final void mT__21() throws RecognitionException {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:7:7: ( '=' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:7:9: '='
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:7:7: ( '=' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:7:9: '='
             {
             match('='); 
 
@@ -74,8 +74,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:8:7: ( '>' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:8:9: '>'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:8:7: ( '>' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:8:9: '>'
             {
             match('>'); 
 
@@ -94,8 +94,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:9:7: ( '<' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:9:9: '<'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:9:7: ( '<' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:9:9: '<'
             {
             match('<'); 
 
@@ -114,8 +114,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:10:7: ( '==' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:10:9: '=='
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:10:7: ( '==' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:10:9: '=='
             {
             match("=="); 
 
@@ -135,8 +135,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:11:7: ( '!=' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:11:9: '!='
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:11:7: ( '!=' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:11:9: '!='
             {
             match("!="); 
 
@@ -156,8 +156,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:12:7: ( '+' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:12:9: '+'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:12:7: ( '+' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:12:9: '+'
             {
             match('+'); 
 
@@ -176,8 +176,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:13:7: ( '-' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:13:9: '-'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:13:7: ( '-' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:13:9: '-'
             {
             match('-'); 
 
@@ -196,8 +196,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:14:7: ( '*' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:14:9: '*'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:14:7: ( '*' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:14:9: '*'
             {
             match('*'); 
 
@@ -216,8 +216,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:15:7: ( '/' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:15:9: '/'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:15:7: ( '/' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:15:9: '/'
             {
             match('/'); 
 
@@ -236,8 +236,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:16:7: ( '(' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:16:9: '('
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:16:7: ( '(' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:16:9: '('
             {
             match('('); 
 
@@ -256,8 +256,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:17:7: ( ')' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:17:9: ')'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:17:7: ( ')' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:17:9: ')'
             {
             match(')'); 
 
@@ -276,8 +276,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = LOOP;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:64:5: ( 'loop' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:64:7: 'loop'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:64:5: ( 'loop' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:64:7: 'loop'
             {
             match("loop"); 
 
@@ -297,8 +297,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = POOL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:65:5: ( 'pool' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:65:7: 'pool'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:65:5: ( 'pool' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:65:7: 'pool'
             {
             match("pool"); 
 
@@ -318,8 +318,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = IF;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:66:3: ( 'if' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:66:5: 'if'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:66:3: ( 'if' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:66:5: 'if'
             {
             match("if"); 
 
@@ -339,8 +339,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = FI;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:67:3: ( 'fi' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:67:5: 'fi'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:67:3: ( 'fi' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:67:5: 'fi'
             {
             match("fi"); 
 
@@ -360,8 +360,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = PRINT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:68:6: ( 'print' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:68:8: 'print'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:68:6: ( 'print' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:68:8: 'print'
             {
             match("print"); 
 
@@ -381,8 +381,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = INTEGER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:69:8: ( 'int' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:69:10: 'int'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:69:8: ( 'int' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:69:10: 'int'
             {
             match("int"); 
 
@@ -402,10 +402,10 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:70:3: ( ( ' ' | '\\t' )+ )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:70:5: ( ' ' | '\\t' )+
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:70:3: ( ( ' ' | '\\t' )+ )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:70:5: ( ' ' | '\\t' )+
             {
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:70:5: ( ' ' | '\\t' )+
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:70:5: ( ' ' | '\\t' )+
             int cnt1=0;
             loop1:
             do {
@@ -419,7 +419,7 @@ public class BackEndLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:
             	    {
             	    if ( input.LA(1)=='\t'||input.LA(1)==' ' ) {
             	        input.consume();
@@ -460,8 +460,8 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = SEMICOLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:71:10: ( ';' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:71:12: ';'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:71:10: ( ';' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:71:12: ';'
             {
             match(';'); 
 
@@ -480,10 +480,10 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:72:4: ( ( NUMBER )+ )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:72:7: ( NUMBER )+
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:72:4: ( ( NUMBER )+ )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:72:7: ( NUMBER )+
             {
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:72:7: ( NUMBER )+
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:72:7: ( NUMBER )+
             int cnt2=0;
             loop2:
             do {
@@ -497,7 +497,7 @@ public class BackEndLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:72:7: NUMBER
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:72:7: NUMBER
             	    {
             	    mNUMBER(); 
 
@@ -529,11 +529,11 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:73:3: ( LETTER ( LETTER | NUMBER )* )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:73:5: LETTER ( LETTER | NUMBER )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:73:3: ( LETTER ( LETTER | NUMBER )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:73:5: LETTER ( LETTER | NUMBER )*
             {
             mLETTER(); 
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:73:12: ( LETTER | NUMBER )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:73:12: ( LETTER | NUMBER )*
             loop3:
             do {
                 int alt3=3;
@@ -549,14 +549,14 @@ public class BackEndLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:73:13: LETTER
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:73:13: LETTER
             	    {
             	    mLETTER(); 
 
             	    }
             	    break;
             	case 2 :
-            	    // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:73:22: NUMBER
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:73:22: NUMBER
             	    {
             	    mNUMBER(); 
 
@@ -584,10 +584,10 @@ public class BackEndLexer extends Lexer {
         try {
             int _type = NEWLINE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:74:8: ( ( '\\r' )? '\\n' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:74:10: ( '\\r' )? '\\n'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:74:8: ( ( '\\r' )? '\\n' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:74:10: ( '\\r' )? '\\n'
             {
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:74:10: ( '\\r' )?
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:74:10: ( '\\r' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -596,7 +596,7 @@ public class BackEndLexer extends Lexer {
             }
             switch (alt4) {
                 case 1 :
-                    // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:74:10: '\\r'
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:74:10: '\\r'
                     {
                     match('\r'); 
 
@@ -621,11 +621,11 @@ public class BackEndLexer extends Lexer {
     // $ANTLR start "NUMBER"
     public final void mNUMBER() throws RecognitionException {
         try {
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:75:16: ( ( '0' .. '9' ) )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:75:18: ( '0' .. '9' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:75:16: ( ( '0' .. '9' ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:75:18: ( '0' .. '9' )
             {
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:75:18: ( '0' .. '9' )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:75:19: '0' .. '9'
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:75:18: ( '0' .. '9' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:75:19: '0' .. '9'
             {
             matchRange('0','9'); 
 
@@ -643,8 +643,8 @@ public class BackEndLexer extends Lexer {
     // $ANTLR start "LETTER"
     public final void mLETTER() throws RecognitionException {
         try {
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:76:16: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
-            // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:76:19: ( 'a' .. 'z' | 'A' .. 'Z' )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:76:16: ( ( 'a' .. 'z' | 'A' .. 'Z' ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:76:19: ( 'a' .. 'z' | 'A' .. 'Z' )
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -665,159 +665,159 @@ public class BackEndLexer extends Lexer {
     // $ANTLR end "LETTER"
 
     public void mTokens() throws RecognitionException {
-        // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:8: ( T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | LOOP | POOL | IF | FI | PRINT | INTEGER | WS | SEMICOLON | INT | ID | NEWLINE )
+        // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:8: ( T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | LOOP | POOL | IF | FI | PRINT | INTEGER | WS | SEMICOLON | INT | ID | NEWLINE )
         int alt5=22;
         alt5 = dfa5.predict(input);
         switch (alt5) {
             case 1 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:10: T__21
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:10: T__21
                 {
                 mT__21(); 
 
                 }
                 break;
             case 2 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:16: T__22
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:16: T__22
                 {
                 mT__22(); 
 
                 }
                 break;
             case 3 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:22: T__23
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:22: T__23
                 {
                 mT__23(); 
 
                 }
                 break;
             case 4 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:28: T__24
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:28: T__24
                 {
                 mT__24(); 
 
                 }
                 break;
             case 5 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:34: T__25
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:34: T__25
                 {
                 mT__25(); 
 
                 }
                 break;
             case 6 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:40: T__26
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:40: T__26
                 {
                 mT__26(); 
 
                 }
                 break;
             case 7 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:46: T__27
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:46: T__27
                 {
                 mT__27(); 
 
                 }
                 break;
             case 8 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:52: T__28
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:52: T__28
                 {
                 mT__28(); 
 
                 }
                 break;
             case 9 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:58: T__29
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:58: T__29
                 {
                 mT__29(); 
 
                 }
                 break;
             case 10 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:64: T__30
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:64: T__30
                 {
                 mT__30(); 
 
                 }
                 break;
             case 11 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:70: T__31
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:70: T__31
                 {
                 mT__31(); 
 
                 }
                 break;
             case 12 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:76: LOOP
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:76: LOOP
                 {
                 mLOOP(); 
 
                 }
                 break;
             case 13 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:81: POOL
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:81: POOL
                 {
                 mPOOL(); 
 
                 }
                 break;
             case 14 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:86: IF
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:86: IF
                 {
                 mIF(); 
 
                 }
                 break;
             case 15 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:89: FI
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:89: FI
                 {
                 mFI(); 
 
                 }
                 break;
             case 16 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:92: PRINT
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:92: PRINT
                 {
                 mPRINT(); 
 
                 }
                 break;
             case 17 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:98: INTEGER
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:98: INTEGER
                 {
                 mINTEGER(); 
 
                 }
                 break;
             case 18 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:106: WS
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:106: WS
                 {
                 mWS(); 
 
                 }
                 break;
             case 19 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:109: SEMICOLON
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:109: SEMICOLON
                 {
                 mSEMICOLON(); 
 
                 }
                 break;
             case 20 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:119: INT
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:119: INT
                 {
                 mINT(); 
 
                 }
                 break;
             case 21 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:123: ID
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:123: ID
                 {
                 mID(); 
 
                 }
                 break;
             case 22 :
-                // C:\\Users\\Lyle\\workspace\\vcalc\\src\\BackEnd.g:1:126: NEWLINE
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/BackEnd.g:1:126: NEWLINE
                 {
                 mNEWLINE(); 
 
@@ -831,14 +831,14 @@ public class BackEndLexer extends Lexer {
 
     protected DFA5 dfa5 = new DFA5(this);
     static final String DFA5_eotS =
-        "\1\uffff\1\25\11\uffff\4\22\7\uffff\3\22\1\37\1\22\1\41\3\22\1"+
-        "\uffff\1\45\1\uffff\1\46\1\47\1\22\3\uffff\1\51\1\uffff";
+        "\1\uffff\1\25\11\uffff\4\22\7\uffff\3\22\1\37\1\22\1\41\3\22\1\uffff"+
+        "\1\45\1\uffff\1\46\1\47\1\22\3\uffff\1\51\1\uffff";
     static final String DFA5_eofS =
         "\52\uffff";
     static final String DFA5_minS =
-        "\1\11\1\75\11\uffff\2\157\1\146\1\151\7\uffff\2\157\1\151\1\60"+
-        "\1\164\1\60\1\160\1\154\1\156\1\uffff\1\60\1\uffff\2\60\1\164\3"+
-        "\uffff\1\60\1\uffff";
+        "\1\11\1\75\11\uffff\2\157\1\146\1\151\7\uffff\2\157\1\151\1\60\1"+
+        "\164\1\60\1\160\1\154\1\156\1\uffff\1\60\1\uffff\2\60\1\164\3\uffff"+
+        "\1\60\1\uffff";
     static final String DFA5_maxS =
         "\1\172\1\75\11\uffff\1\157\1\162\1\156\1\151\7\uffff\2\157\1\151"+
         "\1\172\1\164\1\172\1\160\1\154\1\156\1\uffff\1\172\1\uffff\2\172"+

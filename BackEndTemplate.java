@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /cshome/bilec/git/vcalc/BackEndTemplate.g 2014-10-08 18:28:24
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g 2014-10-08 20:06:35
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
@@ -78,7 +78,7 @@ public class BackEndTemplate extends TreeParser {
     }
 
     public String[] getTokenNames() { return BackEndTemplate.tokenNames; }
-    public String getGrammarFileName() { return "/cshome/bilec/git/vcalc/BackEndTemplate.g"; }
+    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g"; }
 
 
       int countLabel = 0; int countLoop = 0; int progLine = 0;
@@ -92,7 +92,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "walk"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:27:1: walk : ^( PROGRAM (x+= declaration )* (y+= block )* ) -> program2(a=$xb=$y);
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:27:1: walk : ^( PROGRAM (x+= declaration )* (y+= block )* ) -> program2(a=$xb=$y);
     public final BackEndTemplate.walk_return walk() throws RecognitionException {
         BackEndTemplate.walk_return retval = new BackEndTemplate.walk_return();
         retval.start = input.LT(1);
@@ -102,14 +102,14 @@ public class BackEndTemplate extends TreeParser {
         RuleReturnScope x = null;
         RuleReturnScope y = null;
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:28:3: ( ^( PROGRAM (x+= declaration )* (y+= block )* ) -> program2(a=$xb=$y))
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:28:5: ^( PROGRAM (x+= declaration )* (y+= block )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:28:3: ( ^( PROGRAM (x+= declaration )* (y+= block )* ) -> program2(a=$xb=$y))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:28:5: ^( PROGRAM (x+= declaration )* (y+= block )* )
             {
             match(input,PROGRAM,FOLLOW_PROGRAM_in_walk74); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /cshome/bilec/git/vcalc/BackEndTemplate.g:28:15: (x+= declaration )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:28:15: (x+= declaration )*
                 loop1:
                 do {
                     int alt1=2;
@@ -122,7 +122,7 @@ public class BackEndTemplate extends TreeParser {
 
                     switch (alt1) {
                 	case 1 :
-                	    // /cshome/bilec/git/vcalc/BackEndTemplate.g:28:16: x+= declaration
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:28:16: x+= declaration
                 	    {
                 	    pushFollow(FOLLOW_declaration_in_walk79);
                 	    x=declaration();
@@ -141,7 +141,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                 } while (true);
 
-                // /cshome/bilec/git/vcalc/BackEndTemplate.g:28:33: (y+= block )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:28:33: (y+= block )*
                 loop2:
                 do {
                     int alt2=2;
@@ -154,7 +154,7 @@ public class BackEndTemplate extends TreeParser {
 
                     switch (alt2) {
                 	case 1 :
-                	    // /cshome/bilec/git/vcalc/BackEndTemplate.g:28:34: y+= block
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:28:34: y+= block
                 	    {
                 	    pushFollow(FOLLOW_block_in_walk86);
                 	    y=block();
@@ -206,7 +206,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "declaration"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:31:1: declaration : ^( DECL INTEGER x= ID y+= expr ) -> declareInt(a=$yid=$xop=opcounter);
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:31:1: declaration : ^( DECL INTEGER x= ID y+= expr ) -> declareInt(a=$yid=$xop=opcounter);
     public final BackEndTemplate.declaration_return declaration() throws RecognitionException {
         BackEndTemplate.declaration_return retval = new BackEndTemplate.declaration_return();
         retval.start = input.LT(1);
@@ -215,8 +215,8 @@ public class BackEndTemplate extends TreeParser {
         List list_y=null;
         RuleReturnScope y = null;
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:32:3: ( ^( DECL INTEGER x= ID y+= expr ) -> declareInt(a=$yid=$xop=opcounter))
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:32:5: ^( DECL INTEGER x= ID y+= expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:32:3: ( ^( DECL INTEGER x= ID y+= expr ) -> declareInt(a=$yid=$xop=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:32:5: ^( DECL INTEGER x= ID y+= expr )
             {
             match(input,DECL,FOLLOW_DECL_in_declaration118); 
 
@@ -263,7 +263,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "storeVariable"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:35:1: storeVariable : ^( DECL INTEGER x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter);
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:35:1: storeVariable : ^( DECL INTEGER x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter);
     public final BackEndTemplate.storeVariable_return storeVariable() throws RecognitionException {
         BackEndTemplate.storeVariable_return retval = new BackEndTemplate.storeVariable_return();
         retval.start = input.LT(1);
@@ -272,8 +272,8 @@ public class BackEndTemplate extends TreeParser {
         List list_y=null;
         RuleReturnScope y = null;
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:36:3: ( ^( DECL INTEGER x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter))
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:36:5: ^( DECL INTEGER x= ID y+= expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:36:3: ( ^( DECL INTEGER x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:36:5: ^( DECL INTEGER x= ID y+= expr )
             {
             match(input,DECL,FOLLOW_DECL_in_storeVariable165); 
 
@@ -320,7 +320,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "block"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:39:1: block : ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter));
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:39:1: block : ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=progLineop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter));
     public final BackEndTemplate.block_return block() throws RecognitionException {
         BackEndTemplate.block_return retval = new BackEndTemplate.block_return();
         retval.start = input.LT(1);
@@ -331,7 +331,7 @@ public class BackEndTemplate extends TreeParser {
         RuleReturnScope x = null;
         RuleReturnScope y = null;
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:40:3: ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:40:3: ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=progLineop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter))
             int alt5=4;
             int LA5_0 = input.LA(1);
 
@@ -383,7 +383,7 @@ public class BackEndTemplate extends TreeParser {
             }
             switch (alt5) {
                 case 1 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:40:5: ^( LINE ^( PRINT x+= expr ) )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:40:5: ^( LINE ^( PRINT x+= expr ) )
                     {
                     match(input,LINE,FOLLOW_LINE_in_block207); 
 
@@ -417,7 +417,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:41:5: ^( LINE ^( IF x+= expr (y+= block )* ) )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:5: ^( LINE ^( IF x+= expr (y+= block )* ) )
                     {
                     match(input,LINE,FOLLOW_LINE_in_block243); 
 
@@ -433,7 +433,7 @@ public class BackEndTemplate extends TreeParser {
                     if (list_x==null) list_x=new ArrayList();
                     list_x.add(x.getTemplate());
 
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:41:26: (y+= block )*
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:26: (y+= block )*
                     loop3:
                     do {
                         int alt3=2;
@@ -446,7 +446,7 @@ public class BackEndTemplate extends TreeParser {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // /cshome/bilec/git/vcalc/BackEndTemplate.g:41:26: y+= block
+                    	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:26: y+= block
                     	    {
                     	    pushFollow(FOLLOW_block_in_block254);
                     	    y=block();
@@ -469,21 +469,21 @@ public class BackEndTemplate extends TreeParser {
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    countLabel = countLabel + 2; tempcounter++;
+                    countLabel = countLabel + 2; progLine++;
 
 
                     // TEMPLATE REWRITE
-                    // 41:83: -> bne(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel)
+                    // 41:80: -> bne(tc=progLineop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel)
                     {
                         retval.st = templateLib.getInstanceOf("bne",
-                      new STAttrMap().put("tc", tempcounter).put("op", opcounter).put("exp", list_x).put("lines", list_y).put("label", countLabel-1).put("nextlabel", countLabel));
+                      new STAttrMap().put("tc", progLine).put("op", opcounter).put("exp", list_x).put("lines", list_y).put("label", countLabel-1).put("nextlabel", countLabel));
                     }
 
 
                     }
                     break;
                 case 3 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:42:5: ^( LINE ^( LOOP x+= expr (y+= block )* ) )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:5: ^( LINE ^( LOOP x+= expr (y+= block )* ) )
                     {
                     match(input,LINE,FOLLOW_LINE_in_block295); 
 
@@ -499,7 +499,7 @@ public class BackEndTemplate extends TreeParser {
                     if (list_x==null) list_x=new ArrayList();
                     list_x.add(x.getTemplate());
 
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:42:28: (y+= block )*
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:28: (y+= block )*
                     loop4:
                     do {
                         int alt4=2;
@@ -512,7 +512,7 @@ public class BackEndTemplate extends TreeParser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // /cshome/bilec/git/vcalc/BackEndTemplate.g:42:28: y+= block
+                    	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:28: y+= block
                     	    {
                     	    pushFollow(FOLLOW_block_in_block306);
                     	    y=block();
@@ -535,11 +535,11 @@ public class BackEndTemplate extends TreeParser {
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    countLoop = countLoop + 3;
+                    countLoop = countLoop + 3; tempcounter++;
 
 
                     // TEMPLATE REWRITE
-                    // 42:68: -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop)
+                    // 42:83: -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop)
                     {
                         retval.st = templateLib.getInstanceOf("looper",
                       new STAttrMap().put("tc", tempcounter).put("op", opcounter).put("exp", list_x).put("lines", list_y).put("label", countLoop - 2).put("nextlabel", countLoop -1).put("exitlabel", countLoop));
@@ -549,7 +549,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:43:5: ^( LINE ^( ASSIGN '=' t= ID y+= expr ) )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:43:5: ^( LINE ^( ASSIGN '=' t= ID y+= expr ) )
                     {
                     match(input,LINE,FOLLOW_LINE_in_block351); 
 
@@ -603,7 +603,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "assignment"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:46:1: assignment : ^( ASSIGN '=' x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter);
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:46:1: assignment : ^( ASSIGN '=' x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter);
     public final BackEndTemplate.assignment_return assignment() throws RecognitionException {
         BackEndTemplate.assignment_return retval = new BackEndTemplate.assignment_return();
         retval.start = input.LT(1);
@@ -612,8 +612,8 @@ public class BackEndTemplate extends TreeParser {
         List list_y=null;
         RuleReturnScope y = null;
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:47:3: ( ^( ASSIGN '=' x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter))
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:47:5: ^( ASSIGN '=' x= ID y+= expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:47:3: ( ^( ASSIGN '=' x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:47:5: ^( ASSIGN '=' x= ID y+= expr )
             {
             match(input,ASSIGN,FOLLOW_ASSIGN_in_assignment399); 
 
@@ -660,7 +660,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "print"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:50:1: print : ^( PRINT x+= expr ) -> printStatement(a=$xtc=tempcounterop=opcounter);
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:50:1: print : ^( PRINT x+= expr ) -> printStatement(a=$xtc=tempcounterop=opcounter);
     public final BackEndTemplate.print_return print() throws RecognitionException {
         BackEndTemplate.print_return retval = new BackEndTemplate.print_return();
         retval.start = input.LT(1);
@@ -668,8 +668,8 @@ public class BackEndTemplate extends TreeParser {
         List list_x=null;
         RuleReturnScope x = null;
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:51:3: ( ^( PRINT x+= expr ) -> printStatement(a=$xtc=tempcounterop=opcounter))
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:51:5: ^( PRINT x+= expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:51:3: ( ^( PRINT x+= expr ) -> printStatement(a=$xtc=tempcounterop=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:51:5: ^( PRINT x+= expr )
             {
             match(input,PRINT,FOLLOW_PRINT_in_print443); 
 
@@ -715,14 +715,14 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "ifstatement"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:54:1: ifstatement : ^( IF expr ( block )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:54:1: ifstatement : ^( IF expr ( block )* ) ;
     public final BackEndTemplate.ifstatement_return ifstatement() throws RecognitionException {
         BackEndTemplate.ifstatement_return retval = new BackEndTemplate.ifstatement_return();
         retval.start = input.LT(1);
 
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:55:3: ( ^( IF expr ( block )* ) )
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:55:5: ^( IF expr ( block )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:3: ( ^( IF expr ( block )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:5: ^( IF expr ( block )* )
             {
             match(input,IF,FOLLOW_IF_in_ifstatement484); 
 
@@ -732,7 +732,7 @@ public class BackEndTemplate extends TreeParser {
 
             state._fsp--;
 
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:55:15: ( block )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:15: ( block )*
             loop6:
             do {
                 int alt6=2;
@@ -745,7 +745,7 @@ public class BackEndTemplate extends TreeParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEndTemplate.g:55:15: block
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:15: block
             	    {
             	    pushFollow(FOLLOW_block_in_ifstatement488);
             	    block();
@@ -784,14 +784,14 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "loop"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:58:1: loop : ^( LOOP expr ( block )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:58:1: loop : ^( LOOP expr ( block )* ) ;
     public final BackEndTemplate.loop_return loop() throws RecognitionException {
         BackEndTemplate.loop_return retval = new BackEndTemplate.loop_return();
         retval.start = input.LT(1);
 
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:59:3: ( ^( LOOP expr ( block )* ) )
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:59:5: ^( LOOP expr ( block )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:3: ( ^( LOOP expr ( block )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:5: ^( LOOP expr ( block )* )
             {
             match(input,LOOP,FOLLOW_LOOP_in_loop507); 
 
@@ -801,7 +801,7 @@ public class BackEndTemplate extends TreeParser {
 
             state._fsp--;
 
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:59:17: ( block )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:17: ( block )*
             loop7:
             do {
                 int alt7=2;
@@ -814,7 +814,7 @@ public class BackEndTemplate extends TreeParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEndTemplate.g:59:17: block
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:17: block
             	    {
             	    pushFollow(FOLLOW_block_in_loop511);
             	    block();
@@ -853,7 +853,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "expr"
-    // /cshome/bilec/git/vcalc/BackEndTemplate.g:62:1: expr : ( ^( '==' x= expr y= expr ) -> eql(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '!=' x= expr y= expr ) -> neq(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '>' x= expr y= expr ) -> sgt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '<' x= expr y= expr ) -> slt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '+' x= expr y= expr ) -> add(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '-' x= expr y= expr ) -> sub(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '*' x= expr y= expr ) -> mult(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '/' x= expr y= expr ) -> div(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | INT -> int(v=$INT.textoc=opcountertc=tempcounter) | ID -> var(id=$ID.textoc=opcounter));
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:62:1: expr : ( ^( '==' x= expr y= expr ) -> eql(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '!=' x= expr y= expr ) -> neq(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '>' x= expr y= expr ) -> sgt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '<' x= expr y= expr ) -> slt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '+' x= expr y= expr ) -> add(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '-' x= expr y= expr ) -> sub(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '*' x= expr y= expr ) -> mult(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '/' x= expr y= expr ) -> div(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | INT -> int(v=$INT.textoc=opcountertc=tempcounter) | ID -> var(id=$ID.textoc=opcounter));
     public final BackEndTemplate.expr_return expr() throws RecognitionException {
         BackEndTemplate.expr_return retval = new BackEndTemplate.expr_return();
         retval.start = input.LT(1);
@@ -866,7 +866,7 @@ public class BackEndTemplate extends TreeParser {
 
 
         try {
-            // /cshome/bilec/git/vcalc/BackEndTemplate.g:63:3: ( ^( '==' x= expr y= expr ) -> eql(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '!=' x= expr y= expr ) -> neq(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '>' x= expr y= expr ) -> sgt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '<' x= expr y= expr ) -> slt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '+' x= expr y= expr ) -> add(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '-' x= expr y= expr ) -> sub(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '*' x= expr y= expr ) -> mult(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '/' x= expr y= expr ) -> div(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | INT -> int(v=$INT.textoc=opcountertc=tempcounter) | ID -> var(id=$ID.textoc=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:63:3: ( ^( '==' x= expr y= expr ) -> eql(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '!=' x= expr y= expr ) -> neq(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '>' x= expr y= expr ) -> sgt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '<' x= expr y= expr ) -> slt(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1tc=tempcounterdest=opcounter) | ^( '+' x= expr y= expr ) -> add(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '-' x= expr y= expr ) -> sub(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '*' x= expr y= expr ) -> mult(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | ^( '/' x= expr y= expr ) -> div(a=$x.stb=$y.stop1=opcounter-2op2=opcounter-1dest=opcounter) | INT -> int(v=$INT.textoc=opcountertc=tempcounter) | ID -> var(id=$ID.textoc=opcounter))
             int alt8=10;
             switch ( input.LA(1) ) {
             case 24:
@@ -928,7 +928,7 @@ public class BackEndTemplate extends TreeParser {
 
             switch (alt8) {
                 case 1 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:63:5: ^( '==' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:63:5: ^( '==' x= expr y= expr )
                     {
                     match(input,24,FOLLOW_24_in_expr532); 
 
@@ -959,7 +959,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:64:5: ^( '!=' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:64:5: ^( '!=' x= expr y= expr )
                     {
                     match(input,25,FOLLOW_25_in_expr579); 
 
@@ -990,7 +990,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:65:5: ^( '>' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:65:5: ^( '>' x= expr y= expr )
                     {
                     match(input,22,FOLLOW_22_in_expr626); 
 
@@ -1021,7 +1021,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:66:5: ^( '<' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:66:5: ^( '<' x= expr y= expr )
                     {
                     match(input,23,FOLLOW_23_in_expr673); 
 
@@ -1052,7 +1052,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:67:5: ^( '+' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:67:5: ^( '+' x= expr y= expr )
                     {
                     match(input,26,FOLLOW_26_in_expr720); 
 
@@ -1083,7 +1083,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:68:5: ^( '-' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:68:5: ^( '-' x= expr y= expr )
                     {
                     match(input,27,FOLLOW_27_in_expr763); 
 
@@ -1114,7 +1114,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:69:5: ^( '*' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:69:5: ^( '*' x= expr y= expr )
                     {
                     match(input,28,FOLLOW_28_in_expr806); 
 
@@ -1145,7 +1145,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:70:5: ^( '/' x= expr y= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:70:5: ^( '/' x= expr y= expr )
                     {
                     match(input,29,FOLLOW_29_in_expr849); 
 
@@ -1176,7 +1176,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:71:5: INT
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:71:5: INT
                     {
                     INT1=(CommonTree)match(input,INT,FOLLOW_INT_in_expr891); 
                     opcounter++; tempcounter++;
@@ -1193,7 +1193,7 @@ public class BackEndTemplate extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /cshome/bilec/git/vcalc/BackEndTemplate.g:72:5: ID
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:72:5: ID
                     {
                     ID2=(CommonTree)match(input,ID,FOLLOW_ID_in_expr916); 
                     opcounter++;

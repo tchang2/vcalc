@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /cshome/bilec/git/vcalc/BackEnd.g 2014-10-08 18:28:25
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g 2014-10-08 20:06:33
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -64,7 +64,7 @@ public class BackEndParser extends Parser {
     }
 
     public String[] getTokenNames() { return BackEndParser.tokenNames; }
-    public String getGrammarFileName() { return "/cshome/bilec/git/vcalc/BackEnd.g"; }
+    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g"; }
 
 
     public static class prog_return extends ParserRuleReturnScope {
@@ -73,7 +73,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "prog"
-    // /cshome/bilec/git/vcalc/BackEnd.g:11:1: prog : ( declaration )* ( line )* EOF -> ^( PROGRAM ( declaration )* ( line )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:11:1: prog : ( declaration )* ( line )* EOF -> ^( PROGRAM ( declaration )* ( line )* ) ;
     public final BackEndParser.prog_return prog() throws RecognitionException {
         BackEndParser.prog_return retval = new BackEndParser.prog_return();
         retval.start = input.LT(1);
@@ -91,10 +91,10 @@ public class BackEndParser extends Parser {
         RewriteRuleSubtreeStream stream_declaration=new RewriteRuleSubtreeStream(adaptor,"rule declaration");
         RewriteRuleSubtreeStream stream_line=new RewriteRuleSubtreeStream(adaptor,"rule line");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:12:3: ( ( declaration )* ( line )* EOF -> ^( PROGRAM ( declaration )* ( line )* ) )
-            // /cshome/bilec/git/vcalc/BackEnd.g:12:5: ( declaration )* ( line )* EOF
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:3: ( ( declaration )* ( line )* EOF -> ^( PROGRAM ( declaration )* ( line )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:5: ( declaration )* ( line )* EOF
             {
-            // /cshome/bilec/git/vcalc/BackEnd.g:12:5: ( declaration )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:5: ( declaration )*
             loop1:
             do {
                 int alt1=2;
@@ -107,7 +107,7 @@ public class BackEndParser extends Parser {
 
                 switch (alt1) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:12:5: declaration
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:5: declaration
             	    {
             	    pushFollow(FOLLOW_declaration_in_prog48);
             	    declaration1=declaration();
@@ -124,7 +124,7 @@ public class BackEndParser extends Parser {
                 }
             } while (true);
 
-            // /cshome/bilec/git/vcalc/BackEnd.g:12:18: ( line )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:18: ( line )*
             loop2:
             do {
                 int alt2=2;
@@ -137,7 +137,7 @@ public class BackEndParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:12:18: line
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:18: line
             	    {
             	    pushFollow(FOLLOW_line_in_prog51);
             	    line2=line();
@@ -160,7 +160,7 @@ public class BackEndParser extends Parser {
 
 
             // AST REWRITE
-            // elements: line, declaration
+            // elements: declaration, line
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -172,18 +172,18 @@ public class BackEndParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 12:28: -> ^( PROGRAM ( declaration )* ( line )* )
             {
-                // /cshome/bilec/git/vcalc/BackEnd.g:12:31: ^( PROGRAM ( declaration )* ( line )* )
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:31: ^( PROGRAM ( declaration )* ( line )* )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(PROGRAM, "PROGRAM"), root_1);
 
-                // /cshome/bilec/git/vcalc/BackEnd.g:12:41: ( declaration )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:41: ( declaration )*
                 while ( stream_declaration.hasNext() ) {
                     adaptor.addChild(root_1, stream_declaration.nextTree());
 
                 }
                 stream_declaration.reset();
-                // /cshome/bilec/git/vcalc/BackEnd.g:12:54: ( line )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:12:54: ( line )*
                 while ( stream_line.hasNext() ) {
                     adaptor.addChild(root_1, stream_line.nextTree());
 
@@ -222,7 +222,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "line"
-    // /cshome/bilec/git/vcalc/BackEnd.g:15:1: line : ( assignment SEMICOLON -> ^( LINE assignment ) | print SEMICOLON -> ^( LINE print ) | loop -> ^( LINE loop ) | conditional -> ^( LINE conditional ) );
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:15:1: line : ( assignment SEMICOLON -> ^( LINE assignment ) | print SEMICOLON -> ^( LINE print ) | loop -> ^( LINE loop ) | conditional -> ^( LINE conditional ) );
     public final BackEndParser.line_return line() throws RecognitionException {
         BackEndParser.line_return retval = new BackEndParser.line_return();
         retval.start = input.LT(1);
@@ -248,7 +248,7 @@ public class BackEndParser extends Parser {
         RewriteRuleSubtreeStream stream_conditional=new RewriteRuleSubtreeStream(adaptor,"rule conditional");
         RewriteRuleSubtreeStream stream_print=new RewriteRuleSubtreeStream(adaptor,"rule print");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:16:3: ( assignment SEMICOLON -> ^( LINE assignment ) | print SEMICOLON -> ^( LINE print ) | loop -> ^( LINE loop ) | conditional -> ^( LINE conditional ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:16:3: ( assignment SEMICOLON -> ^( LINE assignment ) | print SEMICOLON -> ^( LINE print ) | loop -> ^( LINE loop ) | conditional -> ^( LINE conditional ) )
             int alt3=4;
             switch ( input.LA(1) ) {
             case ID:
@@ -280,7 +280,7 @@ public class BackEndParser extends Parser {
 
             switch (alt3) {
                 case 1 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:16:5: assignment SEMICOLON
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:16:5: assignment SEMICOLON
                     {
                     pushFollow(FOLLOW_assignment_in_line79);
                     assignment4=assignment();
@@ -306,7 +306,7 @@ public class BackEndParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 16:26: -> ^( LINE assignment )
                     {
-                        // /cshome/bilec/git/vcalc/BackEnd.g:16:29: ^( LINE assignment )
+                        // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:16:29: ^( LINE assignment )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LINE, "LINE"), root_1);
@@ -322,7 +322,7 @@ public class BackEndParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:17:5: print SEMICOLON
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:17:5: print SEMICOLON
                     {
                     pushFollow(FOLLOW_print_in_line95);
                     print6=print();
@@ -348,7 +348,7 @@ public class BackEndParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 17:21: -> ^( LINE print )
                     {
-                        // /cshome/bilec/git/vcalc/BackEnd.g:17:24: ^( LINE print )
+                        // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:17:24: ^( LINE print )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LINE, "LINE"), root_1);
@@ -364,7 +364,7 @@ public class BackEndParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:18:5: loop
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:18:5: loop
                     {
                     pushFollow(FOLLOW_loop_in_line111);
                     loop8=loop();
@@ -387,7 +387,7 @@ public class BackEndParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 18:10: -> ^( LINE loop )
                     {
-                        // /cshome/bilec/git/vcalc/BackEnd.g:18:13: ^( LINE loop )
+                        // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:18:13: ^( LINE loop )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LINE, "LINE"), root_1);
@@ -403,7 +403,7 @@ public class BackEndParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:19:5: conditional
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:19:5: conditional
                     {
                     pushFollow(FOLLOW_conditional_in_line125);
                     conditional9=conditional();
@@ -426,7 +426,7 @@ public class BackEndParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 19:17: -> ^( LINE conditional )
                     {
-                        // /cshome/bilec/git/vcalc/BackEnd.g:19:20: ^( LINE conditional )
+                        // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:19:20: ^( LINE conditional )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LINE, "LINE"), root_1);
@@ -467,7 +467,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "declaration"
-    // /cshome/bilec/git/vcalc/BackEnd.g:22:1: declaration : INTEGER ID '=' expr SEMICOLON -> ^( DECL INTEGER ID expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:22:1: declaration : INTEGER ID '=' expr SEMICOLON -> ^( DECL INTEGER ID expr ) ;
     public final BackEndParser.declaration_return declaration() throws RecognitionException {
         BackEndParser.declaration_return retval = new BackEndParser.declaration_return();
         retval.start = input.LT(1);
@@ -491,8 +491,8 @@ public class BackEndParser extends Parser {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:23:3: ( INTEGER ID '=' expr SEMICOLON -> ^( DECL INTEGER ID expr ) )
-            // /cshome/bilec/git/vcalc/BackEnd.g:23:5: INTEGER ID '=' expr SEMICOLON
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:23:3: ( INTEGER ID '=' expr SEMICOLON -> ^( DECL INTEGER ID expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:23:5: INTEGER ID '=' expr SEMICOLON
             {
             INTEGER10=(Token)match(input,INTEGER,FOLLOW_INTEGER_in_declaration146);  
             stream_INTEGER.add(INTEGER10);
@@ -515,7 +515,7 @@ public class BackEndParser extends Parser {
 
 
             // AST REWRITE
-            // elements: ID, expr, INTEGER
+            // elements: expr, ID, INTEGER
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -527,7 +527,7 @@ public class BackEndParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 23:35: -> ^( DECL INTEGER ID expr )
             {
-                // /cshome/bilec/git/vcalc/BackEnd.g:23:38: ^( DECL INTEGER ID expr )
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:23:38: ^( DECL INTEGER ID expr )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DECL, "DECL"), root_1);
@@ -568,7 +568,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "assignment"
-    // /cshome/bilec/git/vcalc/BackEnd.g:26:1: assignment : ID '=' expr -> ^( ASSIGN '=' ID expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:26:1: assignment : ID '=' expr -> ^( ASSIGN '=' ID expr ) ;
     public final BackEndParser.assignment_return assignment() throws RecognitionException {
         BackEndParser.assignment_return retval = new BackEndParser.assignment_return();
         retval.start = input.LT(1);
@@ -586,8 +586,8 @@ public class BackEndParser extends Parser {
         RewriteRuleTokenStream stream_ID=new RewriteRuleTokenStream(adaptor,"token ID");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:27:3: ( ID '=' expr -> ^( ASSIGN '=' ID expr ) )
-            // /cshome/bilec/git/vcalc/BackEnd.g:27:5: ID '=' expr
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:27:3: ( ID '=' expr -> ^( ASSIGN '=' ID expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:27:5: ID '=' expr
             {
             ID15=(Token)match(input,ID,FOLLOW_ID_in_assignment182);  
             stream_ID.add(ID15);
@@ -604,7 +604,7 @@ public class BackEndParser extends Parser {
 
 
             // AST REWRITE
-            // elements: 21, expr, ID
+            // elements: expr, 21, ID
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -616,7 +616,7 @@ public class BackEndParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 27:17: -> ^( ASSIGN '=' ID expr )
             {
-                // /cshome/bilec/git/vcalc/BackEnd.g:27:20: ^( ASSIGN '=' ID expr )
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:27:20: ^( ASSIGN '=' ID expr )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(ASSIGN, "ASSIGN"), root_1);
@@ -657,7 +657,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "print"
-    // /cshome/bilec/git/vcalc/BackEnd.g:30:1: print : PRINT expr -> ^( PRINT expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:30:1: print : PRINT expr -> ^( PRINT expr ) ;
     public final BackEndParser.print_return print() throws RecognitionException {
         BackEndParser.print_return retval = new BackEndParser.print_return();
         retval.start = input.LT(1);
@@ -672,8 +672,8 @@ public class BackEndParser extends Parser {
         RewriteRuleTokenStream stream_PRINT=new RewriteRuleTokenStream(adaptor,"token PRINT");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:31:3: ( PRINT expr -> ^( PRINT expr ) )
-            // /cshome/bilec/git/vcalc/BackEnd.g:31:5: PRINT expr
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:31:3: ( PRINT expr -> ^( PRINT expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:31:5: PRINT expr
             {
             PRINT18=(Token)match(input,PRINT,FOLLOW_PRINT_in_print214);  
             stream_PRINT.add(PRINT18);
@@ -699,7 +699,7 @@ public class BackEndParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 31:16: -> ^( PRINT expr )
             {
-                // /cshome/bilec/git/vcalc/BackEnd.g:31:19: ^( PRINT expr )
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:31:19: ^( PRINT expr )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(stream_PRINT.nextNode(), root_1);
@@ -738,7 +738,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "expr"
-    // /cshome/bilec/git/vcalc/BackEnd.g:34:1: expr : compareExpr ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:34:1: expr : compareExpr ;
     public final BackEndParser.expr_return expr() throws RecognitionException {
         BackEndParser.expr_return retval = new BackEndParser.expr_return();
         retval.start = input.LT(1);
@@ -750,8 +750,8 @@ public class BackEndParser extends Parser {
 
 
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:35:3: ( compareExpr )
-            // /cshome/bilec/git/vcalc/BackEnd.g:35:5: compareExpr
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:35:3: ( compareExpr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:35:5: compareExpr
             {
             root_0 = (Object)adaptor.nil();
 
@@ -788,7 +788,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "compareExpr"
-    // /cshome/bilec/git/vcalc/BackEnd.g:38:1: compareExpr : addExpr ( ( '>' | '<' | '==' | '!=' ) addExpr )* ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:38:1: compareExpr : addExpr ( ( '>' | '<' | '==' | '!=' ) addExpr )* ;
     public final BackEndParser.compareExpr_return compareExpr() throws RecognitionException {
         BackEndParser.compareExpr_return retval = new BackEndParser.compareExpr_return();
         retval.start = input.LT(1);
@@ -810,8 +810,8 @@ public class BackEndParser extends Parser {
         Object string_literal25_tree=null;
 
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:39:3: ( addExpr ( ( '>' | '<' | '==' | '!=' ) addExpr )* )
-            // /cshome/bilec/git/vcalc/BackEnd.g:39:5: addExpr ( ( '>' | '<' | '==' | '!=' ) addExpr )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:3: ( addExpr ( ( '>' | '<' | '==' | '!=' ) addExpr )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:5: addExpr ( ( '>' | '<' | '==' | '!=' ) addExpr )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -821,7 +821,7 @@ public class BackEndParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, addExpr21.getTree());
-            // /cshome/bilec/git/vcalc/BackEnd.g:39:13: ( ( '>' | '<' | '==' | '!=' ) addExpr )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:13: ( ( '>' | '<' | '==' | '!=' ) addExpr )*
             loop5:
             do {
                 int alt5=2;
@@ -834,9 +834,9 @@ public class BackEndParser extends Parser {
 
                 switch (alt5) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:39:14: ( '>' | '<' | '==' | '!=' ) addExpr
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:14: ( '>' | '<' | '==' | '!=' ) addExpr
             	    {
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:39:14: ( '>' | '<' | '==' | '!=' )
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:14: ( '>' | '<' | '==' | '!=' )
             	    int alt4=4;
             	    switch ( input.LA(1) ) {
             	    case 22:
@@ -868,7 +868,7 @@ public class BackEndParser extends Parser {
 
             	    switch (alt4) {
             	        case 1 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:39:15: '>'
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:15: '>'
             	            {
             	            char_literal22=(Token)match(input,22,FOLLOW_22_in_compareExpr256); 
             	            char_literal22_tree = (Object)adaptor.create(char_literal22);
@@ -878,7 +878,7 @@ public class BackEndParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:39:22: '<'
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:22: '<'
             	            {
             	            char_literal23=(Token)match(input,23,FOLLOW_23_in_compareExpr261); 
             	            char_literal23_tree = (Object)adaptor.create(char_literal23);
@@ -888,7 +888,7 @@ public class BackEndParser extends Parser {
             	            }
             	            break;
             	        case 3 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:39:29: '=='
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:29: '=='
             	            {
             	            string_literal24=(Token)match(input,24,FOLLOW_24_in_compareExpr266); 
             	            string_literal24_tree = (Object)adaptor.create(string_literal24);
@@ -898,7 +898,7 @@ public class BackEndParser extends Parser {
             	            }
             	            break;
             	        case 4 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:39:37: '!='
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:39:37: '!='
             	            {
             	            string_literal25=(Token)match(input,25,FOLLOW_25_in_compareExpr271); 
             	            string_literal25_tree = (Object)adaptor.create(string_literal25);
@@ -952,7 +952,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "addExpr"
-    // /cshome/bilec/git/vcalc/BackEnd.g:42:1: addExpr : multiExpr ( ( '+' | '-' ) multiExpr )* ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:42:1: addExpr : multiExpr ( ( '+' | '-' ) multiExpr )* ;
     public final BackEndParser.addExpr_return addExpr() throws RecognitionException {
         BackEndParser.addExpr_return retval = new BackEndParser.addExpr_return();
         retval.start = input.LT(1);
@@ -970,8 +970,8 @@ public class BackEndParser extends Parser {
         Object char_literal29_tree=null;
 
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:43:3: ( multiExpr ( ( '+' | '-' ) multiExpr )* )
-            // /cshome/bilec/git/vcalc/BackEnd.g:43:5: multiExpr ( ( '+' | '-' ) multiExpr )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:3: ( multiExpr ( ( '+' | '-' ) multiExpr )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:5: multiExpr ( ( '+' | '-' ) multiExpr )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -981,7 +981,7 @@ public class BackEndParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, multiExpr27.getTree());
-            // /cshome/bilec/git/vcalc/BackEnd.g:43:15: ( ( '+' | '-' ) multiExpr )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:15: ( ( '+' | '-' ) multiExpr )*
             loop7:
             do {
                 int alt7=2;
@@ -994,9 +994,9 @@ public class BackEndParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:43:16: ( '+' | '-' ) multiExpr
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:16: ( '+' | '-' ) multiExpr
             	    {
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:43:16: ( '+' | '-' )
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:16: ( '+' | '-' )
             	    int alt6=2;
             	    int LA6_0 = input.LA(1);
 
@@ -1014,7 +1014,7 @@ public class BackEndParser extends Parser {
             	    }
             	    switch (alt6) {
             	        case 1 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:43:17: '+'
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:17: '+'
             	            {
             	            char_literal28=(Token)match(input,26,FOLLOW_26_in_addExpr297); 
             	            char_literal28_tree = (Object)adaptor.create(char_literal28);
@@ -1024,7 +1024,7 @@ public class BackEndParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:43:23: '-'
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:43:23: '-'
             	            {
             	            char_literal29=(Token)match(input,27,FOLLOW_27_in_addExpr301); 
             	            char_literal29_tree = (Object)adaptor.create(char_literal29);
@@ -1078,7 +1078,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "multiExpr"
-    // /cshome/bilec/git/vcalc/BackEnd.g:46:1: multiExpr : atom ( ( '*' | '/' ) atom )* ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:46:1: multiExpr : atom ( ( '*' | '/' ) atom )* ;
     public final BackEndParser.multiExpr_return multiExpr() throws RecognitionException {
         BackEndParser.multiExpr_return retval = new BackEndParser.multiExpr_return();
         retval.start = input.LT(1);
@@ -1096,8 +1096,8 @@ public class BackEndParser extends Parser {
         Object char_literal33_tree=null;
 
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:47:3: ( atom ( ( '*' | '/' ) atom )* )
-            // /cshome/bilec/git/vcalc/BackEnd.g:47:5: atom ( ( '*' | '/' ) atom )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:3: ( atom ( ( '*' | '/' ) atom )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:5: atom ( ( '*' | '/' ) atom )*
             {
             root_0 = (Object)adaptor.nil();
 
@@ -1107,7 +1107,7 @@ public class BackEndParser extends Parser {
             state._fsp--;
 
             adaptor.addChild(root_0, atom31.getTree());
-            // /cshome/bilec/git/vcalc/BackEnd.g:47:10: ( ( '*' | '/' ) atom )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:10: ( ( '*' | '/' ) atom )*
             loop9:
             do {
                 int alt9=2;
@@ -1120,9 +1120,9 @@ public class BackEndParser extends Parser {
 
                 switch (alt9) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:47:11: ( '*' | '/' ) atom
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:11: ( '*' | '/' ) atom
             	    {
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:47:11: ( '*' | '/' )
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:11: ( '*' | '/' )
             	    int alt8=2;
             	    int LA8_0 = input.LA(1);
 
@@ -1140,7 +1140,7 @@ public class BackEndParser extends Parser {
             	    }
             	    switch (alt8) {
             	        case 1 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:47:12: '*'
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:12: '*'
             	            {
             	            char_literal32=(Token)match(input,28,FOLLOW_28_in_multiExpr324); 
             	            char_literal32_tree = (Object)adaptor.create(char_literal32);
@@ -1150,7 +1150,7 @@ public class BackEndParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /cshome/bilec/git/vcalc/BackEnd.g:47:19: '/'
+            	            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:47:19: '/'
             	            {
             	            char_literal33=(Token)match(input,29,FOLLOW_29_in_multiExpr329); 
             	            char_literal33_tree = (Object)adaptor.create(char_literal33);
@@ -1204,7 +1204,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "atom"
-    // /cshome/bilec/git/vcalc/BackEnd.g:50:1: atom : ( INT | ID | '(' expr ')' -> expr );
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:50:1: atom : ( INT | ID | '(' expr ')' -> expr );
     public final BackEndParser.atom_return atom() throws RecognitionException {
         BackEndParser.atom_return retval = new BackEndParser.atom_return();
         retval.start = input.LT(1);
@@ -1226,7 +1226,7 @@ public class BackEndParser extends Parser {
         RewriteRuleTokenStream stream_31=new RewriteRuleTokenStream(adaptor,"token 31");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:51:3: ( INT | ID | '(' expr ')' -> expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:51:3: ( INT | ID | '(' expr ')' -> expr )
             int alt10=3;
             switch ( input.LA(1) ) {
             case INT:
@@ -1253,7 +1253,7 @@ public class BackEndParser extends Parser {
 
             switch (alt10) {
                 case 1 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:51:5: INT
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:51:5: INT
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1265,7 +1265,7 @@ public class BackEndParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:52:5: ID
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:52:5: ID
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1277,7 +1277,7 @@ public class BackEndParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /cshome/bilec/git/vcalc/BackEnd.g:53:5: '(' expr ')'
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:53:5: '(' expr ')'
                     {
                     char_literal37=(Token)match(input,30,FOLLOW_30_in_atom363);  
                     stream_30.add(char_literal37);
@@ -1339,7 +1339,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "loop"
-    // /cshome/bilec/git/vcalc/BackEnd.g:56:1: loop : LOOP expr ( line )* POOL SEMICOLON -> ^( LOOP expr ( line )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:56:1: loop : LOOP expr ( line )* POOL SEMICOLON -> ^( LOOP expr ( line )* ) ;
     public final BackEndParser.loop_return loop() throws RecognitionException {
         BackEndParser.loop_return retval = new BackEndParser.loop_return();
         retval.start = input.LT(1);
@@ -1363,8 +1363,8 @@ public class BackEndParser extends Parser {
         RewriteRuleSubtreeStream stream_line=new RewriteRuleSubtreeStream(adaptor,"rule line");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:57:3: ( LOOP expr ( line )* POOL SEMICOLON -> ^( LOOP expr ( line )* ) )
-            // /cshome/bilec/git/vcalc/BackEnd.g:57:5: LOOP expr ( line )* POOL SEMICOLON
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:57:3: ( LOOP expr ( line )* POOL SEMICOLON -> ^( LOOP expr ( line )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:57:5: LOOP expr ( line )* POOL SEMICOLON
             {
             LOOP40=(Token)match(input,LOOP,FOLLOW_LOOP_in_loop386);  
             stream_LOOP.add(LOOP40);
@@ -1375,7 +1375,7 @@ public class BackEndParser extends Parser {
             state._fsp--;
 
             stream_expr.add(expr41.getTree());
-            // /cshome/bilec/git/vcalc/BackEnd.g:57:15: ( line )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:57:15: ( line )*
             loop11:
             do {
                 int alt11=2;
@@ -1388,7 +1388,7 @@ public class BackEndParser extends Parser {
 
                 switch (alt11) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:57:15: line
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:57:15: line
             	    {
             	    pushFollow(FOLLOW_line_in_loop390);
             	    line42=line();
@@ -1426,13 +1426,13 @@ public class BackEndParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 57:36: -> ^( LOOP expr ( line )* )
             {
-                // /cshome/bilec/git/vcalc/BackEnd.g:57:39: ^( LOOP expr ( line )* )
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:57:39: ^( LOOP expr ( line )* )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(stream_LOOP.nextNode(), root_1);
 
                 adaptor.addChild(root_1, stream_expr.nextTree());
-                // /cshome/bilec/git/vcalc/BackEnd.g:57:51: ( line )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:57:51: ( line )*
                 while ( stream_line.hasNext() ) {
                     adaptor.addChild(root_1, stream_line.nextTree());
 
@@ -1471,7 +1471,7 @@ public class BackEndParser extends Parser {
     };
 
     // $ANTLR start "conditional"
-    // /cshome/bilec/git/vcalc/BackEnd.g:60:1: conditional : IF expr ( line )* FI SEMICOLON -> ^( IF expr ( line )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:60:1: conditional : IF expr ( line )* FI SEMICOLON -> ^( IF expr ( line )* ) ;
     public final BackEndParser.conditional_return conditional() throws RecognitionException {
         BackEndParser.conditional_return retval = new BackEndParser.conditional_return();
         retval.start = input.LT(1);
@@ -1495,8 +1495,8 @@ public class BackEndParser extends Parser {
         RewriteRuleSubtreeStream stream_line=new RewriteRuleSubtreeStream(adaptor,"rule line");
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
-            // /cshome/bilec/git/vcalc/BackEnd.g:61:3: ( IF expr ( line )* FI SEMICOLON -> ^( IF expr ( line )* ) )
-            // /cshome/bilec/git/vcalc/BackEnd.g:61:5: IF expr ( line )* FI SEMICOLON
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:61:3: ( IF expr ( line )* FI SEMICOLON -> ^( IF expr ( line )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:61:5: IF expr ( line )* FI SEMICOLON
             {
             IF45=(Token)match(input,IF,FOLLOW_IF_in_conditional421);  
             stream_IF.add(IF45);
@@ -1507,7 +1507,7 @@ public class BackEndParser extends Parser {
             state._fsp--;
 
             stream_expr.add(expr46.getTree());
-            // /cshome/bilec/git/vcalc/BackEnd.g:61:13: ( line )*
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:61:13: ( line )*
             loop12:
             do {
                 int alt12=2;
@@ -1520,7 +1520,7 @@ public class BackEndParser extends Parser {
 
                 switch (alt12) {
             	case 1 :
-            	    // /cshome/bilec/git/vcalc/BackEnd.g:61:13: line
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:61:13: line
             	    {
             	    pushFollow(FOLLOW_line_in_conditional425);
             	    line47=line();
@@ -1546,7 +1546,7 @@ public class BackEndParser extends Parser {
 
 
             // AST REWRITE
-            // elements: expr, line, IF
+            // elements: line, expr, IF
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1558,13 +1558,13 @@ public class BackEndParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 61:32: -> ^( IF expr ( line )* )
             {
-                // /cshome/bilec/git/vcalc/BackEnd.g:61:35: ^( IF expr ( line )* )
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:61:35: ^( IF expr ( line )* )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(stream_IF.nextNode(), root_1);
 
                 adaptor.addChild(root_1, stream_expr.nextTree());
-                // /cshome/bilec/git/vcalc/BackEnd.g:61:45: ( line )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/BackEnd.g:61:45: ( line )*
                 while ( stream_line.hasNext() ) {
                     adaptor.addChild(root_1, stream_line.nextTree());
 

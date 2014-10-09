@@ -173,8 +173,8 @@ slt(a,b,op1,op2,tc,dest) ::= <<
 bne(tc, op, exp, lines, label, nextlabel) ::= <<
 
 <exp>
-%t<tc> = zext i32 %<op>, to i1
-br i1 %t<tc>, label %b<label>, label %b<nextlabel>
+%x<tc> = trunc i32 %<op> to i1
+br i1 %x<tc>, label %b<label>, label %b<nextlabel>
 b<label>:
 
 <lines>
@@ -189,7 +189,7 @@ looper(tc, op, exp, lines, label, nextlabel, exitlabel) ::= <<
 br label %loop<label>
 loop<label>:
 <exp>
-%t<tc> = zext i32 %<op> to i1
+%t<tc> = trunc i32 %<op> to i1
 br i1 %t<tc>, label %loop<nextlabel>, label %loop<exitlabel>
 loop<nextlabel>:
 <lines>

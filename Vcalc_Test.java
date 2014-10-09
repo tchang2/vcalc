@@ -22,7 +22,7 @@ public class Vcalc_Test {
 	public static void main(String[] args) throws RecognitionException, IOException {
 		
 		//get input file. Hardcoded for now
-		CharStream input = new ANTLRFileStream(arg[0]);
+		CharStream input = new ANTLRFileStream(args[0]);
 		
 		//run lexer and parser
 		VcalcLPLexer lexer = new VcalcLPLexer(input);
@@ -48,7 +48,7 @@ public class Vcalc_Test {
 			Interpretor interpreter = new Interpretor(nodes, symtab);
 			interpreter.program();
 		} else {
-		CharStream beinput = new ANTLRFileStream(arg[0]);
+		CharStream beinput = new ANTLRFileStream(args[0]);
 		BackEndLexer belexer = new BackEndLexer(beinput);
 		CommonTokenStream betokens = new CommonTokenStream(belexer);
 		BackEndParser beparser = new BackEndParser(betokens);

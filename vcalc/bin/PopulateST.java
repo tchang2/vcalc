@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g 2014-10-08 19:21:13
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g 2014-10-08 19:21:25
 
 import SymTab.*;
 
@@ -63,7 +63,7 @@ public class PopulateST extends TreeParser {
         
 
     public String[] getTokenNames() { return PopulateST.tokenNames; }
-    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g"; }
+    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g"; }
 
 
         SymbolTable symtab;
@@ -85,17 +85,17 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "program"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:31:1: program : ^( PROGRAM ( declaration )* ( statement )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:31:1: program : ^( PROGRAM ( declaration )* ( statement )* ) ;
     public final void program() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:32:3: ( ^( PROGRAM ( declaration )* ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:32:5: ^( PROGRAM ( declaration )* ( statement )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:32:3: ( ^( PROGRAM ( declaration )* ( statement )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:32:5: ^( PROGRAM ( declaration )* ( statement )* )
             {
             match(input,PROGRAM,FOLLOW_PROGRAM_in_program59); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:32:15: ( declaration )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:32:15: ( declaration )*
                 loop1:
                 do {
                     int alt1=2;
@@ -108,7 +108,7 @@ public class PopulateST extends TreeParser {
 
                     switch (alt1) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:32:15: declaration
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:32:15: declaration
                 	    {
                 	    pushFollow(FOLLOW_declaration_in_program61);
                 	    declaration();
@@ -124,7 +124,7 @@ public class PopulateST extends TreeParser {
                     }
                 } while (true);
 
-                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:32:28: ( statement )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:32:28: ( statement )*
                 loop2:
                 do {
                     int alt2=2;
@@ -137,7 +137,7 @@ public class PopulateST extends TreeParser {
 
                     switch (alt2) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:32:28: statement
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:32:28: statement
                 	    {
                 	    pushFollow(FOLLOW_statement_in_program64);
                 	    statement();
@@ -172,7 +172,7 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "declaration"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:36:1: declaration : ^( DECL type assignment ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:36:1: declaration : ^( DECL type assignment ) ;
     public final void declaration() throws RecognitionException {
         AssignmentTuple assignment1 = null;
 
@@ -180,8 +180,8 @@ public class PopulateST extends TreeParser {
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:37:3: ( ^( DECL type assignment ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:37:5: ^( DECL type assignment )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:37:3: ( ^( DECL type assignment ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:37:5: ^( DECL type assignment )
             {
             match(input,DECL,FOLLOW_DECL_in_declaration81); 
 
@@ -227,7 +227,7 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "assignment"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:52:1: assignment returns [AssignmentTuple tup] : ^( EQUAL IDENT expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:52:1: assignment returns [AssignmentTuple tup] : ^( EQUAL IDENT expr ) ;
     public final AssignmentTuple assignment() throws RecognitionException {
         AssignmentTuple tup = null;
 
@@ -236,8 +236,8 @@ public class PopulateST extends TreeParser {
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:53:3: ( ^( EQUAL IDENT expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:53:5: ^( EQUAL IDENT expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:53:3: ( ^( EQUAL IDENT expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:53:5: ^( EQUAL IDENT expr )
             {
             match(input,EQUAL,FOLLOW_EQUAL_in_assignment112); 
 
@@ -267,13 +267,13 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "statement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:56:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:56:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
     public final void statement() throws RecognitionException {
         AssignmentTuple assignment5 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:57:3: ( ifStatement | loopStatement | printStatement | assignment )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:57:3: ( ifStatement | loopStatement | printStatement | assignment )
             int alt3=4;
             switch ( input.LA(1) ) {
             case 22:
@@ -305,7 +305,7 @@ public class PopulateST extends TreeParser {
 
             switch (alt3) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:57:5: ifStatement
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:57:5: ifStatement
                     {
                     pushFollow(FOLLOW_ifStatement_in_statement134);
                     ifStatement();
@@ -316,7 +316,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:58:5: loopStatement
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:58:5: loopStatement
                     {
                     pushFollow(FOLLOW_loopStatement_in_statement140);
                     loopStatement();
@@ -327,7 +327,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:59:5: printStatement
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:59:5: printStatement
                     {
                     pushFollow(FOLLOW_printStatement_in_statement146);
                     printStatement();
@@ -338,7 +338,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:60:5: assignment
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:60:5: assignment
                     {
                     int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();
                     pushFollow(FOLLOW_assignment_in_statement159);
@@ -375,14 +375,14 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "ifStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:73:1: ifStatement : ^( 'if' expr cstat ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:73:1: ifStatement : ^( 'if' expr cstat ) ;
     public final void ifStatement() throws RecognitionException {
         String expr6 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:74:3: ( ^( 'if' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:74:5: ^( 'if' expr cstat )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:74:3: ( ^( 'if' expr cstat ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:74:5: ^( 'if' expr cstat )
             {
             match(input,22,FOLLOW_22_in_ifStatement174); 
 
@@ -421,14 +421,14 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "loopStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:82:1: loopStatement : ^( 'loop' expr cstat ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:82:1: loopStatement : ^( 'loop' expr cstat ) ;
     public final void loopStatement() throws RecognitionException {
         String expr7 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:83:3: ( ^( 'loop' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:83:5: ^( 'loop' expr cstat )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:83:3: ( ^( 'loop' expr cstat ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:83:5: ^( 'loop' expr cstat )
             {
             match(input,23,FOLLOW_23_in_loopStatement196); 
 
@@ -468,17 +468,17 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "cstat"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:91:1: cstat : ^( CSTAT ( statement )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:91:1: cstat : ^( CSTAT ( statement )* ) ;
     public final void cstat() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:92:3: ( ^( CSTAT ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:92:5: ^( CSTAT ( statement )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:92:3: ( ^( CSTAT ( statement )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:92:5: ^( CSTAT ( statement )* )
             {
             match(input,CSTAT,FOLLOW_CSTAT_in_cstat216); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:92:13: ( statement )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:92:13: ( statement )*
                 loop4:
                 do {
                     int alt4=2;
@@ -491,7 +491,7 @@ public class PopulateST extends TreeParser {
 
                     switch (alt4) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:92:13: statement
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:92:13: statement
                 	    {
                 	    pushFollow(FOLLOW_statement_in_cstat218);
                 	    statement();
@@ -526,11 +526,11 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "printStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:94:1: printStatement : ^( 'print' expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:94:1: printStatement : ^( 'print' expr ) ;
     public final void printStatement() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:95:3: ( ^( 'print' expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:95:5: ^( 'print' expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:95:3: ( ^( 'print' expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:95:5: ^( 'print' expr )
             {
             match(input,25,FOLLOW_25_in_printStatement233); 
 
@@ -558,7 +558,7 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "expr"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:97:1: expr returns [String type] : ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | vector | IDENT | INTEGER );
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:97:1: expr returns [String type] : ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | vector | IDENT | INTEGER );
     public final String expr() throws RecognitionException {
         String type = null;
 
@@ -569,7 +569,7 @@ public class PopulateST extends TreeParser {
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:98:3: ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | vector | IDENT | INTEGER )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:98:3: ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | vector | IDENT | INTEGER )
             int alt5=12;
             switch ( input.LA(1) ) {
             case 31:
@@ -643,7 +643,7 @@ public class PopulateST extends TreeParser {
 
             switch (alt5) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:98:5: ^( '+' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:98:5: ^( '+' a= expr b= expr )
                     {
                     match(input,31,FOLLOW_31_in_expr253); 
 
@@ -670,7 +670,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:104:5: ^( '-' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:104:5: ^( '-' a= expr b= expr )
                     {
                     match(input,32,FOLLOW_32_in_expr271); 
 
@@ -697,7 +697,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:110:5: ^( '*' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:110:5: ^( '*' a= expr b= expr )
                     {
                     match(input,33,FOLLOW_33_in_expr289); 
 
@@ -724,7 +724,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:116:5: ^( '/' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:116:5: ^( '/' a= expr b= expr )
                     {
                     match(input,34,FOLLOW_34_in_expr307); 
 
@@ -751,7 +751,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:122:5: ^( '==' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:122:5: ^( '==' a= expr b= expr )
                     {
                     match(input,27,FOLLOW_27_in_expr325); 
 
@@ -778,7 +778,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:128:5: ^( '!=' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:128:5: ^( '!=' a= expr b= expr )
                     {
                     match(input,28,FOLLOW_28_in_expr343); 
 
@@ -805,7 +805,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:134:5: ^( '>' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:134:5: ^( '>' a= expr b= expr )
                     {
                     match(input,30,FOLLOW_30_in_expr361); 
 
@@ -832,7 +832,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:140:5: ^( '<' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:140:5: ^( '<' a= expr b= expr )
                     {
                     match(input,29,FOLLOW_29_in_expr379); 
 
@@ -859,7 +859,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:146:5: ^( DREF a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:146:5: ^( DREF a= expr b= expr )
                     {
                     match(input,DREF,FOLLOW_DREF_in_expr397); 
 
@@ -887,7 +887,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:153:5: vector
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:153:5: vector
                     {
                     pushFollow(FOLLOW_vector_in_expr414);
                     vector();
@@ -899,7 +899,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:154:5: IDENT
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:154:5: IDENT
                     {
                     IDENT8=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_expr422); 
 
@@ -914,7 +914,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:163:5: INTEGER
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:163:5: INTEGER
                     {
                     match(input,INTEGER,FOLLOW_INTEGER_in_expr433); 
                     type = "int";
@@ -936,7 +936,7 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "vector"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:165:1: vector : ( ^( '..' expr expr ) | ^( GEN IDENT v= expr e= expr ) | ^( 'filter' IDENT v= expr e= expr ) );
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:165:1: vector : ( ^( '..' expr expr ) | ^( GEN IDENT v= expr e= expr ) | ^( 'filter' IDENT v= expr e= expr ) );
     public final void vector() throws RecognitionException {
         CommonTree IDENT9=null;
         CommonTree IDENT10=null;
@@ -946,7 +946,7 @@ public class PopulateST extends TreeParser {
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:166:3: ( ^( '..' expr expr ) | ^( GEN IDENT v= expr e= expr ) | ^( 'filter' IDENT v= expr e= expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:166:3: ( ^( '..' expr expr ) | ^( GEN IDENT v= expr e= expr ) | ^( 'filter' IDENT v= expr e= expr ) )
             int alt6=3;
             switch ( input.LA(1) ) {
             case 37:
@@ -973,7 +973,7 @@ public class PopulateST extends TreeParser {
 
             switch (alt6) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:166:5: ^( '..' expr expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:166:5: ^( '..' expr expr )
                     {
                     match(input,37,FOLLOW_37_in_vector448); 
 
@@ -994,7 +994,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:167:5: ^( GEN IDENT v= expr e= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:167:5: ^( GEN IDENT v= expr e= expr )
                     {
                     match(input,GEN,FOLLOW_GEN_in_vector460); 
 
@@ -1032,7 +1032,7 @@ public class PopulateST extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:185:5: ^( 'filter' IDENT v= expr e= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:185:5: ^( 'filter' IDENT v= expr e= expr )
                     {
                     match(input,26,FOLLOW_26_in_vector491); 
 
@@ -1085,15 +1085,15 @@ public class PopulateST extends TreeParser {
 
 
     // $ANTLR start "type"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:204:1: type returns [Type tsym] : IDENT ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:204:1: type returns [Type tsym] : IDENT ;
     public final Type type() throws RecognitionException {
         Type tsym = null;
 
         CommonTree IDENT11=null;
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:205:3: ( IDENT )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/PopulateST.g:205:5: IDENT
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:205:3: ( IDENT )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/PopulateST.g:205:5: IDENT
             {
             IDENT11=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_type528); 
 

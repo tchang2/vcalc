@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g 2014-10-08 19:21:19
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g 2014-10-08 19:21:38
 
 import SymTab.*;
 import VcalcValue.*;
@@ -64,7 +64,7 @@ public class Interpretor extends TreeParser {
         
 
     public String[] getTokenNames() { return Interpretor.tokenNames; }
-    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g"; }
+    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g"; }
 
 
         SymbolTable symtab;
@@ -79,17 +79,17 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "program"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:25:1: program : ^( PROGRAM ( declaration )* ( statement )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:25:1: program : ^( PROGRAM ( declaration )* ( statement )* ) ;
     public final void program() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:26:3: ( ^( PROGRAM ( declaration )* ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:26:5: ^( PROGRAM ( declaration )* ( statement )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:26:3: ( ^( PROGRAM ( declaration )* ( statement )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:26:5: ^( PROGRAM ( declaration )* ( statement )* )
             {
             match(input,PROGRAM,FOLLOW_PROGRAM_in_program59); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:26:15: ( declaration )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:26:15: ( declaration )*
                 loop1:
                 do {
                     int alt1=2;
@@ -102,7 +102,7 @@ public class Interpretor extends TreeParser {
 
                     switch (alt1) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:26:15: declaration
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:26:15: declaration
                 	    {
                 	    pushFollow(FOLLOW_declaration_in_program61);
                 	    declaration();
@@ -118,7 +118,7 @@ public class Interpretor extends TreeParser {
                     }
                 } while (true);
 
-                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:26:28: ( statement )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:26:28: ( statement )*
                 loop2:
                 do {
                     int alt2=2;
@@ -131,7 +131,7 @@ public class Interpretor extends TreeParser {
 
                     switch (alt2) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:26:28: statement
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:26:28: statement
                 	    {
                 	    pushFollow(FOLLOW_statement_in_program64);
                 	    statement();
@@ -166,11 +166,11 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "declaration"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:30:1: declaration : ^( DECL type assignment ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:30:1: declaration : ^( DECL type assignment ) ;
     public final void declaration() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:31:3: ( ^( DECL type assignment ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:31:5: ^( DECL type assignment )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:31:3: ( ^( DECL type assignment ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:31:5: ^( DECL type assignment )
             {
             match(input,DECL,FOLLOW_DECL_in_declaration81); 
 
@@ -203,15 +203,15 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "assignment"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:35:1: assignment : ^( EQUAL IDENT expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:35:1: assignment : ^( EQUAL IDENT expr ) ;
     public final void assignment() throws RecognitionException {
         CommonTree IDENT1=null;
         Value expr2 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:36:3: ( ^( EQUAL IDENT expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:36:5: ^( EQUAL IDENT expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:36:3: ( ^( EQUAL IDENT expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:36:5: ^( EQUAL IDENT expr )
             {
             match(input,EQUAL,FOLLOW_EQUAL_in_assignment105); 
 
@@ -247,10 +247,10 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "statement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:44:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:44:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
     public final void statement() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:45:3: ( ifStatement | loopStatement | printStatement | assignment )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:45:3: ( ifStatement | loopStatement | printStatement | assignment )
             int alt3=4;
             switch ( input.LA(1) ) {
             case 22:
@@ -282,7 +282,7 @@ public class Interpretor extends TreeParser {
 
             switch (alt3) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:45:5: ifStatement
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:45:5: ifStatement
                     {
                     pushFollow(FOLLOW_ifStatement_in_statement125);
                     ifStatement();
@@ -293,7 +293,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:46:5: loopStatement
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:46:5: loopStatement
                     {
                     pushFollow(FOLLOW_loopStatement_in_statement131);
                     loopStatement();
@@ -304,7 +304,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:47:5: printStatement
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:47:5: printStatement
                     {
                     pushFollow(FOLLOW_printStatement_in_statement137);
                     printStatement();
@@ -315,7 +315,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:48:5: assignment
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:48:5: assignment
                     {
                     pushFollow(FOLLOW_assignment_in_statement143);
                     assignment();
@@ -340,15 +340,15 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "ifStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:50:1: ifStatement : ^( 'if' expr cstat ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:50:1: ifStatement : ^( 'if' expr cstat ) ;
     public final void ifStatement() throws RecognitionException {
         Value expr3 = null;
 
 
         boolean flag = true; boolean oldflag = true;
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:52:3: ( ^( 'if' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:52:5: ^( 'if' expr cstat )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:52:3: ( ^( 'if' expr cstat ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:52:5: ^( 'if' expr cstat )
             {
             match(input,22,FOLLOW_22_in_ifStatement162); 
 
@@ -402,15 +402,15 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "loopStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:74:1: loopStatement : ^( 'loop' expr cstat ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:74:1: loopStatement : ^( 'loop' expr cstat ) ;
     public final void loopStatement() throws RecognitionException {
         Value expr4 = null;
 
 
         int mark = input.mark(); boolean rewind = false; boolean flag = true; boolean oldflag = true;
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:76:3: ( ^( 'loop' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:76:5: ^( 'loop' expr cstat )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:76:3: ( ^( 'loop' expr cstat ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:76:5: ^( 'loop' expr cstat )
             {
             match(input,23,FOLLOW_23_in_loopStatement195); 
 
@@ -465,17 +465,17 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "cstat"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:99:1: cstat : ^( CSTAT ( statement )* ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:99:1: cstat : ^( CSTAT ( statement )* ) ;
     public final void cstat() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:100:3: ( ^( CSTAT ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:100:5: ^( CSTAT ( statement )* )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:100:3: ( ^( CSTAT ( statement )* ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:100:5: ^( CSTAT ( statement )* )
             {
             match(input,CSTAT,FOLLOW_CSTAT_in_cstat219); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:100:13: ( statement )*
+                // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:100:13: ( statement )*
                 loop4:
                 do {
                     int alt4=2;
@@ -488,7 +488,7 @@ public class Interpretor extends TreeParser {
 
                     switch (alt4) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:100:13: statement
+                	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:100:13: statement
                 	    {
                 	    pushFollow(FOLLOW_statement_in_cstat221);
                 	    statement();
@@ -523,14 +523,14 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "printStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:102:1: printStatement : ^( 'print' expr ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:102:1: printStatement : ^( 'print' expr ) ;
     public final void printStatement() throws RecognitionException {
         Value expr5 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:103:3: ( ^( 'print' expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:103:5: ^( 'print' expr )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:103:3: ( ^( 'print' expr ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:103:5: ^( 'print' expr )
             {
             match(input,25,FOLLOW_25_in_printStatement236); 
 
@@ -559,7 +559,7 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "expr"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:105:1: expr returns [Value value] : ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER );
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:105:1: expr returns [Value value] : ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER );
     public final Value expr() throws RecognitionException {
         Value value = null;
 
@@ -575,7 +575,7 @@ public class Interpretor extends TreeParser {
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:106:3: ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:106:3: ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER )
             int alt5=14;
             switch ( input.LA(1) ) {
             case 31:
@@ -657,7 +657,7 @@ public class Interpretor extends TreeParser {
 
             switch (alt5) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:106:5: ^( '+' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:106:5: ^( '+' a= expr b= expr )
                     {
                     match(input,31,FOLLOW_31_in_expr258); 
 
@@ -679,7 +679,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:107:5: ^( '-' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:107:5: ^( '-' a= expr b= expr )
                     {
                     match(input,32,FOLLOW_32_in_expr276); 
 
@@ -701,7 +701,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:108:5: ^( '*' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:108:5: ^( '*' a= expr b= expr )
                     {
                     match(input,33,FOLLOW_33_in_expr294); 
 
@@ -723,7 +723,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:109:5: ^( '/' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:109:5: ^( '/' a= expr b= expr )
                     {
                     match(input,34,FOLLOW_34_in_expr312); 
 
@@ -745,7 +745,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:110:5: ^( '==' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:110:5: ^( '==' a= expr b= expr )
                     {
                     match(input,27,FOLLOW_27_in_expr330); 
 
@@ -767,7 +767,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:111:5: ^( '!=' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:111:5: ^( '!=' a= expr b= expr )
                     {
                     match(input,28,FOLLOW_28_in_expr348); 
 
@@ -789,7 +789,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:112:5: ^( '>' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:112:5: ^( '>' a= expr b= expr )
                     {
                     match(input,30,FOLLOW_30_in_expr366); 
 
@@ -811,7 +811,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:113:5: ^( '<' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:113:5: ^( '<' a= expr b= expr )
                     {
                     match(input,29,FOLLOW_29_in_expr384); 
 
@@ -833,7 +833,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:114:5: ^( DREF a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:114:5: ^( DREF a= expr b= expr )
                     {
                     match(input,DREF,FOLLOW_DREF_in_expr402); 
 
@@ -855,7 +855,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:115:5: ^( '..' a= expr b= expr )
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:115:5: ^( '..' a= expr b= expr )
                     {
                     match(input,37,FOLLOW_37_in_expr420); 
 
@@ -883,7 +883,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:122:5: gen
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:122:5: gen
                     {
                     pushFollow(FOLLOW_gen_in_expr437);
                     gen6=gen();
@@ -895,7 +895,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:123:5: filter
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:123:5: filter
                     {
                     pushFollow(FOLLOW_filter_in_expr445);
                     filter7=filter();
@@ -907,7 +907,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:124:5: IDENT
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:124:5: IDENT
                     {
                     IDENT8=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_expr453); 
 
@@ -919,7 +919,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:129:5: INTEGER
+                    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:129:5: INTEGER
                     {
                     INTEGER9=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_expr461); 
                     value = new Value(Integer.parseInt((INTEGER9!=null?INTEGER9.getText():null)));
@@ -941,7 +941,7 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "gen"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:132:1: gen returns [Value value] : ^( GEN IDENT v= expr (d= expr )+ ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:132:1: gen returns [Value value] : ^( GEN IDENT v= expr (d= expr )+ ) ;
     public final Value gen() throws RecognitionException {
         Value value = null;
 
@@ -958,8 +958,8 @@ public class Interpretor extends TreeParser {
           currentscope = new NestedScope("genscope", currentscope); 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:139:3: ( ^( GEN IDENT v= expr (d= expr )+ ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:139:5: ^( GEN IDENT v= expr (d= expr )+ )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:139:3: ( ^( GEN IDENT v= expr (d= expr )+ ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:139:5: ^( GEN IDENT v= expr (d= expr )+ )
             {
             match(input,GEN,FOLLOW_GEN_in_gen488); 
 
@@ -975,7 +975,7 @@ public class Interpretor extends TreeParser {
                 VariableSymbol vs = new VariableSymbol((IDENT10!=null?IDENT10.getText():null), new BuiltInTypeSymbol("int"), new Value(v.dref(new Value(index)).getInt()));
                 currentscope.define(vs);
               
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:145:3: (d= expr )+
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:145:3: (d= expr )+
             int cnt6=0;
             loop6:
             do {
@@ -989,7 +989,7 @@ public class Interpretor extends TreeParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:145:4: d= expr
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:145:4: d= expr
             	    {
             	    int mark = input.mark();
             	    pushFollow(FOLLOW_expr_in_gen509);
@@ -1039,7 +1039,7 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "filter"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:158:1: filter returns [Value value] : ^( 'filter' IDENT v= expr (d= expr )+ ) ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:158:1: filter returns [Value value] : ^( 'filter' IDENT v= expr (d= expr )+ ) ;
     public final Value filter() throws RecognitionException {
         Value value = null;
 
@@ -1056,8 +1056,8 @@ public class Interpretor extends TreeParser {
           currentscope = new NestedScope("filscope", currentscope); 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:165:3: ( ^( 'filter' IDENT v= expr (d= expr )+ ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:165:5: ^( 'filter' IDENT v= expr (d= expr )+ )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:165:3: ( ^( 'filter' IDENT v= expr (d= expr )+ ) )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:165:5: ^( 'filter' IDENT v= expr (d= expr )+ )
             {
             match(input,26,FOLLOW_26_in_filter545); 
 
@@ -1073,7 +1073,7 @@ public class Interpretor extends TreeParser {
                 VariableSymbol vs = new VariableSymbol((IDENT11!=null?IDENT11.getText():null), new BuiltInTypeSymbol("int"), new Value(v.dref(new Value(index)).getInt()));
                 currentscope.define(vs);
               
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:170:3: (d= expr )+
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:170:3: (d= expr )+
             int cnt7=0;
             loop7:
             do {
@@ -1087,7 +1087,7 @@ public class Interpretor extends TreeParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:170:4: d= expr
+            	    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:170:4: d= expr
             	    {
             	    int mark = input.mark();
             	    pushFollow(FOLLOW_expr_in_filter564);
@@ -1143,15 +1143,15 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "type"
-    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:189:1: type returns [Type tsym] : IDENT ;
+    // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:189:1: type returns [Type tsym] : IDENT ;
     public final Type type() throws RecognitionException {
         Type tsym = null;
 
         CommonTree IDENT12=null;
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:190:3: ( IDENT )
-            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/src/Interpretor.g:190:5: IDENT
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:190:3: ( IDENT )
+            // /home/linux-vm/workspace_indigo/git/vcalc/vcalc/bin/Interpretor.g:190:5: IDENT
             {
             IDENT12=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_type591); 
 
