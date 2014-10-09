@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g 2014-10-06 17:56:45
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /cshome/bilec/git/vcalc/Interpretor.g 2014-10-08 18:28:22
 
 import SymTab.*;
 import VcalcValue.*;
@@ -64,7 +64,7 @@ public class Interpretor extends TreeParser {
         
 
     public String[] getTokenNames() { return Interpretor.tokenNames; }
-    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g"; }
+    public String getGrammarFileName() { return "/cshome/bilec/git/vcalc/Interpretor.g"; }
 
 
         SymbolTable symtab;
@@ -79,17 +79,17 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "program"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:25:1: program : ^( PROGRAM ( declaration )* ( statement )* ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:25:1: program : ^( PROGRAM ( declaration )* ( statement )* ) ;
     public final void program() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:26:3: ( ^( PROGRAM ( declaration )* ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:26:5: ^( PROGRAM ( declaration )* ( statement )* )
+            // /cshome/bilec/git/vcalc/Interpretor.g:26:3: ( ^( PROGRAM ( declaration )* ( statement )* ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:26:5: ^( PROGRAM ( declaration )* ( statement )* )
             {
             match(input,PROGRAM,FOLLOW_PROGRAM_in_program59); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:26:15: ( declaration )*
+                // /cshome/bilec/git/vcalc/Interpretor.g:26:15: ( declaration )*
                 loop1:
                 do {
                     int alt1=2;
@@ -102,7 +102,7 @@ public class Interpretor extends TreeParser {
 
                     switch (alt1) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:26:15: declaration
+                	    // /cshome/bilec/git/vcalc/Interpretor.g:26:15: declaration
                 	    {
                 	    pushFollow(FOLLOW_declaration_in_program61);
                 	    declaration();
@@ -118,7 +118,7 @@ public class Interpretor extends TreeParser {
                     }
                 } while (true);
 
-                // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:26:28: ( statement )*
+                // /cshome/bilec/git/vcalc/Interpretor.g:26:28: ( statement )*
                 loop2:
                 do {
                     int alt2=2;
@@ -131,7 +131,7 @@ public class Interpretor extends TreeParser {
 
                     switch (alt2) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:26:28: statement
+                	    // /cshome/bilec/git/vcalc/Interpretor.g:26:28: statement
                 	    {
                 	    pushFollow(FOLLOW_statement_in_program64);
                 	    statement();
@@ -166,11 +166,11 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "declaration"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:30:1: declaration : ^( DECL type assignment ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:30:1: declaration : ^( DECL type assignment ) ;
     public final void declaration() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:31:3: ( ^( DECL type assignment ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:31:5: ^( DECL type assignment )
+            // /cshome/bilec/git/vcalc/Interpretor.g:31:3: ( ^( DECL type assignment ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:31:5: ^( DECL type assignment )
             {
             match(input,DECL,FOLLOW_DECL_in_declaration81); 
 
@@ -203,33 +203,32 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "assignment"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:35:1: assignment : ^( EQUAL IDENT expr ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:35:1: assignment : ^( EQUAL IDENT expr ) ;
     public final void assignment() throws RecognitionException {
-        CommonTree IDENT2=null;
-        Value expr1 = null;
+        CommonTree IDENT1=null;
+        Value expr2 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:36:3: ( ^( EQUAL IDENT expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:36:5: ^( EQUAL IDENT expr )
+            // /cshome/bilec/git/vcalc/Interpretor.g:36:3: ( ^( EQUAL IDENT expr ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:36:5: ^( EQUAL IDENT expr )
             {
             match(input,EQUAL,FOLLOW_EQUAL_in_assignment105); 
 
             match(input, Token.DOWN, null); 
-            IDENT2=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_assignment107); 
+            IDENT1=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_assignment107); 
             pushFollow(FOLLOW_expr_in_assignment109);
-            expr1=expr();
+            expr2=expr();
 
             state._fsp--;
 
 
             match(input, Token.UP, null); 
 
-                //expr1.print();
                 if (gflag) {
-                  Symbol s = symtab.resolve((IDENT2!=null?IDENT2.getText():null));
+                  Symbol s = symtab.resolve((IDENT1!=null?IDENT1.getText():null));
                   VariableSymbol vs = (VariableSymbol) s;
-                  vs.setValue(expr1);
+                  vs.setValue(expr2);
                 }
               
 
@@ -248,10 +247,10 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "statement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:45:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
+    // /cshome/bilec/git/vcalc/Interpretor.g:44:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
     public final void statement() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:46:3: ( ifStatement | loopStatement | printStatement | assignment )
+            // /cshome/bilec/git/vcalc/Interpretor.g:45:3: ( ifStatement | loopStatement | printStatement | assignment )
             int alt3=4;
             switch ( input.LA(1) ) {
             case 22:
@@ -283,7 +282,7 @@ public class Interpretor extends TreeParser {
 
             switch (alt3) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:46:5: ifStatement
+                    // /cshome/bilec/git/vcalc/Interpretor.g:45:5: ifStatement
                     {
                     pushFollow(FOLLOW_ifStatement_in_statement124);
                     ifStatement();
@@ -294,7 +293,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:47:5: loopStatement
+                    // /cshome/bilec/git/vcalc/Interpretor.g:46:5: loopStatement
                     {
                     pushFollow(FOLLOW_loopStatement_in_statement130);
                     loopStatement();
@@ -305,7 +304,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:48:5: printStatement
+                    // /cshome/bilec/git/vcalc/Interpretor.g:47:5: printStatement
                     {
                     pushFollow(FOLLOW_printStatement_in_statement136);
                     printStatement();
@@ -316,7 +315,7 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:49:5: assignment
+                    // /cshome/bilec/git/vcalc/Interpretor.g:48:5: assignment
                     {
                     pushFollow(FOLLOW_assignment_in_statement142);
                     assignment();
@@ -341,20 +340,22 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "ifStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:51:1: ifStatement : ^( 'if' expr cstat ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:50:1: ifStatement : ^( 'if' expr cstat ) ;
     public final void ifStatement() throws RecognitionException {
         Value expr3 = null;
 
 
         boolean flag = true; boolean oldflag = true;
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:53:3: ( ^( 'if' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:53:5: ^( 'if' expr cstat )
+            // /cshome/bilec/git/vcalc/Interpretor.g:52:3: ( ^( 'if' expr cstat ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:52:5: ^( 'if' expr cstat )
             {
             match(input,22,FOLLOW_22_in_ifStatement161); 
 
+            int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();
+
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_expr_in_ifStatement163);
+            pushFollow(FOLLOW_expr_in_ifStatement165);
             expr3=expr();
 
             state._fsp--;
@@ -364,7 +365,7 @@ public class Interpretor extends TreeParser {
                     oldflag = gflag;
                     int cond = expr3.getInt().intValue();
                     if (cond != 1 && cond != 0) {
-                      System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+                      System.err.println("Runtime Error: Line<" + line + ":" + chline + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
                       System.exit(-1);
                     }
                     if (cond == 1) {
@@ -379,7 +380,7 @@ public class Interpretor extends TreeParser {
                     oldflag = gflag;
                   }
                 
-            pushFollow(FOLLOW_cstat_in_ifStatement173);
+            pushFollow(FOLLOW_cstat_in_ifStatement175);
             cstat();
 
             state._fsp--;
@@ -403,20 +404,22 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "loopStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:75:1: loopStatement : ^( 'loop' expr cstat ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:74:1: loopStatement : ^( 'loop' expr cstat ) ;
     public final void loopStatement() throws RecognitionException {
         Value expr4 = null;
 
 
         int mark = input.mark(); boolean rewind = false; boolean flag = true; boolean oldflag = true;
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:77:3: ( ^( 'loop' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:77:5: ^( 'loop' expr cstat )
+            // /cshome/bilec/git/vcalc/Interpretor.g:76:3: ( ^( 'loop' expr cstat ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:76:5: ^( 'loop' expr cstat )
             {
-            match(input,23,FOLLOW_23_in_loopStatement194); 
+            match(input,23,FOLLOW_23_in_loopStatement196); 
+
+            int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_expr_in_loopStatement196);
+            pushFollow(FOLLOW_expr_in_loopStatement200);
             expr4=expr();
 
             state._fsp--;
@@ -426,7 +429,7 @@ public class Interpretor extends TreeParser {
                   oldflag = gflag;
                   int cond = expr4.getInt().intValue();
                   if (cond != 1 && cond != 0) {
-                    System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+                    System.err.println("Runtime Error: Line<" + line + ":" + chline + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
                     System.exit(-1);
                   }
                   if (cond == 1) {
@@ -442,7 +445,7 @@ public class Interpretor extends TreeParser {
                   oldflag = gflag;
                 }
               
-            pushFollow(FOLLOW_cstat_in_loopStatement202);
+            pushFollow(FOLLOW_cstat_in_loopStatement206);
             cstat();
 
             state._fsp--;
@@ -466,17 +469,17 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "cstat"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:100:1: cstat : ^( CSTAT ( statement )* ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:99:1: cstat : ^( CSTAT ( statement )* ) ;
     public final void cstat() throws RecognitionException {
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:101:3: ( ^( CSTAT ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:101:5: ^( CSTAT ( statement )* )
+            // /cshome/bilec/git/vcalc/Interpretor.g:100:3: ( ^( CSTAT ( statement )* ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:100:5: ^( CSTAT ( statement )* )
             {
-            match(input,CSTAT,FOLLOW_CSTAT_in_cstat218); 
+            match(input,CSTAT,FOLLOW_CSTAT_in_cstat222); 
 
             if ( input.LA(1)==Token.DOWN ) {
                 match(input, Token.DOWN, null); 
-                // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:101:13: ( statement )*
+                // /cshome/bilec/git/vcalc/Interpretor.g:100:13: ( statement )*
                 loop4:
                 do {
                     int alt4=2;
@@ -489,9 +492,9 @@ public class Interpretor extends TreeParser {
 
                     switch (alt4) {
                 	case 1 :
-                	    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:101:13: statement
+                	    // /cshome/bilec/git/vcalc/Interpretor.g:100:13: statement
                 	    {
-                	    pushFollow(FOLLOW_statement_in_cstat220);
+                	    pushFollow(FOLLOW_statement_in_cstat224);
                 	    statement();
 
                 	    state._fsp--;
@@ -524,19 +527,19 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "printStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:103:1: printStatement : ^( 'print' expr ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:102:1: printStatement : ^( 'print' expr ) ;
     public final void printStatement() throws RecognitionException {
         Value expr5 = null;
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:104:3: ( ^( 'print' expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:104:5: ^( 'print' expr )
+            // /cshome/bilec/git/vcalc/Interpretor.g:103:3: ( ^( 'print' expr ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:103:5: ^( 'print' expr )
             {
-            match(input,25,FOLLOW_25_in_printStatement235); 
+            match(input,25,FOLLOW_25_in_printStatement239); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_expr_in_printStatement237);
+            pushFollow(FOLLOW_expr_in_printStatement241);
             expr5=expr();
 
             state._fsp--;
@@ -560,7 +563,7 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "expr"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:106:1: expr returns [Value value] : ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER );
+    // /cshome/bilec/git/vcalc/Interpretor.g:105:1: expr returns [Value value] : ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER );
     public final Value expr() throws RecognitionException {
         Value value = null;
 
@@ -576,7 +579,7 @@ public class Interpretor extends TreeParser {
 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:107:3: ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER )
+            // /cshome/bilec/git/vcalc/Interpretor.g:106:3: ( ^( '+' a= expr b= expr ) | ^( '-' a= expr b= expr ) | ^( '*' a= expr b= expr ) | ^( '/' a= expr b= expr ) | ^( '==' a= expr b= expr ) | ^( '!=' a= expr b= expr ) | ^( '>' a= expr b= expr ) | ^( '<' a= expr b= expr ) | ^( DREF a= expr b= expr ) | ^( '..' a= expr b= expr ) | gen | filter | IDENT | INTEGER )
             int alt5=14;
             switch ( input.LA(1) ) {
             case 31:
@@ -658,17 +661,17 @@ public class Interpretor extends TreeParser {
 
             switch (alt5) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:107:5: ^( '+' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:106:5: ^( '+' a= expr b= expr )
                     {
-                    match(input,31,FOLLOW_31_in_expr257); 
+                    match(input,31,FOLLOW_31_in_expr261); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr261);
+                    pushFollow(FOLLOW_expr_in_expr265);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr265);
+                    pushFollow(FOLLOW_expr_in_expr269);
                     b=expr();
 
                     state._fsp--;
@@ -680,17 +683,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:108:5: ^( '-' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:107:5: ^( '-' a= expr b= expr )
                     {
-                    match(input,32,FOLLOW_32_in_expr275); 
+                    match(input,32,FOLLOW_32_in_expr279); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr279);
+                    pushFollow(FOLLOW_expr_in_expr283);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr283);
+                    pushFollow(FOLLOW_expr_in_expr287);
                     b=expr();
 
                     state._fsp--;
@@ -702,17 +705,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:109:5: ^( '*' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:108:5: ^( '*' a= expr b= expr )
                     {
-                    match(input,33,FOLLOW_33_in_expr293); 
+                    match(input,33,FOLLOW_33_in_expr297); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr297);
+                    pushFollow(FOLLOW_expr_in_expr301);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr301);
+                    pushFollow(FOLLOW_expr_in_expr305);
                     b=expr();
 
                     state._fsp--;
@@ -724,17 +727,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:110:5: ^( '/' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:109:5: ^( '/' a= expr b= expr )
                     {
-                    match(input,34,FOLLOW_34_in_expr311); 
+                    match(input,34,FOLLOW_34_in_expr315); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr315);
+                    pushFollow(FOLLOW_expr_in_expr319);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr319);
+                    pushFollow(FOLLOW_expr_in_expr323);
                     b=expr();
 
                     state._fsp--;
@@ -746,17 +749,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:111:5: ^( '==' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:110:5: ^( '==' a= expr b= expr )
                     {
-                    match(input,27,FOLLOW_27_in_expr329); 
+                    match(input,27,FOLLOW_27_in_expr333); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr333);
+                    pushFollow(FOLLOW_expr_in_expr337);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr337);
+                    pushFollow(FOLLOW_expr_in_expr341);
                     b=expr();
 
                     state._fsp--;
@@ -768,17 +771,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:112:5: ^( '!=' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:111:5: ^( '!=' a= expr b= expr )
                     {
-                    match(input,28,FOLLOW_28_in_expr347); 
+                    match(input,28,FOLLOW_28_in_expr351); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr351);
+                    pushFollow(FOLLOW_expr_in_expr355);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr355);
+                    pushFollow(FOLLOW_expr_in_expr359);
                     b=expr();
 
                     state._fsp--;
@@ -790,17 +793,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:113:5: ^( '>' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:112:5: ^( '>' a= expr b= expr )
                     {
-                    match(input,30,FOLLOW_30_in_expr365); 
+                    match(input,30,FOLLOW_30_in_expr369); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr369);
+                    pushFollow(FOLLOW_expr_in_expr373);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr373);
+                    pushFollow(FOLLOW_expr_in_expr377);
                     b=expr();
 
                     state._fsp--;
@@ -812,17 +815,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:114:5: ^( '<' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:113:5: ^( '<' a= expr b= expr )
                     {
-                    match(input,29,FOLLOW_29_in_expr383); 
+                    match(input,29,FOLLOW_29_in_expr387); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr387);
+                    pushFollow(FOLLOW_expr_in_expr391);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr391);
+                    pushFollow(FOLLOW_expr_in_expr395);
                     b=expr();
 
                     state._fsp--;
@@ -834,17 +837,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:115:5: ^( DREF a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:114:5: ^( DREF a= expr b= expr )
                     {
-                    match(input,DREF,FOLLOW_DREF_in_expr401); 
+                    match(input,DREF,FOLLOW_DREF_in_expr405); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr405);
+                    pushFollow(FOLLOW_expr_in_expr409);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr409);
+                    pushFollow(FOLLOW_expr_in_expr413);
                     b=expr();
 
                     state._fsp--;
@@ -856,17 +859,17 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:116:5: ^( '..' a= expr b= expr )
+                    // /cshome/bilec/git/vcalc/Interpretor.g:115:5: ^( '..' a= expr b= expr )
                     {
-                    match(input,37,FOLLOW_37_in_expr419); 
+                    match(input,37,FOLLOW_37_in_expr423); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr423);
+                    pushFollow(FOLLOW_expr_in_expr427);
                     a=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr427);
+                    pushFollow(FOLLOW_expr_in_expr431);
                     b=expr();
 
                     state._fsp--;
@@ -875,7 +878,7 @@ public class Interpretor extends TreeParser {
                     match(input, Token.UP, null); 
 
                         if (!a.getTypeName().equals("int") || !b.getTypeName().equals("int") || a.getInt().intValue() > b.getInt().intValue()) {
-                          System.err.println("Range boundary error on " + a.toString() + ".." + b.toString());
+                          System.err.println("Runtime Error: Line<" + input.getTokenStream().get(input.index()).getLine() + ":" + input.getTokenStream().get(input.index()).getCharPositionInLine() + ">" + "Range boundary error on " + a.toString() + ".." + b.toString());
                           System.exit(-1);
                         }
                         value = new Value(a, b);
@@ -884,9 +887,9 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:123:5: gen
+                    // /cshome/bilec/git/vcalc/Interpretor.g:122:5: gen
                     {
-                    pushFollow(FOLLOW_gen_in_expr436);
+                    pushFollow(FOLLOW_gen_in_expr440);
                     gen6=gen();
 
                     state._fsp--;
@@ -896,9 +899,9 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:124:5: filter
+                    // /cshome/bilec/git/vcalc/Interpretor.g:123:5: filter
                     {
-                    pushFollow(FOLLOW_filter_in_expr444);
+                    pushFollow(FOLLOW_filter_in_expr448);
                     filter7=filter();
 
                     state._fsp--;
@@ -908,9 +911,9 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:125:5: IDENT
+                    // /cshome/bilec/git/vcalc/Interpretor.g:124:5: IDENT
                     {
-                    IDENT8=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_expr452); 
+                    IDENT8=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_expr456); 
 
                         Symbol s = currentscope.resolve((IDENT8!=null?IDENT8.getText():null));
                         VariableSymbol vs = (VariableSymbol) s;
@@ -920,9 +923,9 @@ public class Interpretor extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:130:5: INTEGER
+                    // /cshome/bilec/git/vcalc/Interpretor.g:129:5: INTEGER
                     {
-                    INTEGER9=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_expr460); 
+                    INTEGER9=(CommonTree)match(input,INTEGER,FOLLOW_INTEGER_in_expr464); 
                     value = new Value(Integer.parseInt((INTEGER9!=null?INTEGER9.getText():null)));
 
                     }
@@ -942,7 +945,7 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "gen"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:133:1: gen returns [Value value] : ^( GEN IDENT v= expr (d= expr )+ ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:132:1: gen returns [Value value] : ^( GEN IDENT v= expr (d= expr )+ ) ;
     public final Value gen() throws RecognitionException {
         Value value = null;
 
@@ -959,14 +962,14 @@ public class Interpretor extends TreeParser {
           currentscope = new NestedScope("genscope", currentscope); 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:140:3: ( ^( GEN IDENT v= expr (d= expr )+ ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:140:5: ^( GEN IDENT v= expr (d= expr )+ )
+            // /cshome/bilec/git/vcalc/Interpretor.g:139:3: ( ^( GEN IDENT v= expr (d= expr )+ ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:139:5: ^( GEN IDENT v= expr (d= expr )+ )
             {
-            match(input,GEN,FOLLOW_GEN_in_gen487); 
+            match(input,GEN,FOLLOW_GEN_in_gen491); 
 
             match(input, Token.DOWN, null); 
-            IDENT10=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_gen492); 
-            pushFollow(FOLLOW_expr_in_gen496);
+            IDENT10=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_gen496); 
+            pushFollow(FOLLOW_expr_in_gen500);
             v=expr();
 
             state._fsp--;
@@ -976,7 +979,7 @@ public class Interpretor extends TreeParser {
                 VariableSymbol vs = new VariableSymbol((IDENT10!=null?IDENT10.getText():null), new BuiltInTypeSymbol("int"), new Value(v.dref(new Value(index)).getInt()));
                 currentscope.define(vs);
               
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:146:3: (d= expr )+
+            // /cshome/bilec/git/vcalc/Interpretor.g:145:3: (d= expr )+
             int cnt6=0;
             loop6:
             do {
@@ -990,10 +993,10 @@ public class Interpretor extends TreeParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:146:4: d= expr
+            	    // /cshome/bilec/git/vcalc/Interpretor.g:145:4: d= expr
             	    {
             	    int mark = input.mark();
-            	    pushFollow(FOLLOW_expr_in_gen508);
+            	    pushFollow(FOLLOW_expr_in_gen512);
             	    d=expr();
 
             	    state._fsp--;
@@ -1040,7 +1043,7 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "filter"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:159:1: filter returns [Value value] : ^( 'filter' IDENT v= expr (d= expr )+ ) ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:158:1: filter returns [Value value] : ^( 'filter' IDENT v= expr (d= expr )+ ) ;
     public final Value filter() throws RecognitionException {
         Value value = null;
 
@@ -1057,14 +1060,14 @@ public class Interpretor extends TreeParser {
           currentscope = new NestedScope("filscope", currentscope); 
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:166:3: ( ^( 'filter' IDENT v= expr (d= expr )+ ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:166:5: ^( 'filter' IDENT v= expr (d= expr )+ )
+            // /cshome/bilec/git/vcalc/Interpretor.g:165:3: ( ^( 'filter' IDENT v= expr (d= expr )+ ) )
+            // /cshome/bilec/git/vcalc/Interpretor.g:165:5: ^( 'filter' IDENT v= expr (d= expr )+ )
             {
-            match(input,26,FOLLOW_26_in_filter544); 
+            match(input,26,FOLLOW_26_in_filter548); 
 
             match(input, Token.DOWN, null); 
-            IDENT11=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_filter546); 
-            pushFollow(FOLLOW_expr_in_filter550);
+            IDENT11=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_filter550); 
+            pushFollow(FOLLOW_expr_in_filter554);
             v=expr();
 
             state._fsp--;
@@ -1074,7 +1077,7 @@ public class Interpretor extends TreeParser {
                 VariableSymbol vs = new VariableSymbol((IDENT11!=null?IDENT11.getText():null), new BuiltInTypeSymbol("int"), new Value(v.dref(new Value(index)).getInt()));
                 currentscope.define(vs);
               
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:171:3: (d= expr )+
+            // /cshome/bilec/git/vcalc/Interpretor.g:170:3: (d= expr )+
             int cnt7=0;
             loop7:
             do {
@@ -1088,10 +1091,11 @@ public class Interpretor extends TreeParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:171:4: d= expr
+            	    // /cshome/bilec/git/vcalc/Interpretor.g:170:4: d= expr
             	    {
             	    int mark = input.mark();
-            	    pushFollow(FOLLOW_expr_in_filter563);
+            	    int line = input.getTokenStream().get(input.index()).getLine(); int chline = input.getTokenStream().get(input.index()).getCharPositionInLine();
+            	    pushFollow(FOLLOW_expr_in_filter569);
             	    d=expr();
 
             	    state._fsp--;
@@ -1099,7 +1103,7 @@ public class Interpretor extends TreeParser {
 
             	      int cond = d.getInt().intValue();
             	      if (cond != 1 && cond != 0) {
-            	        System.err.println("Conditional statements require a value of 1 or 0, got: " + cond);
+            	        System.err.println("Runtime Error: Line<" + line + ":" + chline + ">" + "Conditional statements require a value of 1 or 0, got: " + cond);
             	        System.exit(-1);
             	      }
             	      if (cond == 1)
@@ -1144,17 +1148,17 @@ public class Interpretor extends TreeParser {
 
 
     // $ANTLR start "type"
-    // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:190:1: type returns [Type tsym] : IDENT ;
+    // /cshome/bilec/git/vcalc/Interpretor.g:189:1: type returns [Type tsym] : IDENT ;
     public final Type type() throws RecognitionException {
         Type tsym = null;
 
         CommonTree IDENT12=null;
 
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:191:3: ( IDENT )
-            // /home/linux-vm/workspace_indigo/git/vcalc/Interpretor.g:191:5: IDENT
+            // /cshome/bilec/git/vcalc/Interpretor.g:190:3: ( IDENT )
+            // /cshome/bilec/git/vcalc/Interpretor.g:190:5: IDENT
             {
-            IDENT12=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_type590); 
+            IDENT12=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_type596); 
 
                 tsym = (Type) symtab.resolveType((IDENT12!=null?IDENT12.getText():null));
               
@@ -1191,57 +1195,57 @@ public class Interpretor extends TreeParser {
     public static final BitSet FOLLOW_printStatement_in_statement136 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_assignment_in_statement142 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_ifStatement161 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_ifStatement163 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_cstat_in_ifStatement173 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_23_in_loopStatement194 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_loopStatement196 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_cstat_in_loopStatement202 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_CSTAT_in_cstat218 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_statement_in_cstat220 = new BitSet(new long[]{0x0000000002C00408L});
-    public static final BitSet FOLLOW_25_in_printStatement235 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_printStatement237 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_31_in_expr257 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr261 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr265 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_32_in_expr275 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr279 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr283 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_33_in_expr293 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr297 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr301 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_34_in_expr311 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr315 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr319 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_27_in_expr329 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr333 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr337 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_28_in_expr347 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr351 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr355 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_30_in_expr365 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr369 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr373 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_29_in_expr383 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr387 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr391 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_DREF_in_expr401 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr405 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr409 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_37_in_expr419 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr423 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_expr427 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_gen_in_expr436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_filter_in_expr444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_expr452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INTEGER_in_expr460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_GEN_in_gen487 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_gen492 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_gen496 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_gen508 = new BitSet(new long[]{0x00000027FC008388L});
-    public static final BitSet FOLLOW_26_in_filter544 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_IDENT_in_filter546 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_filter550 = new BitSet(new long[]{0x00000027FC008380L});
-    public static final BitSet FOLLOW_expr_in_filter563 = new BitSet(new long[]{0x00000027FC008388L});
-    public static final BitSet FOLLOW_IDENT_in_type590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_expr_in_ifStatement165 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_cstat_in_ifStatement175 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_23_in_loopStatement196 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_loopStatement200 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_cstat_in_loopStatement206 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_CSTAT_in_cstat222 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_statement_in_cstat224 = new BitSet(new long[]{0x0000000002C00408L});
+    public static final BitSet FOLLOW_25_in_printStatement239 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_printStatement241 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_31_in_expr261 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr265 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr269 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_32_in_expr279 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr283 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr287 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_33_in_expr297 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr301 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr305 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_34_in_expr315 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr319 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr323 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_27_in_expr333 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr337 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr341 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_28_in_expr351 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr355 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr359 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_30_in_expr369 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr373 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr377 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_29_in_expr387 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr391 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr395 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_DREF_in_expr405 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr409 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr413 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_37_in_expr423 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr427 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_expr431 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_gen_in_expr440 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_filter_in_expr448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_expr456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INTEGER_in_expr464 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_GEN_in_gen491 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_gen496 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_gen500 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_gen512 = new BitSet(new long[]{0x00000027FC008388L});
+    public static final BitSet FOLLOW_26_in_filter548 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_IDENT_in_filter550 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_filter554 = new BitSet(new long[]{0x00000027FC008380L});
+    public static final BitSet FOLLOW_expr_in_filter569 = new BitSet(new long[]{0x00000027FC008388L});
+    public static final BitSet FOLLOW_IDENT_in_type596 = new BitSet(new long[]{0x0000000000000002L});
 
 }

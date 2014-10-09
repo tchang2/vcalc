@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g 2014-10-06 17:56:44
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /cshome/bilec/git/vcalc/VcalcLP.g 2014-10-08 18:28:20
 
   import SymTab.*;
 
@@ -77,7 +77,7 @@ public class VcalcLPParser extends Parser {
     }
 
     public String[] getTokenNames() { return VcalcLPParser.tokenNames; }
-    public String getGrammarFileName() { return "/home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g"; }
+    public String getGrammarFileName() { return "/cshome/bilec/git/vcalc/VcalcLP.g"; }
 
 
       SymbolTable symtab;
@@ -89,7 +89,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "program"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:28:1: program[SymbolTable symtab] : ( declaration )* ( statement )* -> ^( PROGRAM ( declaration )* ( statement )* ) ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:28:1: program[SymbolTable symtab] : ( declaration )* ( statement )* -> ^( PROGRAM ( declaration )* ( statement )* ) ;
     public final VcalcLPParser.program_return program(SymbolTable symtab) throws RecognitionException {
         VcalcLPParser.program_return retval = new VcalcLPParser.program_return();
         retval.start = input.LT(1);
@@ -106,17 +106,17 @@ public class VcalcLPParser extends Parser {
         this.symtab = symtab;
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 1) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:3: ( ( declaration )* ( statement )* -> ^( PROGRAM ( declaration )* ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:5: ( declaration )* ( statement )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:30:3: ( ( declaration )* ( statement )* -> ^( PROGRAM ( declaration )* ( statement )* ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:30:5: ( declaration )* ( statement )*
             {
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:5: ( declaration )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:30:5: ( declaration )*
             loop1:
             do {
                 int alt1=2;
                 alt1 = dfa1.predict(input);
                 switch (alt1) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:0:0: declaration
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:0:0: declaration
             	    {
             	    pushFollow(FOLLOW_declaration_in_program104);
             	    declaration1=declaration();
@@ -133,7 +133,7 @@ public class VcalcLPParser extends Parser {
                 }
             } while (true);
 
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:18: ( statement )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:30:18: ( statement )*
             loop2:
             do {
                 int alt2=2;
@@ -146,7 +146,7 @@ public class VcalcLPParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:0:0: statement
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:0:0: statement
             	    {
             	    pushFollow(FOLLOW_statement_in_program107);
             	    statement2=statement();
@@ -179,18 +179,18 @@ public class VcalcLPParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 30:29: -> ^( PROGRAM ( declaration )* ( statement )* )
             {
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:32: ^( PROGRAM ( declaration )* ( statement )* )
+                // /cshome/bilec/git/vcalc/VcalcLP.g:30:32: ^( PROGRAM ( declaration )* ( statement )* )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(PROGRAM, "PROGRAM"), root_1);
 
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:42: ( declaration )*
+                // /cshome/bilec/git/vcalc/VcalcLP.g:30:42: ( declaration )*
                 while ( stream_declaration.hasNext() ) {
                     adaptor.addChild(root_1, stream_declaration.nextTree());
 
                 }
                 stream_declaration.reset();
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:55: ( statement )*
+                // /cshome/bilec/git/vcalc/VcalcLP.g:30:55: ( statement )*
                 while ( stream_statement.hasNext() ) {
                     adaptor.addChild(root_1, stream_statement.nextTree());
 
@@ -232,7 +232,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "declaration"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:33:1: declaration : type assignment -> ^( DECL type assignment ) ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:33:1: declaration : type assignment -> ^( DECL type assignment ) ;
     public final VcalcLPParser.declaration_return declaration() throws RecognitionException {
         VcalcLPParser.declaration_return retval = new VcalcLPParser.declaration_return();
         retval.start = input.LT(1);
@@ -248,8 +248,8 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_type=new RewriteRuleSubtreeStream(adaptor,"rule type");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:35:3: ( type assignment -> ^( DECL type assignment ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:35:5: type assignment
+            // /cshome/bilec/git/vcalc/VcalcLP.g:35:3: ( type assignment -> ^( DECL type assignment ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:35:5: type assignment
             {
             pushFollow(FOLLOW_type_in_declaration134);
             type3=type();
@@ -279,7 +279,7 @@ public class VcalcLPParser extends Parser {
             root_0 = (Object)adaptor.nil();
             // 35:21: -> ^( DECL type assignment )
             {
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:35:24: ^( DECL type assignment )
+                // /cshome/bilec/git/vcalc/VcalcLP.g:35:24: ^( DECL type assignment )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DECL, "DECL"), root_1);
@@ -322,7 +322,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "assignment"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:37:1: assignment : ( IDENT EQUAL expr SC -> ^( EQUAL IDENT expr ) | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' );
+    // /cshome/bilec/git/vcalc/VcalcLP.g:37:1: assignment : ( IDENT EQUAL expr SC -> ^( EQUAL IDENT expr ) | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' );
     public final VcalcLPParser.assignment_return assignment() throws RecognitionException {
         VcalcLPParser.assignment_return retval = new VcalcLPParser.assignment_return();
         retval.start = input.LT(1);
@@ -358,7 +358,7 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:38:3: ( IDENT EQUAL expr SC -> ^( EQUAL IDENT expr ) | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:38:3: ( IDENT EQUAL expr SC -> ^( EQUAL IDENT expr ) | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' )
             int alt3=8;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -411,7 +411,7 @@ public class VcalcLPParser extends Parser {
 
             switch (alt3) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:38:5: IDENT EQUAL expr SC
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:38:5: IDENT EQUAL expr SC
                     {
                     IDENT5=(Token)match(input,IDENT,FOLLOW_IDENT_in_assignment161); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IDENT.add(IDENT5);
@@ -419,7 +419,7 @@ public class VcalcLPParser extends Parser {
                     if ( state.backtracking==0 ) {
 
                           if ((IDENT5!=null?IDENT5.getText():null).equals("int") || (IDENT5!=null?IDENT5.getText():null).equals("vector")) {
-                            System.err.println("'" + (IDENT5!=null?IDENT5.getText():null) + "' is not a valid name");
+                            System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'" + (IDENT5!=null?IDENT5.getText():null) + "' is not a valid name");
                             System.exit(-1);
                           }
                         
@@ -452,7 +452,7 @@ public class VcalcLPParser extends Parser {
                     root_0 = (Object)adaptor.nil();
                     // 43:19: -> ^( EQUAL IDENT expr )
                     {
-                        // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:43:22: ^( EQUAL IDENT expr )
+                        // /cshome/bilec/git/vcalc/VcalcLP.g:43:22: ^( EQUAL IDENT expr )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_EQUAL.nextNode(), root_1);
@@ -469,7 +469,7 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:44:5: 'fi'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:44:5: 'fi'
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -479,13 +479,13 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, string_literal9_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'fi' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'fi' is not a valid name"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:45:5: IN
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:45:5: IN
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -495,13 +495,13 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, IN10_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'in' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'in' is not a valid name"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:46:5: 'if'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:46:5: 'if'
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -511,13 +511,13 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, string_literal11_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'if' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'if' is not a valid name"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 5 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:47:5: 'loop'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:47:5: 'loop'
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -527,13 +527,13 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, string_literal12_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'loop' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'loop' is not a valid name"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 6 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:48:5: 'pool'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:48:5: 'pool'
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -543,13 +543,13 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, string_literal13_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'pool' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'pool' is not a valid name"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 7 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:49:5: 'print'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:49:5: 'print'
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -559,13 +559,13 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, string_literal14_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'print' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'print' is not a valid name"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 8 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:50:5: 'filter'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:50:5: 'filter'
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -575,7 +575,7 @@ public class VcalcLPParser extends Parser {
                     adaptor.addChild(root_0, string_literal15_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'filter' is not a valid name"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'filter' is not a valid name"); System.exit(-1);
                     }
 
                     }
@@ -609,7 +609,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "statement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:53:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
+    // /cshome/bilec/git/vcalc/VcalcLP.g:53:1: statement : ( ifStatement | loopStatement | printStatement | assignment );
     public final VcalcLPParser.statement_return statement() throws RecognitionException {
         VcalcLPParser.statement_return retval = new VcalcLPParser.statement_return();
         retval.start = input.LT(1);
@@ -628,7 +628,7 @@ public class VcalcLPParser extends Parser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:55:3: ( ifStatement | loopStatement | printStatement | assignment )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:54:3: ( ifStatement | loopStatement | printStatement | assignment )
             int alt4=4;
             switch ( input.LA(1) ) {
             case 22:
@@ -707,11 +707,11 @@ public class VcalcLPParser extends Parser {
 
             switch (alt4) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:55:5: ifStatement
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:54:5: ifStatement
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_ifStatement_in_statement252);
+                    pushFollow(FOLLOW_ifStatement_in_statement251);
                     ifStatement16=ifStatement();
 
                     state._fsp--;
@@ -721,11 +721,11 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:56:5: loopStatement
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:55:5: loopStatement
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_loopStatement_in_statement258);
+                    pushFollow(FOLLOW_loopStatement_in_statement257);
                     loopStatement17=loopStatement();
 
                     state._fsp--;
@@ -735,11 +735,11 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:57:5: printStatement
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:56:5: printStatement
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_printStatement_in_statement264);
+                    pushFollow(FOLLOW_printStatement_in_statement263);
                     printStatement18=printStatement();
 
                     state._fsp--;
@@ -749,11 +749,11 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:58:5: assignment
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:57:5: assignment
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_assignment_in_statement270);
+                    pushFollow(FOLLOW_assignment_in_statement269);
                     assignment19=assignment();
 
                     state._fsp--;
@@ -791,7 +791,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "ifStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:60:1: ifStatement : 'if' LP expr RP cstat 'fi' SC -> ^( 'if' expr cstat ) ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:59:1: ifStatement : 'if' LP expr RP cstat 'fi' SC -> ^( 'if' expr cstat ) ;
     public final VcalcLPParser.ifStatement_return ifStatement() throws RecognitionException {
         VcalcLPParser.ifStatement_return retval = new VcalcLPParser.ifStatement_return();
         retval.start = input.LT(1);
@@ -822,40 +822,40 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_cstat=new RewriteRuleSubtreeStream(adaptor,"rule cstat");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:61:3: ( 'if' LP expr RP cstat 'fi' SC -> ^( 'if' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:61:5: 'if' LP expr RP cstat 'fi' SC
+            // /cshome/bilec/git/vcalc/VcalcLP.g:60:3: ( 'if' LP expr RP cstat 'fi' SC -> ^( 'if' expr cstat ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:60:5: 'if' LP expr RP cstat 'fi' SC
             {
-            string_literal20=(Token)match(input,22,FOLLOW_22_in_ifStatement283); if (state.failed) return retval; 
+            string_literal20=(Token)match(input,22,FOLLOW_22_in_ifStatement282); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_22.add(string_literal20);
 
-            LP21=(Token)match(input,LP,FOLLOW_LP_in_ifStatement285); if (state.failed) return retval; 
+            LP21=(Token)match(input,LP,FOLLOW_LP_in_ifStatement284); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LP.add(LP21);
 
-            pushFollow(FOLLOW_expr_in_ifStatement287);
+            pushFollow(FOLLOW_expr_in_ifStatement286);
             expr22=expr();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_expr.add(expr22.getTree());
-            RP23=(Token)match(input,RP,FOLLOW_RP_in_ifStatement289); if (state.failed) return retval; 
+            RP23=(Token)match(input,RP,FOLLOW_RP_in_ifStatement288); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_RP.add(RP23);
 
-            pushFollow(FOLLOW_cstat_in_ifStatement291);
+            pushFollow(FOLLOW_cstat_in_ifStatement290);
             cstat24=cstat();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_cstat.add(cstat24.getTree());
-            string_literal25=(Token)match(input,21,FOLLOW_21_in_ifStatement293); if (state.failed) return retval; 
+            string_literal25=(Token)match(input,21,FOLLOW_21_in_ifStatement292); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_21.add(string_literal25);
 
-            SC26=(Token)match(input,SC,FOLLOW_SC_in_ifStatement295); if (state.failed) return retval; 
+            SC26=(Token)match(input,SC,FOLLOW_SC_in_ifStatement294); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_SC.add(SC26);
 
 
 
             // AST REWRITE
-            // elements: 22, expr, cstat
+            // elements: expr, 22, cstat
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -866,9 +866,9 @@ public class VcalcLPParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 61:35: -> ^( 'if' expr cstat )
+            // 60:35: -> ^( 'if' expr cstat )
             {
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:61:38: ^( 'if' expr cstat )
+                // /cshome/bilec/git/vcalc/VcalcLP.g:60:38: ^( 'if' expr cstat )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(stream_22.nextNode(), root_1);
@@ -894,7 +894,7 @@ public class VcalcLPParser extends Parser {
         }
         catch (RecognitionException re) {
 
-                System.err.println("Syntax error on if statement");
+                System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "Syntax error on if statement");
                 System.exit(-1);
               
         }
@@ -911,7 +911,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "loopStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:67:1: loopStatement : 'loop' LP expr RP cstat 'pool' SC -> ^( 'loop' expr cstat ) ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:66:1: loopStatement : 'loop' LP expr RP cstat 'pool' SC -> ^( 'loop' expr cstat ) ;
     public final VcalcLPParser.loopStatement_return loopStatement() throws RecognitionException {
         VcalcLPParser.loopStatement_return retval = new VcalcLPParser.loopStatement_return();
         retval.start = input.LT(1);
@@ -942,40 +942,40 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_cstat=new RewriteRuleSubtreeStream(adaptor,"rule cstat");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:68:3: ( 'loop' LP expr RP cstat 'pool' SC -> ^( 'loop' expr cstat ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:68:5: 'loop' LP expr RP cstat 'pool' SC
+            // /cshome/bilec/git/vcalc/VcalcLP.g:67:3: ( 'loop' LP expr RP cstat 'pool' SC -> ^( 'loop' expr cstat ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:67:5: 'loop' LP expr RP cstat 'pool' SC
             {
-            string_literal27=(Token)match(input,23,FOLLOW_23_in_loopStatement325); if (state.failed) return retval; 
+            string_literal27=(Token)match(input,23,FOLLOW_23_in_loopStatement324); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_23.add(string_literal27);
 
-            LP28=(Token)match(input,LP,FOLLOW_LP_in_loopStatement327); if (state.failed) return retval; 
+            LP28=(Token)match(input,LP,FOLLOW_LP_in_loopStatement326); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LP.add(LP28);
 
-            pushFollow(FOLLOW_expr_in_loopStatement329);
+            pushFollow(FOLLOW_expr_in_loopStatement328);
             expr29=expr();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_expr.add(expr29.getTree());
-            RP30=(Token)match(input,RP,FOLLOW_RP_in_loopStatement331); if (state.failed) return retval; 
+            RP30=(Token)match(input,RP,FOLLOW_RP_in_loopStatement330); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_RP.add(RP30);
 
-            pushFollow(FOLLOW_cstat_in_loopStatement333);
+            pushFollow(FOLLOW_cstat_in_loopStatement332);
             cstat31=cstat();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_cstat.add(cstat31.getTree());
-            string_literal32=(Token)match(input,24,FOLLOW_24_in_loopStatement335); if (state.failed) return retval; 
+            string_literal32=(Token)match(input,24,FOLLOW_24_in_loopStatement334); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_24.add(string_literal32);
 
-            SC33=(Token)match(input,SC,FOLLOW_SC_in_loopStatement337); if (state.failed) return retval; 
+            SC33=(Token)match(input,SC,FOLLOW_SC_in_loopStatement336); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_SC.add(SC33);
 
 
 
             // AST REWRITE
-            // elements: expr, 23, cstat
+            // elements: 23, cstat, expr
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -986,9 +986,9 @@ public class VcalcLPParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 68:39: -> ^( 'loop' expr cstat )
+            // 67:39: -> ^( 'loop' expr cstat )
             {
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:68:42: ^( 'loop' expr cstat )
+                // /cshome/bilec/git/vcalc/VcalcLP.g:67:42: ^( 'loop' expr cstat )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(stream_23.nextNode(), root_1);
@@ -1014,7 +1014,7 @@ public class VcalcLPParser extends Parser {
         }
         catch (RecognitionException re) {
 
-                System.err.println("Syntax error on loop statement");
+                System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "Syntax error on loop statement");
                 System.exit(-1);
               
         }
@@ -1031,7 +1031,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "cstat"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:74:1: cstat : ( statement )* -> ^( CSTAT ( statement )* ) ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:73:1: cstat : ( statement )* -> ^( CSTAT ( statement )* ) ;
     public final VcalcLPParser.cstat_return cstat() throws RecognitionException {
         VcalcLPParser.cstat_return retval = new VcalcLPParser.cstat_return();
         retval.start = input.LT(1);
@@ -1044,10 +1044,10 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_statement=new RewriteRuleSubtreeStream(adaptor,"rule statement");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:75:3: ( ( statement )* -> ^( CSTAT ( statement )* ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:75:5: ( statement )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:74:3: ( ( statement )* -> ^( CSTAT ( statement )* ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:74:5: ( statement )*
             {
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:75:5: ( statement )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:74:5: ( statement )*
             loop5:
             do {
                 int alt5=2;
@@ -1089,9 +1089,9 @@ public class VcalcLPParser extends Parser {
 
                 switch (alt5) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:0:0: statement
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:0:0: statement
             	    {
-            	    pushFollow(FOLLOW_statement_in_cstat367);
+            	    pushFollow(FOLLOW_statement_in_cstat366);
             	    statement34=statement();
 
             	    state._fsp--;
@@ -1120,14 +1120,14 @@ public class VcalcLPParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 75:16: -> ^( CSTAT ( statement )* )
+            // 74:16: -> ^( CSTAT ( statement )* )
             {
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:75:19: ^( CSTAT ( statement )* )
+                // /cshome/bilec/git/vcalc/VcalcLP.g:74:19: ^( CSTAT ( statement )* )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(CSTAT, "CSTAT"), root_1);
 
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:75:27: ( statement )*
+                // /cshome/bilec/git/vcalc/VcalcLP.g:74:27: ( statement )*
                 while ( stream_statement.hasNext() ) {
                     adaptor.addChild(root_1, stream_statement.nextTree());
 
@@ -1169,7 +1169,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "printStatement"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:77:1: printStatement : 'print' LP expr RP SC -> ^( 'print' expr ) ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:76:1: printStatement : 'print' LP expr RP SC -> ^( 'print' expr ) ;
     public final VcalcLPParser.printStatement_return printStatement() throws RecognitionException {
         VcalcLPParser.printStatement_return retval = new VcalcLPParser.printStatement_return();
         retval.start = input.LT(1);
@@ -1194,31 +1194,31 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:78:3: ( 'print' LP expr RP SC -> ^( 'print' expr ) )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:78:5: 'print' LP expr RP SC
+            // /cshome/bilec/git/vcalc/VcalcLP.g:77:3: ( 'print' LP expr RP SC -> ^( 'print' expr ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:77:5: 'print' LP expr RP SC
             {
-            string_literal35=(Token)match(input,25,FOLLOW_25_in_printStatement389); if (state.failed) return retval; 
+            string_literal35=(Token)match(input,25,FOLLOW_25_in_printStatement388); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_25.add(string_literal35);
 
-            LP36=(Token)match(input,LP,FOLLOW_LP_in_printStatement391); if (state.failed) return retval; 
+            LP36=(Token)match(input,LP,FOLLOW_LP_in_printStatement390); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_LP.add(LP36);
 
-            pushFollow(FOLLOW_expr_in_printStatement393);
+            pushFollow(FOLLOW_expr_in_printStatement392);
             expr37=expr();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) stream_expr.add(expr37.getTree());
-            RP38=(Token)match(input,RP,FOLLOW_RP_in_printStatement395); if (state.failed) return retval; 
+            RP38=(Token)match(input,RP,FOLLOW_RP_in_printStatement394); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_RP.add(RP38);
 
-            SC39=(Token)match(input,SC,FOLLOW_SC_in_printStatement397); if (state.failed) return retval; 
+            SC39=(Token)match(input,SC,FOLLOW_SC_in_printStatement396); if (state.failed) return retval; 
             if ( state.backtracking==0 ) stream_SC.add(SC39);
 
 
 
             // AST REWRITE
-            // elements: 25, expr
+            // elements: expr, 25
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -1229,9 +1229,9 @@ public class VcalcLPParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 78:27: -> ^( 'print' expr )
+            // 77:27: -> ^( 'print' expr )
             {
-                // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:78:30: ^( 'print' expr )
+                // /cshome/bilec/git/vcalc/VcalcLP.g:77:30: ^( 'print' expr )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(stream_25.nextNode(), root_1);
@@ -1256,7 +1256,7 @@ public class VcalcLPParser extends Parser {
         }
         catch (RecognitionException re) {
 
-                System.err.println("Syntax error on print statement");
+                System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "Syntax error on print statement");
                 System.exit(-1);
               
         }
@@ -1273,7 +1273,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "expr"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:84:1: expr : add ( ( '==' | '!=' | '<' | '>' ) add )* ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:83:1: expr : add ( ( '==' | '!=' | '<' | '>' ) add )* ;
     public final VcalcLPParser.expr_return expr() throws RecognitionException {
         VcalcLPParser.expr_return retval = new VcalcLPParser.expr_return();
         retval.start = input.LT(1);
@@ -1296,18 +1296,18 @@ public class VcalcLPParser extends Parser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:3: ( add ( ( '==' | '!=' | '<' | '>' ) add )* )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:5: add ( ( '==' | '!=' | '<' | '>' ) add )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:84:3: ( add ( ( '==' | '!=' | '<' | '>' ) add )* )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:84:5: add ( ( '==' | '!=' | '<' | '>' ) add )*
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_add_in_expr425);
+            pushFollow(FOLLOW_add_in_expr424);
             add40=add();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, add40.getTree());
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:9: ( ( '==' | '!=' | '<' | '>' ) add )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:84:9: ( ( '==' | '!=' | '<' | '>' ) add )*
             loop7:
             do {
                 int alt7=2;
@@ -1320,9 +1320,9 @@ public class VcalcLPParser extends Parser {
 
                 switch (alt7) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:10: ( '==' | '!=' | '<' | '>' ) add
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:84:10: ( '==' | '!=' | '<' | '>' ) add
             	    {
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:10: ( '==' | '!=' | '<' | '>' )
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:84:10: ( '==' | '!=' | '<' | '>' )
             	    int alt6=4;
             	    switch ( input.LA(1) ) {
             	    case 27:
@@ -1355,9 +1355,9 @@ public class VcalcLPParser extends Parser {
 
             	    switch (alt6) {
             	        case 1 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:11: '=='
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:84:11: '=='
             	            {
-            	            string_literal41=(Token)match(input,27,FOLLOW_27_in_expr429); if (state.failed) return retval;
+            	            string_literal41=(Token)match(input,27,FOLLOW_27_in_expr428); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            string_literal41_tree = (Object)adaptor.create(string_literal41);
             	            root_0 = (Object)adaptor.becomeRoot(string_literal41_tree, root_0);
@@ -1366,9 +1366,9 @@ public class VcalcLPParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:19: '!='
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:84:19: '!='
             	            {
-            	            string_literal42=(Token)match(input,28,FOLLOW_28_in_expr434); if (state.failed) return retval;
+            	            string_literal42=(Token)match(input,28,FOLLOW_28_in_expr433); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            string_literal42_tree = (Object)adaptor.create(string_literal42);
             	            root_0 = (Object)adaptor.becomeRoot(string_literal42_tree, root_0);
@@ -1377,9 +1377,9 @@ public class VcalcLPParser extends Parser {
             	            }
             	            break;
             	        case 3 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:27: '<'
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:84:27: '<'
             	            {
-            	            char_literal43=(Token)match(input,29,FOLLOW_29_in_expr439); if (state.failed) return retval;
+            	            char_literal43=(Token)match(input,29,FOLLOW_29_in_expr438); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            char_literal43_tree = (Object)adaptor.create(char_literal43);
             	            root_0 = (Object)adaptor.becomeRoot(char_literal43_tree, root_0);
@@ -1388,9 +1388,9 @@ public class VcalcLPParser extends Parser {
             	            }
             	            break;
             	        case 4 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:85:34: '>'
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:84:34: '>'
             	            {
-            	            char_literal44=(Token)match(input,30,FOLLOW_30_in_expr444); if (state.failed) return retval;
+            	            char_literal44=(Token)match(input,30,FOLLOW_30_in_expr443); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            char_literal44_tree = (Object)adaptor.create(char_literal44);
             	            root_0 = (Object)adaptor.becomeRoot(char_literal44_tree, root_0);
@@ -1401,7 +1401,7 @@ public class VcalcLPParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_add_in_expr448);
+            	    pushFollow(FOLLOW_add_in_expr447);
             	    add45=add();
 
             	    state._fsp--;
@@ -1446,7 +1446,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "add"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:87:1: add : mult ( ( '+' | '-' ) mult )* ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:86:1: add : mult ( ( '+' | '-' ) mult )* ;
     public final VcalcLPParser.add_return add() throws RecognitionException {
         VcalcLPParser.add_return retval = new VcalcLPParser.add_return();
         retval.start = input.LT(1);
@@ -1465,18 +1465,18 @@ public class VcalcLPParser extends Parser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:3: ( mult ( ( '+' | '-' ) mult )* )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:5: mult ( ( '+' | '-' ) mult )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:87:3: ( mult ( ( '+' | '-' ) mult )* )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:87:5: mult ( ( '+' | '-' ) mult )*
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_mult_in_add462);
+            pushFollow(FOLLOW_mult_in_add461);
             mult46=mult();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, mult46.getTree());
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:10: ( ( '+' | '-' ) mult )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:87:10: ( ( '+' | '-' ) mult )*
             loop9:
             do {
                 int alt9=2;
@@ -1489,9 +1489,9 @@ public class VcalcLPParser extends Parser {
 
                 switch (alt9) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:11: ( '+' | '-' ) mult
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:87:11: ( '+' | '-' ) mult
             	    {
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:11: ( '+' | '-' )
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:87:11: ( '+' | '-' )
             	    int alt8=2;
             	    int LA8_0 = input.LA(1);
 
@@ -1510,9 +1510,9 @@ public class VcalcLPParser extends Parser {
             	    }
             	    switch (alt8) {
             	        case 1 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:12: '+'
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:87:12: '+'
             	            {
-            	            char_literal47=(Token)match(input,31,FOLLOW_31_in_add466); if (state.failed) return retval;
+            	            char_literal47=(Token)match(input,31,FOLLOW_31_in_add465); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            char_literal47_tree = (Object)adaptor.create(char_literal47);
             	            root_0 = (Object)adaptor.becomeRoot(char_literal47_tree, root_0);
@@ -1521,9 +1521,9 @@ public class VcalcLPParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:88:19: '-'
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:87:19: '-'
             	            {
-            	            char_literal48=(Token)match(input,32,FOLLOW_32_in_add471); if (state.failed) return retval;
+            	            char_literal48=(Token)match(input,32,FOLLOW_32_in_add470); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            char_literal48_tree = (Object)adaptor.create(char_literal48);
             	            root_0 = (Object)adaptor.becomeRoot(char_literal48_tree, root_0);
@@ -1534,7 +1534,7 @@ public class VcalcLPParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_mult_in_add475);
+            	    pushFollow(FOLLOW_mult_in_add474);
             	    mult49=mult();
 
             	    state._fsp--;
@@ -1579,7 +1579,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "mult"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:90:1: mult : dref ( ( '*' | '/' ) dref )* ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:89:1: mult : dref ( ( '*' | '/' ) dref )* ;
     public final VcalcLPParser.mult_return mult() throws RecognitionException {
         VcalcLPParser.mult_return retval = new VcalcLPParser.mult_return();
         retval.start = input.LT(1);
@@ -1598,18 +1598,18 @@ public class VcalcLPParser extends Parser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:3: ( dref ( ( '*' | '/' ) dref )* )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:5: dref ( ( '*' | '/' ) dref )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:90:3: ( dref ( ( '*' | '/' ) dref )* )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:90:5: dref ( ( '*' | '/' ) dref )*
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_dref_in_mult489);
+            pushFollow(FOLLOW_dref_in_mult488);
             dref50=dref();
 
             state._fsp--;
             if (state.failed) return retval;
             if ( state.backtracking==0 ) adaptor.addChild(root_0, dref50.getTree());
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:10: ( ( '*' | '/' ) dref )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:90:10: ( ( '*' | '/' ) dref )*
             loop11:
             do {
                 int alt11=2;
@@ -1622,9 +1622,9 @@ public class VcalcLPParser extends Parser {
 
                 switch (alt11) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:11: ( '*' | '/' ) dref
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:90:11: ( '*' | '/' ) dref
             	    {
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:11: ( '*' | '/' )
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:90:11: ( '*' | '/' )
             	    int alt10=2;
             	    int LA10_0 = input.LA(1);
 
@@ -1643,9 +1643,9 @@ public class VcalcLPParser extends Parser {
             	    }
             	    switch (alt10) {
             	        case 1 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:12: '*'
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:90:12: '*'
             	            {
-            	            char_literal51=(Token)match(input,33,FOLLOW_33_in_mult493); if (state.failed) return retval;
+            	            char_literal51=(Token)match(input,33,FOLLOW_33_in_mult492); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            char_literal51_tree = (Object)adaptor.create(char_literal51);
             	            root_0 = (Object)adaptor.becomeRoot(char_literal51_tree, root_0);
@@ -1654,9 +1654,9 @@ public class VcalcLPParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:91:19: '/'
+            	            // /cshome/bilec/git/vcalc/VcalcLP.g:90:19: '/'
             	            {
-            	            char_literal52=(Token)match(input,34,FOLLOW_34_in_mult498); if (state.failed) return retval;
+            	            char_literal52=(Token)match(input,34,FOLLOW_34_in_mult497); if (state.failed) return retval;
             	            if ( state.backtracking==0 ) {
             	            char_literal52_tree = (Object)adaptor.create(char_literal52);
             	            root_0 = (Object)adaptor.becomeRoot(char_literal52_tree, root_0);
@@ -1667,7 +1667,7 @@ public class VcalcLPParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_dref_in_mult502);
+            	    pushFollow(FOLLOW_dref_in_mult501);
             	    dref53=dref();
 
             	    state._fsp--;
@@ -1712,7 +1712,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "dref"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:93:1: dref : ( vector -> vector ) ( '[' e= expr ']' -> ^( DREF $dref $e) )* ;
+    // /cshome/bilec/git/vcalc/VcalcLP.g:92:1: dref : ( vector -> vector ) ( '[' e= expr ']' -> ^( DREF $dref $e) )* ;
     public final VcalcLPParser.dref_return dref() throws RecognitionException {
         VcalcLPParser.dref_return retval = new VcalcLPParser.dref_return();
         retval.start = input.LT(1);
@@ -1734,13 +1734,13 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:3: ( ( vector -> vector ) ( '[' e= expr ']' -> ^( DREF $dref $e) )* )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:5: ( vector -> vector ) ( '[' e= expr ']' -> ^( DREF $dref $e) )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:93:3: ( ( vector -> vector ) ( '[' e= expr ']' -> ^( DREF $dref $e) )* )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:93:5: ( vector -> vector ) ( '[' e= expr ']' -> ^( DREF $dref $e) )*
             {
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:5: ( vector -> vector )
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:6: vector
+            // /cshome/bilec/git/vcalc/VcalcLP.g:93:5: ( vector -> vector )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:93:6: vector
             {
-            pushFollow(FOLLOW_vector_in_dref517);
+            pushFollow(FOLLOW_vector_in_dref516);
             vector54=vector();
 
             state._fsp--;
@@ -1760,7 +1760,7 @@ public class VcalcLPParser extends Parser {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 94:13: -> vector
+            // 93:13: -> vector
             {
                 adaptor.addChild(root_0, stream_vector.nextTree());
 
@@ -1769,7 +1769,7 @@ public class VcalcLPParser extends Parser {
             retval.tree = root_0;}
             }
 
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:24: ( '[' e= expr ']' -> ^( DREF $dref $e) )*
+            // /cshome/bilec/git/vcalc/VcalcLP.g:93:24: ( '[' e= expr ']' -> ^( DREF $dref $e) )*
             loop12:
             do {
                 int alt12=2;
@@ -1782,18 +1782,18 @@ public class VcalcLPParser extends Parser {
 
                 switch (alt12) {
             	case 1 :
-            	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:25: '[' e= expr ']'
+            	    // /cshome/bilec/git/vcalc/VcalcLP.g:93:25: '[' e= expr ']'
             	    {
-            	    char_literal55=(Token)match(input,35,FOLLOW_35_in_dref525); if (state.failed) return retval; 
+            	    char_literal55=(Token)match(input,35,FOLLOW_35_in_dref524); if (state.failed) return retval; 
             	    if ( state.backtracking==0 ) stream_35.add(char_literal55);
 
-            	    pushFollow(FOLLOW_expr_in_dref529);
+            	    pushFollow(FOLLOW_expr_in_dref528);
             	    e=expr();
 
             	    state._fsp--;
             	    if (state.failed) return retval;
             	    if ( state.backtracking==0 ) stream_expr.add(e.getTree());
-            	    char_literal56=(Token)match(input,36,FOLLOW_36_in_dref531); if (state.failed) return retval; 
+            	    char_literal56=(Token)match(input,36,FOLLOW_36_in_dref530); if (state.failed) return retval; 
             	    if ( state.backtracking==0 ) stream_36.add(char_literal56);
 
 
@@ -1811,9 +1811,9 @@ public class VcalcLPParser extends Parser {
             	    RewriteRuleSubtreeStream stream_e=new RewriteRuleSubtreeStream(adaptor,"rule e",e!=null?e.tree:null);
 
             	    root_0 = (Object)adaptor.nil();
-            	    // 94:40: -> ^( DREF $dref $e)
+            	    // 93:40: -> ^( DREF $dref $e)
             	    {
-            	        // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:94:43: ^( DREF $dref $e)
+            	        // /cshome/bilec/git/vcalc/VcalcLP.g:93:43: ^( DREF $dref $e)
             	        {
             	        Object root_1 = (Object)adaptor.nil();
             	        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DREF, "DREF"), root_1);
@@ -1865,7 +1865,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "vector"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:96:1: vector : ( term ( '..' term )* | '[' IDENT IN vector '|' expr ']' -> ^( GEN IDENT vector expr ) | 'filter' LP IDENT IN vector '|' expr RP -> ^( 'filter' IDENT vector expr ) );
+    // /cshome/bilec/git/vcalc/VcalcLP.g:95:1: vector : ( term ( '..' term )* | '[' IDENT IN vector '|' expr ']' -> ^( GEN IDENT vector expr ) | 'filter' LP IDENT IN vector '|' expr RP -> ^( 'filter' IDENT vector expr ) );
     public final VcalcLPParser.vector_return vector() throws RecognitionException {
         VcalcLPParser.vector_return retval = new VcalcLPParser.vector_return();
         retval.start = input.LT(1);
@@ -1921,7 +1921,7 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:97:3: ( term ( '..' term )* | '[' IDENT IN vector '|' expr ']' -> ^( GEN IDENT vector expr ) | 'filter' LP IDENT IN vector '|' expr RP -> ^( 'filter' IDENT vector expr ) )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:96:3: ( term ( '..' term )* | '[' IDENT IN vector '|' expr ']' -> ^( GEN IDENT vector expr ) | 'filter' LP IDENT IN vector '|' expr RP -> ^( 'filter' IDENT vector expr ) )
             int alt14=3;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -1951,17 +1951,17 @@ public class VcalcLPParser extends Parser {
 
             switch (alt14) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:97:5: term ( '..' term )*
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:96:5: term ( '..' term )*
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    pushFollow(FOLLOW_term_in_vector558);
+                    pushFollow(FOLLOW_term_in_vector557);
                     term57=term();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) adaptor.addChild(root_0, term57.getTree());
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:97:10: ( '..' term )*
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:96:10: ( '..' term )*
                     loop13:
                     do {
                         int alt13=2;
@@ -1974,14 +1974,14 @@ public class VcalcLPParser extends Parser {
 
                         switch (alt13) {
                     	case 1 :
-                    	    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:97:11: '..' term
+                    	    // /cshome/bilec/git/vcalc/VcalcLP.g:96:11: '..' term
                     	    {
-                    	    string_literal58=(Token)match(input,37,FOLLOW_37_in_vector561); if (state.failed) return retval;
+                    	    string_literal58=(Token)match(input,37,FOLLOW_37_in_vector560); if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) {
                     	    string_literal58_tree = (Object)adaptor.create(string_literal58);
                     	    root_0 = (Object)adaptor.becomeRoot(string_literal58_tree, root_0);
                     	    }
-                    	    pushFollow(FOLLOW_term_in_vector564);
+                    	    pushFollow(FOLLOW_term_in_vector563);
                     	    term59=term();
 
                     	    state._fsp--;
@@ -2000,39 +2000,39 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:98:5: '[' IDENT IN vector '|' expr ']'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:97:5: '[' IDENT IN vector '|' expr ']'
                     {
-                    char_literal60=(Token)match(input,35,FOLLOW_35_in_vector572); if (state.failed) return retval; 
+                    char_literal60=(Token)match(input,35,FOLLOW_35_in_vector571); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_35.add(char_literal60);
 
-                    IDENT61=(Token)match(input,IDENT,FOLLOW_IDENT_in_vector574); if (state.failed) return retval; 
+                    IDENT61=(Token)match(input,IDENT,FOLLOW_IDENT_in_vector573); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IDENT.add(IDENT61);
 
-                    IN62=(Token)match(input,IN,FOLLOW_IN_in_vector576); if (state.failed) return retval; 
+                    IN62=(Token)match(input,IN,FOLLOW_IN_in_vector575); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IN.add(IN62);
 
-                    pushFollow(FOLLOW_vector_in_vector578);
+                    pushFollow(FOLLOW_vector_in_vector577);
                     vector63=vector();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_vector.add(vector63.getTree());
-                    char_literal64=(Token)match(input,38,FOLLOW_38_in_vector580); if (state.failed) return retval; 
+                    char_literal64=(Token)match(input,38,FOLLOW_38_in_vector579); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_38.add(char_literal64);
 
-                    pushFollow(FOLLOW_expr_in_vector582);
+                    pushFollow(FOLLOW_expr_in_vector581);
                     expr65=expr();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_expr.add(expr65.getTree());
-                    char_literal66=(Token)match(input,36,FOLLOW_36_in_vector584); if (state.failed) return retval; 
+                    char_literal66=(Token)match(input,36,FOLLOW_36_in_vector583); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_36.add(char_literal66);
 
 
 
                     // AST REWRITE
-                    // elements: expr, IDENT, vector
+                    // elements: IDENT, expr, vector
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2043,9 +2043,9 @@ public class VcalcLPParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 98:38: -> ^( GEN IDENT vector expr )
+                    // 97:38: -> ^( GEN IDENT vector expr )
                     {
-                        // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:98:41: ^( GEN IDENT vector expr )
+                        // /cshome/bilec/git/vcalc/VcalcLP.g:97:41: ^( GEN IDENT vector expr )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(GEN, "GEN"), root_1);
@@ -2063,42 +2063,42 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:99:5: 'filter' LP IDENT IN vector '|' expr RP
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:98:5: 'filter' LP IDENT IN vector '|' expr RP
                     {
-                    string_literal67=(Token)match(input,26,FOLLOW_26_in_vector602); if (state.failed) return retval; 
+                    string_literal67=(Token)match(input,26,FOLLOW_26_in_vector601); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_26.add(string_literal67);
 
-                    LP68=(Token)match(input,LP,FOLLOW_LP_in_vector604); if (state.failed) return retval; 
+                    LP68=(Token)match(input,LP,FOLLOW_LP_in_vector603); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LP.add(LP68);
 
-                    IDENT69=(Token)match(input,IDENT,FOLLOW_IDENT_in_vector606); if (state.failed) return retval; 
+                    IDENT69=(Token)match(input,IDENT,FOLLOW_IDENT_in_vector605); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IDENT.add(IDENT69);
 
-                    IN70=(Token)match(input,IN,FOLLOW_IN_in_vector608); if (state.failed) return retval; 
+                    IN70=(Token)match(input,IN,FOLLOW_IN_in_vector607); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_IN.add(IN70);
 
-                    pushFollow(FOLLOW_vector_in_vector610);
+                    pushFollow(FOLLOW_vector_in_vector609);
                     vector71=vector();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_vector.add(vector71.getTree());
-                    char_literal72=(Token)match(input,38,FOLLOW_38_in_vector612); if (state.failed) return retval; 
+                    char_literal72=(Token)match(input,38,FOLLOW_38_in_vector611); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_38.add(char_literal72);
 
-                    pushFollow(FOLLOW_expr_in_vector614);
+                    pushFollow(FOLLOW_expr_in_vector613);
                     expr73=expr();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_expr.add(expr73.getTree());
-                    RP74=(Token)match(input,RP,FOLLOW_RP_in_vector616); if (state.failed) return retval; 
+                    RP74=(Token)match(input,RP,FOLLOW_RP_in_vector615); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_RP.add(RP74);
 
 
 
                     // AST REWRITE
-                    // elements: expr, 26, vector, IDENT
+                    // elements: 26, vector, IDENT, expr
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2109,9 +2109,9 @@ public class VcalcLPParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 99:45: -> ^( 'filter' IDENT vector expr )
+                    // 98:45: -> ^( 'filter' IDENT vector expr )
                     {
-                        // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:99:48: ^( 'filter' IDENT vector expr )
+                        // /cshome/bilec/git/vcalc/VcalcLP.g:98:48: ^( 'filter' IDENT vector expr )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_26.nextNode(), root_1);
@@ -2157,7 +2157,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "term"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:101:1: term : ( LP expr RP -> expr | IDENT | INTEGER );
+    // /cshome/bilec/git/vcalc/VcalcLP.g:100:1: term : ( LP expr RP -> expr | IDENT | INTEGER );
     public final VcalcLPParser.term_return term() throws RecognitionException {
         VcalcLPParser.term_return retval = new VcalcLPParser.term_return();
         retval.start = input.LT(1);
@@ -2180,7 +2180,7 @@ public class VcalcLPParser extends Parser {
         RewriteRuleSubtreeStream stream_expr=new RewriteRuleSubtreeStream(adaptor,"rule expr");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 14) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:102:3: ( LP expr RP -> expr | IDENT | INTEGER )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:101:3: ( LP expr RP -> expr | IDENT | INTEGER )
             int alt15=3;
             switch ( input.LA(1) ) {
             case LP:
@@ -2208,18 +2208,18 @@ public class VcalcLPParser extends Parser {
 
             switch (alt15) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:102:5: LP expr RP
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:101:5: LP expr RP
                     {
-                    LP75=(Token)match(input,LP,FOLLOW_LP_in_term641); if (state.failed) return retval; 
+                    LP75=(Token)match(input,LP,FOLLOW_LP_in_term640); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_LP.add(LP75);
 
-                    pushFollow(FOLLOW_expr_in_term643);
+                    pushFollow(FOLLOW_expr_in_term642);
                     expr76=expr();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_expr.add(expr76.getTree());
-                    RP77=(Token)match(input,RP,FOLLOW_RP_in_term645); if (state.failed) return retval; 
+                    RP77=(Token)match(input,RP,FOLLOW_RP_in_term644); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_RP.add(RP77);
 
 
@@ -2236,7 +2236,7 @@ public class VcalcLPParser extends Parser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 102:16: -> expr
+                    // 101:16: -> expr
                     {
                         adaptor.addChild(root_0, stream_expr.nextTree());
 
@@ -2246,11 +2246,11 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:103:5: IDENT
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:102:5: IDENT
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    IDENT78=(Token)match(input,IDENT,FOLLOW_IDENT_in_term655); if (state.failed) return retval;
+                    IDENT78=(Token)match(input,IDENT,FOLLOW_IDENT_in_term654); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     IDENT78_tree = (Object)adaptor.create(IDENT78);
                     adaptor.addChild(root_0, IDENT78_tree);
@@ -2259,11 +2259,11 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:104:5: INTEGER
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:103:5: INTEGER
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    INTEGER79=(Token)match(input,INTEGER,FOLLOW_INTEGER_in_term662); if (state.failed) return retval;
+                    INTEGER79=(Token)match(input,INTEGER,FOLLOW_INTEGER_in_term661); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     INTEGER79_tree = (Object)adaptor.create(INTEGER79);
                     adaptor.addChild(root_0, INTEGER79_tree);
@@ -2301,7 +2301,7 @@ public class VcalcLPParser extends Parser {
     };
 
     // $ANTLR start "type"
-    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:106:1: type returns [Type tsym] : ( IDENT | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' );
+    // /cshome/bilec/git/vcalc/VcalcLP.g:105:1: type returns [Type tsym] : ( IDENT | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' );
     public final VcalcLPParser.type_return type() throws RecognitionException {
         VcalcLPParser.type_return retval = new VcalcLPParser.type_return();
         retval.start = input.LT(1);
@@ -2328,7 +2328,7 @@ public class VcalcLPParser extends Parser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 15) ) { return retval; }
-            // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:108:3: ( IDENT | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' )
+            // /cshome/bilec/git/vcalc/VcalcLP.g:107:3: ( IDENT | 'fi' | IN | 'if' | 'loop' | 'pool' | 'print' | 'filter' )
             int alt16=8;
             switch ( input.LA(1) ) {
             case IDENT:
@@ -2381,11 +2381,11 @@ public class VcalcLPParser extends Parser {
 
             switch (alt16) {
                 case 1 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:108:5: IDENT
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:107:5: IDENT
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    IDENT80=(Token)match(input,IDENT,FOLLOW_IDENT_in_type679); if (state.failed) return retval;
+                    IDENT80=(Token)match(input,IDENT,FOLLOW_IDENT_in_type678); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     IDENT80_tree = (Object)adaptor.create(IDENT80);
                     adaptor.addChild(root_0, IDENT80_tree);
@@ -2395,7 +2395,7 @@ public class VcalcLPParser extends Parser {
                           retval.tsym = (Type) symtab.resolveType((IDENT80!=null?IDENT80.getText():null));
                           //System.out.println(tsym.getName());
                           if (retval.tsym == null) {
-                            System.err.println("'" + (IDENT80!=null?IDENT80.getText():null) + "' is not a valid type");
+                            System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'" + (IDENT80!=null?IDENT80.getText():null) + "' is not a valid type");
                             System.exit(-1);
                           }
                         
@@ -2404,113 +2404,113 @@ public class VcalcLPParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:116:5: 'fi'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:115:5: 'fi'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    string_literal81=(Token)match(input,21,FOLLOW_21_in_type687); if (state.failed) return retval;
+                    string_literal81=(Token)match(input,21,FOLLOW_21_in_type686); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     string_literal81_tree = (Object)adaptor.create(string_literal81);
                     adaptor.addChild(root_0, string_literal81_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'fi' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'fi' is not a valid type"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 3 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:117:5: IN
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:116:5: IN
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    IN82=(Token)match(input,IN,FOLLOW_IN_in_type695); if (state.failed) return retval;
+                    IN82=(Token)match(input,IN,FOLLOW_IN_in_type694); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     IN82_tree = (Object)adaptor.create(IN82);
                     adaptor.addChild(root_0, IN82_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'in' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'in' is not a valid type"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 4 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:118:5: 'if'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:117:5: 'if'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    string_literal83=(Token)match(input,22,FOLLOW_22_in_type703); if (state.failed) return retval;
+                    string_literal83=(Token)match(input,22,FOLLOW_22_in_type702); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     string_literal83_tree = (Object)adaptor.create(string_literal83);
                     adaptor.addChild(root_0, string_literal83_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'if' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'if' is not a valid type"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 5 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:119:5: 'loop'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:118:5: 'loop'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    string_literal84=(Token)match(input,23,FOLLOW_23_in_type711); if (state.failed) return retval;
+                    string_literal84=(Token)match(input,23,FOLLOW_23_in_type710); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     string_literal84_tree = (Object)adaptor.create(string_literal84);
                     adaptor.addChild(root_0, string_literal84_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'loop' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'loop' is not a valid type"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 6 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:120:5: 'pool'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:119:5: 'pool'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    string_literal85=(Token)match(input,24,FOLLOW_24_in_type719); if (state.failed) return retval;
+                    string_literal85=(Token)match(input,24,FOLLOW_24_in_type718); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     string_literal85_tree = (Object)adaptor.create(string_literal85);
                     adaptor.addChild(root_0, string_literal85_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'pool' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'pool' is not a valid type"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 7 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:121:5: 'print'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:120:5: 'print'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    string_literal86=(Token)match(input,25,FOLLOW_25_in_type727); if (state.failed) return retval;
+                    string_literal86=(Token)match(input,25,FOLLOW_25_in_type726); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     string_literal86_tree = (Object)adaptor.create(string_literal86);
                     adaptor.addChild(root_0, string_literal86_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'print' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'print' is not a valid type"); System.exit(-1);
                     }
 
                     }
                     break;
                 case 8 :
-                    // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:122:5: 'filter'
+                    // /cshome/bilec/git/vcalc/VcalcLP.g:121:5: 'filter'
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    string_literal87=(Token)match(input,26,FOLLOW_26_in_type735); if (state.failed) return retval;
+                    string_literal87=(Token)match(input,26,FOLLOW_26_in_type734); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     string_literal87_tree = (Object)adaptor.create(string_literal87);
                     adaptor.addChild(root_0, string_literal87_tree);
                     }
                     if ( state.backtracking==0 ) {
-                      System.err.println("'filter' is not a valid type"); System.exit(-1);
+                      System.err.println("Sanity Error: Line<" + input.get(input.index()).getLine() + ":" + input.get(input.index()).getCharPositionInLine() + ">" + "'filter' is not a valid type"); System.exit(-1);
                     }
 
                     }
@@ -2540,8 +2540,8 @@ public class VcalcLPParser extends Parser {
 
     // $ANTLR start synpred1_VcalcLP
     public final void synpred1_VcalcLP_fragment() throws RecognitionException {   
-        // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:5: ( declaration )
-        // /home/linux-vm/workspace_indigo/git/vcalc/VcalcLP.g:30:5: declaration
+        // /cshome/bilec/git/vcalc/VcalcLP.g:30:5: ( declaration )
+        // /cshome/bilec/git/vcalc/VcalcLP.g:30:5: declaration
         {
         pushFollow(FOLLOW_declaration_in_synpred1_VcalcLP104);
         declaration();
@@ -2779,79 +2779,79 @@ public class VcalcLPParser extends Parser {
     public static final BitSet FOLLOW_24_in_assignment217 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_25_in_assignment225 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_26_in_assignment233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ifStatement_in_statement252 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_loopStatement_in_statement258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_printStatement_in_statement264 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_assignment_in_statement270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ifStatement283 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_LP_in_ifStatement285 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_ifStatement287 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_RP_in_ifStatement289 = new BitSet(new long[]{0x0000000007E01200L});
-    public static final BitSet FOLLOW_cstat_in_ifStatement291 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ifStatement293 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_SC_in_ifStatement295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_loopStatement325 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_LP_in_loopStatement327 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_loopStatement329 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_RP_in_loopStatement331 = new BitSet(new long[]{0x0000000007E01200L});
-    public static final BitSet FOLLOW_cstat_in_loopStatement333 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_loopStatement335 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_SC_in_loopStatement337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_statement_in_cstat367 = new BitSet(new long[]{0x0000000007E01202L});
-    public static final BitSet FOLLOW_25_in_printStatement389 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_LP_in_printStatement391 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_printStatement393 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_RP_in_printStatement395 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_SC_in_printStatement397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_add_in_expr425 = new BitSet(new long[]{0x0000000078000002L});
-    public static final BitSet FOLLOW_27_in_expr429 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_28_in_expr434 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_29_in_expr439 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_30_in_expr444 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_add_in_expr448 = new BitSet(new long[]{0x0000000078000002L});
-    public static final BitSet FOLLOW_mult_in_add462 = new BitSet(new long[]{0x0000000180000002L});
-    public static final BitSet FOLLOW_31_in_add466 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_32_in_add471 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_mult_in_add475 = new BitSet(new long[]{0x0000000180000002L});
-    public static final BitSet FOLLOW_dref_in_mult489 = new BitSet(new long[]{0x0000000600000002L});
-    public static final BitSet FOLLOW_33_in_mult493 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_34_in_mult498 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_dref_in_mult502 = new BitSet(new long[]{0x0000000600000002L});
-    public static final BitSet FOLLOW_vector_in_dref517 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_35_in_dref525 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_dref529 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_dref531 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_term_in_vector558 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_37_in_vector561 = new BitSet(new long[]{0x000000000000A200L});
-    public static final BitSet FOLLOW_term_in_vector564 = new BitSet(new long[]{0x0000002000000002L});
-    public static final BitSet FOLLOW_35_in_vector572 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_IDENT_in_vector574 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_IN_in_vector576 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_vector_in_vector578 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_vector580 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_vector582 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_vector584 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_vector602 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_LP_in_vector604 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_IDENT_in_vector606 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_IN_in_vector608 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_vector_in_vector610 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_vector612 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_vector614 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_RP_in_vector616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LP_in_term641 = new BitSet(new long[]{0x000000080400A200L});
-    public static final BitSet FOLLOW_expr_in_term643 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_RP_in_term645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_term655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_INTEGER_in_term662 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IDENT_in_type679 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_type687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_IN_in_type695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_type703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_type711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_type719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_type727 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_type735 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ifStatement_in_statement251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_loopStatement_in_statement257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_printStatement_in_statement263 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_assignment_in_statement269 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ifStatement282 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_LP_in_ifStatement284 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_ifStatement286 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_RP_in_ifStatement288 = new BitSet(new long[]{0x0000000007E01200L});
+    public static final BitSet FOLLOW_cstat_in_ifStatement290 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ifStatement292 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_SC_in_ifStatement294 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_loopStatement324 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_LP_in_loopStatement326 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_loopStatement328 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_RP_in_loopStatement330 = new BitSet(new long[]{0x0000000007E01200L});
+    public static final BitSet FOLLOW_cstat_in_loopStatement332 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_loopStatement334 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_SC_in_loopStatement336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_statement_in_cstat366 = new BitSet(new long[]{0x0000000007E01202L});
+    public static final BitSet FOLLOW_25_in_printStatement388 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_LP_in_printStatement390 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_printStatement392 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_RP_in_printStatement394 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_SC_in_printStatement396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_add_in_expr424 = new BitSet(new long[]{0x0000000078000002L});
+    public static final BitSet FOLLOW_27_in_expr428 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_28_in_expr433 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_29_in_expr438 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_30_in_expr443 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_add_in_expr447 = new BitSet(new long[]{0x0000000078000002L});
+    public static final BitSet FOLLOW_mult_in_add461 = new BitSet(new long[]{0x0000000180000002L});
+    public static final BitSet FOLLOW_31_in_add465 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_32_in_add470 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_mult_in_add474 = new BitSet(new long[]{0x0000000180000002L});
+    public static final BitSet FOLLOW_dref_in_mult488 = new BitSet(new long[]{0x0000000600000002L});
+    public static final BitSet FOLLOW_33_in_mult492 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_34_in_mult497 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_dref_in_mult501 = new BitSet(new long[]{0x0000000600000002L});
+    public static final BitSet FOLLOW_vector_in_dref516 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_35_in_dref524 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_dref528 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_dref530 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_term_in_vector557 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_37_in_vector560 = new BitSet(new long[]{0x000000000000A200L});
+    public static final BitSet FOLLOW_term_in_vector563 = new BitSet(new long[]{0x0000002000000002L});
+    public static final BitSet FOLLOW_35_in_vector571 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_IDENT_in_vector573 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_IN_in_vector575 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_vector_in_vector577 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_vector579 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_vector581 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_vector583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_vector601 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_LP_in_vector603 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_IDENT_in_vector605 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_IN_in_vector607 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_vector_in_vector609 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_vector611 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_vector613 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_RP_in_vector615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LP_in_term640 = new BitSet(new long[]{0x000000080400A200L});
+    public static final BitSet FOLLOW_expr_in_term642 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_RP_in_term644 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_term654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_INTEGER_in_term661 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IDENT_in_type678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_type686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_IN_in_type694 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_type702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_type710 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_type718 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_type726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_type734 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_declaration_in_synpred1_VcalcLP104 = new BitSet(new long[]{0x0000000000000002L});
 
 }

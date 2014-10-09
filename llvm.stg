@@ -184,9 +184,19 @@ b<nextlabel>:
 
 >>
 
+looper(tc, op, exp, lines, label, nextlabel, exitlabel) ::= <<
 
+br label %loop<label>
+loop<label>:
+<exp>
+%t<tc> = zext i32 %<op> to i1
+br i1 %t<tc>, label %loop<nextlabel>, label %loop<exitlabel>
+loop<nextlabel>:
+<lines>
+br label %loop<label>
 
+loop<exitlabel>:
 
-
+>>
 
 

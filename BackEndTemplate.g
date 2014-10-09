@@ -39,7 +39,7 @@ storeVariable
 block
   : ^(LINE ^(PRINT x+=expr)) {tempcounter++;} -> printStatement(a={$x}, tc={tempcounter},op={opcounter})
   | ^(LINE ^(IF x+=expr y+=block*)) {countLabel = countLabel + 2; tempcounter++;} -> bne(tc={tempcounter},op={opcounter},exp={$x},lines={$y},label={countLabel-1},nextlabel={countLabel})
-  | ^(LINE ^(LOOP x+=expr y+=block*)) {countLoop++;} -> looper(exp={$x},lines={$y},label={countLoop})
+  | ^(LINE ^(LOOP x+=expr y+=block*)) {countLoop = countLoop + 3;} -> looper(tc={tempcounter},op={opcounter},exp={$x},lines={$y},label={countLoop - 2},nextlabel={countLoop -1},exitlabel={countLoop})
   | ^(LINE ^(ASSIGN '=' t=ID y+=expr)) -> storeVar(a={$y},id={$t},op={opcounter})
   ;
   
