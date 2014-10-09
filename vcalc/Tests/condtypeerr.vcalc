@@ -1,0 +1,5 @@
+vector v = 1..5;
+
+if (v)
+print(0);
+fi;
