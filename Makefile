@@ -1,11 +1,3 @@
-test:
+all:
+	antlr3 *\.g
 	javac Vcalc_Test.java
-	java Vcalc_Test testfile a >> test.s
-	cat test.s
-
-clean:
-	clear
-	rm *.class
-	rm test.s
-
-refresh: clean test

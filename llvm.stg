@@ -173,7 +173,7 @@ slt(a,b,op1,op2,tc,dest) ::= <<
 bne(tc, op, exp, lines, label, nextlabel) ::= <<
 
 <exp>
-%x<tc> = trunc i32 %<op> to i1
+%x<tc> = icmp eq i32 %<op>, 1
 br i1 %x<tc>, label %b<label>, label %b<nextlabel>
 b<label>:
 
@@ -189,8 +189,8 @@ looper(tc, op, exp, lines, label, nextlabel, exitlabel) ::= <<
 br label %loop<label>
 loop<label>:
 <exp>
-%t<tc> = trunc i32 %<op> to i1
-br i1 %t<tc>, label %loop<nextlabel>, label %loop<exitlabel>
+%x<tc> = icmp eq i32 %<op>, 1
+br i1 %x<tc>, label %loop<nextlabel>, label %loop<exitlabel>
 loop<nextlabel>:
 <lines>
 br label %loop<label>

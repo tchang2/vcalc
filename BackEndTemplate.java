@@ -1,4 +1,4 @@
-// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g 2014-10-08 20:06:35
+// $ANTLR 3.3 Nov 30, 2010 12:50:56 /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g 2014-10-08 21:08:24
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
@@ -82,7 +82,7 @@ public class BackEndTemplate extends TreeParser {
 
 
       int countLabel = 0; int countLoop = 0; int progLine = 0;
-      int opcounter = 1; int tempcounter = 0;
+      int opcounter = 1; int tempcounter = 0; int flag = 0;
 
 
     public static class walk_return extends TreeRuleReturnScope {
@@ -320,7 +320,7 @@ public class BackEndTemplate extends TreeParser {
     };
 
     // $ANTLR start "block"
-    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:39:1: block : ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=progLineop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter));
+    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:39:1: block : ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=progLineop=flagexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=progLineop=flagexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter));
     public final BackEndTemplate.block_return block() throws RecognitionException {
         BackEndTemplate.block_return retval = new BackEndTemplate.block_return();
         retval.start = input.LT(1);
@@ -331,7 +331,7 @@ public class BackEndTemplate extends TreeParser {
         RuleReturnScope x = null;
         RuleReturnScope y = null;
         try {
-            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:40:3: ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=progLineop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter))
+            // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:40:3: ( ^( LINE ^( PRINT x+= expr ) ) -> printStatement(a=$xtc=tempcounterop=opcounter) | ^( LINE ^( IF x+= expr (y+= block )* ) ) -> bne(tc=progLineop=flagexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel) | ^( LINE ^( LOOP x+= expr (y+= block )* ) ) -> looper(tc=progLineop=flagexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop) | ^( LINE ^( ASSIGN '=' t= ID y+= expr ) ) -> storeVar(a=$yid=$top=opcounter))
             int alt5=4;
             int LA5_0 = input.LA(1);
 
@@ -433,7 +433,8 @@ public class BackEndTemplate extends TreeParser {
                     if (list_x==null) list_x=new ArrayList();
                     list_x.add(x.getTemplate());
 
-                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:26: (y+= block )*
+                    flag = opcounter;
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:46: (y+= block )*
                     loop3:
                     do {
                         int alt3=2;
@@ -446,9 +447,9 @@ public class BackEndTemplate extends TreeParser {
 
                         switch (alt3) {
                     	case 1 :
-                    	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:26: y+= block
+                    	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:41:46: y+= block
                     	    {
-                    	    pushFollow(FOLLOW_block_in_block254);
+                    	    pushFollow(FOLLOW_block_in_block256);
                     	    y=block();
 
                     	    state._fsp--;
@@ -473,10 +474,10 @@ public class BackEndTemplate extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 41:80: -> bne(tc=progLineop=opcounterexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel)
+                    // 41:100: -> bne(tc=progLineop=flagexp=$xlines=$ylabel=countLabel-1nextlabel=countLabel)
                     {
                         retval.st = templateLib.getInstanceOf("bne",
-                      new STAttrMap().put("tc", progLine).put("op", opcounter).put("exp", list_x).put("lines", list_y).put("label", countLabel-1).put("nextlabel", countLabel));
+                      new STAttrMap().put("tc", progLine).put("op", flag).put("exp", list_x).put("lines", list_y).put("label", countLabel-1).put("nextlabel", countLabel));
                     }
 
 
@@ -485,13 +486,13 @@ public class BackEndTemplate extends TreeParser {
                 case 3 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:5: ^( LINE ^( LOOP x+= expr (y+= block )* ) )
                     {
-                    match(input,LINE,FOLLOW_LINE_in_block295); 
+                    match(input,LINE,FOLLOW_LINE_in_block297); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,LOOP,FOLLOW_LOOP_in_block298); 
+                    match(input,LOOP,FOLLOW_LOOP_in_block300); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_block302);
+                    pushFollow(FOLLOW_expr_in_block304);
                     x=expr();
 
                     state._fsp--;
@@ -499,7 +500,8 @@ public class BackEndTemplate extends TreeParser {
                     if (list_x==null) list_x=new ArrayList();
                     list_x.add(x.getTemplate());
 
-                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:28: (y+= block )*
+                    flag = opcounter;
+                    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:48: (y+= block )*
                     loop4:
                     do {
                         int alt4=2;
@@ -512,9 +514,9 @@ public class BackEndTemplate extends TreeParser {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:28: y+= block
+                    	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:42:48: y+= block
                     	    {
-                    	    pushFollow(FOLLOW_block_in_block306);
+                    	    pushFollow(FOLLOW_block_in_block310);
                     	    y=block();
 
                     	    state._fsp--;
@@ -535,14 +537,14 @@ public class BackEndTemplate extends TreeParser {
                     match(input, Token.UP, null); 
 
                     match(input, Token.UP, null); 
-                    countLoop = countLoop + 3; tempcounter++;
+                    countLoop = countLoop + 3; progLine++;
 
 
                     // TEMPLATE REWRITE
-                    // 42:83: -> looper(tc=tempcounterop=opcounterexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop)
+                    // 42:100: -> looper(tc=progLineop=flagexp=$xlines=$ylabel=countLoop - 2nextlabel=countLoop -1exitlabel=countLoop)
                     {
                         retval.st = templateLib.getInstanceOf("looper",
-                      new STAttrMap().put("tc", tempcounter).put("op", opcounter).put("exp", list_x).put("lines", list_y).put("label", countLoop - 2).put("nextlabel", countLoop -1).put("exitlabel", countLoop));
+                      new STAttrMap().put("tc", progLine).put("op", flag).put("exp", list_x).put("lines", list_y).put("label", countLoop - 2).put("nextlabel", countLoop -1).put("exitlabel", countLoop));
                     }
 
 
@@ -551,15 +553,15 @@ public class BackEndTemplate extends TreeParser {
                 case 4 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:43:5: ^( LINE ^( ASSIGN '=' t= ID y+= expr ) )
                     {
-                    match(input,LINE,FOLLOW_LINE_in_block351); 
+                    match(input,LINE,FOLLOW_LINE_in_block355); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,ASSIGN,FOLLOW_ASSIGN_in_block354); 
+                    match(input,ASSIGN,FOLLOW_ASSIGN_in_block358); 
 
                     match(input, Token.DOWN, null); 
-                    match(input,21,FOLLOW_21_in_block356); 
-                    t=(CommonTree)match(input,ID,FOLLOW_ID_in_block360); 
-                    pushFollow(FOLLOW_expr_in_block364);
+                    match(input,21,FOLLOW_21_in_block360); 
+                    t=(CommonTree)match(input,ID,FOLLOW_ID_in_block364); 
+                    pushFollow(FOLLOW_expr_in_block368);
                     y=expr();
 
                     state._fsp--;
@@ -615,12 +617,12 @@ public class BackEndTemplate extends TreeParser {
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:47:3: ( ^( ASSIGN '=' x= ID y+= expr ) -> storeVar(a=$yid=$xop=opcounter))
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:47:5: ^( ASSIGN '=' x= ID y+= expr )
             {
-            match(input,ASSIGN,FOLLOW_ASSIGN_in_assignment399); 
+            match(input,ASSIGN,FOLLOW_ASSIGN_in_assignment403); 
 
             match(input, Token.DOWN, null); 
-            match(input,21,FOLLOW_21_in_assignment401); 
-            x=(CommonTree)match(input,ID,FOLLOW_ID_in_assignment405); 
-            pushFollow(FOLLOW_expr_in_assignment409);
+            match(input,21,FOLLOW_21_in_assignment405); 
+            x=(CommonTree)match(input,ID,FOLLOW_ID_in_assignment409); 
+            pushFollow(FOLLOW_expr_in_assignment413);
             y=expr();
 
             state._fsp--;
@@ -671,10 +673,10 @@ public class BackEndTemplate extends TreeParser {
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:51:3: ( ^( PRINT x+= expr ) -> printStatement(a=$xtc=tempcounterop=opcounter))
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:51:5: ^( PRINT x+= expr )
             {
-            match(input,PRINT,FOLLOW_PRINT_in_print443); 
+            match(input,PRINT,FOLLOW_PRINT_in_print447); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_expr_in_print447);
+            pushFollow(FOLLOW_expr_in_print451);
             x=expr();
 
             state._fsp--;
@@ -724,10 +726,10 @@ public class BackEndTemplate extends TreeParser {
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:3: ( ^( IF expr ( block )* ) )
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:5: ^( IF expr ( block )* )
             {
-            match(input,IF,FOLLOW_IF_in_ifstatement484); 
+            match(input,IF,FOLLOW_IF_in_ifstatement488); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_expr_in_ifstatement486);
+            pushFollow(FOLLOW_expr_in_ifstatement490);
             expr();
 
             state._fsp--;
@@ -747,7 +749,7 @@ public class BackEndTemplate extends TreeParser {
             	case 1 :
             	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:55:15: block
             	    {
-            	    pushFollow(FOLLOW_block_in_ifstatement488);
+            	    pushFollow(FOLLOW_block_in_ifstatement492);
             	    block();
 
             	    state._fsp--;
@@ -793,10 +795,10 @@ public class BackEndTemplate extends TreeParser {
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:3: ( ^( LOOP expr ( block )* ) )
             // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:5: ^( LOOP expr ( block )* )
             {
-            match(input,LOOP,FOLLOW_LOOP_in_loop507); 
+            match(input,LOOP,FOLLOW_LOOP_in_loop511); 
 
             match(input, Token.DOWN, null); 
-            pushFollow(FOLLOW_expr_in_loop509);
+            pushFollow(FOLLOW_expr_in_loop513);
             expr();
 
             state._fsp--;
@@ -816,7 +818,7 @@ public class BackEndTemplate extends TreeParser {
             	case 1 :
             	    // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:59:17: block
             	    {
-            	    pushFollow(FOLLOW_block_in_loop511);
+            	    pushFollow(FOLLOW_block_in_loop515);
             	    block();
 
             	    state._fsp--;
@@ -930,15 +932,15 @@ public class BackEndTemplate extends TreeParser {
                 case 1 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:63:5: ^( '==' x= expr y= expr )
                     {
-                    match(input,24,FOLLOW_24_in_expr532); 
+                    match(input,24,FOLLOW_24_in_expr536); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr536);
+                    pushFollow(FOLLOW_expr_in_expr540);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr540);
+                    pushFollow(FOLLOW_expr_in_expr544);
                     y=expr();
 
                     state._fsp--;
@@ -961,15 +963,15 @@ public class BackEndTemplate extends TreeParser {
                 case 2 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:64:5: ^( '!=' x= expr y= expr )
                     {
-                    match(input,25,FOLLOW_25_in_expr579); 
+                    match(input,25,FOLLOW_25_in_expr583); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr583);
+                    pushFollow(FOLLOW_expr_in_expr587);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr587);
+                    pushFollow(FOLLOW_expr_in_expr591);
                     y=expr();
 
                     state._fsp--;
@@ -992,15 +994,15 @@ public class BackEndTemplate extends TreeParser {
                 case 3 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:65:5: ^( '>' x= expr y= expr )
                     {
-                    match(input,22,FOLLOW_22_in_expr626); 
+                    match(input,22,FOLLOW_22_in_expr630); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr630);
+                    pushFollow(FOLLOW_expr_in_expr634);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr634);
+                    pushFollow(FOLLOW_expr_in_expr638);
                     y=expr();
 
                     state._fsp--;
@@ -1023,15 +1025,15 @@ public class BackEndTemplate extends TreeParser {
                 case 4 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:66:5: ^( '<' x= expr y= expr )
                     {
-                    match(input,23,FOLLOW_23_in_expr673); 
+                    match(input,23,FOLLOW_23_in_expr677); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr677);
+                    pushFollow(FOLLOW_expr_in_expr681);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr681);
+                    pushFollow(FOLLOW_expr_in_expr685);
                     y=expr();
 
                     state._fsp--;
@@ -1054,15 +1056,15 @@ public class BackEndTemplate extends TreeParser {
                 case 5 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:67:5: ^( '+' x= expr y= expr )
                     {
-                    match(input,26,FOLLOW_26_in_expr720); 
+                    match(input,26,FOLLOW_26_in_expr724); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr724);
+                    pushFollow(FOLLOW_expr_in_expr728);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr728);
+                    pushFollow(FOLLOW_expr_in_expr732);
                     y=expr();
 
                     state._fsp--;
@@ -1085,15 +1087,15 @@ public class BackEndTemplate extends TreeParser {
                 case 6 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:68:5: ^( '-' x= expr y= expr )
                     {
-                    match(input,27,FOLLOW_27_in_expr763); 
+                    match(input,27,FOLLOW_27_in_expr767); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr767);
+                    pushFollow(FOLLOW_expr_in_expr771);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr771);
+                    pushFollow(FOLLOW_expr_in_expr775);
                     y=expr();
 
                     state._fsp--;
@@ -1116,15 +1118,15 @@ public class BackEndTemplate extends TreeParser {
                 case 7 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:69:5: ^( '*' x= expr y= expr )
                     {
-                    match(input,28,FOLLOW_28_in_expr806); 
+                    match(input,28,FOLLOW_28_in_expr810); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr810);
+                    pushFollow(FOLLOW_expr_in_expr814);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr814);
+                    pushFollow(FOLLOW_expr_in_expr818);
                     y=expr();
 
                     state._fsp--;
@@ -1147,15 +1149,15 @@ public class BackEndTemplate extends TreeParser {
                 case 8 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:70:5: ^( '/' x= expr y= expr )
                     {
-                    match(input,29,FOLLOW_29_in_expr849); 
+                    match(input,29,FOLLOW_29_in_expr853); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_expr_in_expr853);
+                    pushFollow(FOLLOW_expr_in_expr857);
                     x=expr();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_expr_in_expr857);
+                    pushFollow(FOLLOW_expr_in_expr861);
                     y=expr();
 
                     state._fsp--;
@@ -1178,7 +1180,7 @@ public class BackEndTemplate extends TreeParser {
                 case 9 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:71:5: INT
                     {
-                    INT1=(CommonTree)match(input,INT,FOLLOW_INT_in_expr891); 
+                    INT1=(CommonTree)match(input,INT,FOLLOW_INT_in_expr895); 
                     opcounter++; tempcounter++;
 
 
@@ -1195,7 +1197,7 @@ public class BackEndTemplate extends TreeParser {
                 case 10 :
                     // /home/linux-vm/workspace_indigo/git/vcalc/BackEndTemplate.g:72:5: ID
                     {
-                    ID2=(CommonTree)match(input,ID,FOLLOW_ID_in_expr916); 
+                    ID2=(CommonTree)match(input,ID,FOLLOW_ID_in_expr920); 
                     opcounter++;
 
 
@@ -1244,53 +1246,53 @@ public class BackEndTemplate extends TreeParser {
     public static final BitSet FOLLOW_LINE_in_block243 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_IF_in_block246 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_expr_in_block250 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_block_in_block254 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_LINE_in_block295 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_LOOP_in_block298 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_block302 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_block_in_block306 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_LINE_in_block351 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ASSIGN_in_block354 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_21_in_block356 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ID_in_block360 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_block364 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ASSIGN_in_assignment399 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_21_in_assignment401 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_ID_in_assignment405 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_assignment409 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PRINT_in_print443 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_print447 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_IF_in_ifstatement484 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_ifstatement486 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_block_in_ifstatement488 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_LOOP_in_loop507 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_loop509 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_block_in_loop511 = new BitSet(new long[]{0x0000000000000048L});
-    public static final BitSet FOLLOW_24_in_expr532 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr536 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr540 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_25_in_expr579 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr583 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr587 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_22_in_expr626 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr630 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr634 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_23_in_expr673 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr677 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr681 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_26_in_expr720 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr724 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr728 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_27_in_expr763 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr767 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr771 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_28_in_expr806 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr810 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr814 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_29_in_expr849 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expr_in_expr853 = new BitSet(new long[]{0x000000003FC01400L});
-    public static final BitSet FOLLOW_expr_in_expr857 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_INT_in_expr891 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ID_in_expr916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_block_in_block256 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_LINE_in_block297 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_LOOP_in_block300 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_block304 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_block_in_block310 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_LINE_in_block355 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ASSIGN_in_block358 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_21_in_block360 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ID_in_block364 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_block368 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ASSIGN_in_assignment403 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_21_in_assignment405 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_ID_in_assignment409 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_assignment413 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PRINT_in_print447 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_print451 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_IF_in_ifstatement488 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_ifstatement490 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_block_in_ifstatement492 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_LOOP_in_loop511 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_loop513 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_block_in_loop515 = new BitSet(new long[]{0x0000000000000048L});
+    public static final BitSet FOLLOW_24_in_expr536 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr540 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr544 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_25_in_expr583 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr587 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr591 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_22_in_expr630 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr634 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr638 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_23_in_expr677 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr681 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr685 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_26_in_expr724 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr728 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr732 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_27_in_expr767 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr771 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr775 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_28_in_expr810 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr814 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr818 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_29_in_expr853 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expr_in_expr857 = new BitSet(new long[]{0x000000003FC01400L});
+    public static final BitSet FOLLOW_expr_in_expr861 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_INT_in_expr895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ID_in_expr920 = new BitSet(new long[]{0x0000000000000002L});
 
 }

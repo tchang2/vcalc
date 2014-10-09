@@ -1,4 +1,5 @@
 int i = 0;
-if(i<2)
+loop(i < 5)
 print(i);
-fi;
+i = i +1;
+pool;
